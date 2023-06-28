@@ -1,0 +1,86 @@
+# Add the file pre-commit.windows in the folder ".git/hooks" with out ".windows" in the name. (python 3.xx required)
+#!/bin/bash
+
+path_to_7z_file="./7zip/7za.exe"
+directory_to_verify="./Assets/Externals"
+compressed_directory_path="./Compressed"
+compresion_file_name="Externals.7z"
+modification_info_file="$compressed_directory_path/modification_info.json"
+
+# Mostrar la consola de comandos mientras se ejecuta el script
+set -x
+
+# Generar el archivo de información de modificaciones utilizando Python
+generate_modification_info() {
+  python3 <<EOF
+import os
+import json
+
+directory_to_verify = "$directory_to_verify"
+modification_info_file = "$modification_info_file"
+
+modification_info = {}
+for root, dirs, files in os.walk(directory_to_verify):
+    for file in files:
+        file_path = os.path.join(root, file)
+        modification_time = os.path.getmtime(file_path)
+        modification_info[file_path] = modification_time
+
+os.makedirs(os.path.dirname(modification_info_file), exist_ok=True)
+with open(modification_info_file, 'w') as f:
+    json.dump(modification_info, f, indent=2)
+EOF
+}
+
+# Eliminar el directorio de archivos comprimidos existente
+remove_compressed_directory() {
+  [ -d "$compressed_directory_path" ] && rm -rf "$compressed_directory_path"
+}
+
+# Eliminar los archivos comprimidos existentes con extensión .7z o .7z.*
+remove_existing_compressed_files() {
+  find "$compressed_directory_path" -type f -iname '*.7z*' -exec rm {} +
+}
+
+# Comprimir el directorio usando 7-Zip
+compress_directory() {
+  "$path_to_7z_file" -v8m a -t7z "$compressed_directory_path/$compresion_file_name" "$directory_to_verify" && {
+    # Compresión completada con éxito
+    # Agregar el directorio de archivos comprimidos y el archivo de información al commit
+    git add "$compressed_directory_path" "$modification_info_file"
+
+    echo "El directorio ha sido comprimido y los archivos agregados al commit."
+    exit 0
+  } || {
+    # Error durante la compresión
+    echo "Error: no se pudo completar la compresión del directorio."
+    exit 1
+  }
+}
+
+# Verificar si existe el archivo de información de modificaciones
+if [ ! -f "$modification_info_file" ]; then
+  # Generar el archivo de información de modificaciones si no existe
+  generate_modification_info
+fi
+
+# Verificar si hay archivos modificados en el directorio y sus subdirectorios
+archivos_modificados=$(find "$directory_to_verify" -type f -newer "$modification_info_file" -print -quit)
+
+# No hay archivos modificados, continuar con el commit
+if [ -z "$archivos_modificados" ]; then
+  echo "No hay cambios en el directorio. Continuando con el commit."
+  exit 0
+fi
+
+# Eliminar el directorio de archivos comprimidos existente si hay modificaciones
+remove_compressed_directory
+
+# Eliminar los archivos comprimidos existentes con extensión .7z o .7z.*
+remove_existing_compressed_files
+
+# Generar el archivo de información de modificaciones
+generate_modification_info
+
+# Comprimir el directorio usando 7-Zip
+compress_directory
