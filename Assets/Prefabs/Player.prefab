@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7489613887389598937}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7683977946508406891}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &609916045370326110
 ParticleSystem:
@@ -4909,13 +4909,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8859095513812344869}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7683977946508406891}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9059265217933965968
 GameObject:
@@ -4941,13 +4941,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9059265217933965968}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7683977946508406891}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9059265217933965970
 MonoBehaviour:
@@ -5546,6 +5546,12 @@ MonoBehaviour:
     type: 3}
   jumpAction: {fileID: -3984190742013778545, guid: 836cd1345aea4a04abf06c2a0ad9ff55,
     type: 3}
+  umbrellaAction: {fileID: 1120369429361536294, guid: 836cd1345aea4a04abf06c2a0ad9ff55,
+    type: 3}
+  stompAction: {fileID: 1249785114542909976, guid: 836cd1345aea4a04abf06c2a0ad9ff55,
+    type: 3}
+  dashAction: {fileID: 1202799533633769381, guid: 836cd1345aea4a04abf06c2a0ad9ff55,
+    type: 3}
   animator: {fileID: 9059265217326955357}
   oscillator: {fileID: 9059265217933965970}
 --- !u!114 &3054259517603248554
@@ -5682,21 +5688,6 @@ MonoBehaviour:
   stepsParticles: {fileID: 1605336154586156500}
   jumpParticles: {fileID: 3608122847653096}
   landParticles: {fileID: 7238192896892660701}
-  stepsSfx:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 96bd266ab35e40044964ca10a0a0275a,
-      type: 2}
-  jumpSfx:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 2127339cdcc54fa4d9fbb3a7b210d232,
-      type: 2}
-  landSfx:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: d8083063f6c11d642b0549be057b866c,
-      type: 2}
   normalGradient:
     serializedVersion: 2
     key0: {r: 0.3790326, g: 0, b: 1, a: 1}

@@ -37,8 +37,8 @@ public class FootStepController : MonoBehaviour
     {
         center = heightSpringBehaviour.GroundedInfo.rayHit.point;
         normal = heightSpringBehaviour.GroundedInfo.rayHit.normal;
-        forward = Vector3.ProjectOnPlane(transform.forward, normal).normalized;
-        GizmosRT.Arrow(normalId, center, normal, 1, 1, normalGradient);
+        forward = Vector3.ProjectOnPlane(transform.forward, normal != Vector3.zero ? normal : animator.transform.up).normalized;
+        GizmosRT.Arrow(normalId, center, normal != Vector3.zero ? normal : animator.transform.up, 1, 1, normalGradient);
         GizmosRT.Arrow(forwardId, center, forward, 1, 1, forwardGradient);
     }
 

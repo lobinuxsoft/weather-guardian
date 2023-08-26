@@ -15,9 +15,9 @@ namespace Game.InputsController
         [Header("Character Inputs")]
         [SerializeField] InputActionReference moveAction;
         [SerializeField] InputActionReference jumpAction;
-        //[SerializeField] InputActionReference umbrellaAction;
-        //[SerializeField] InputActionReference stompAction;
-        //[SerializeField] InputActionReference dashAction;
+        [SerializeField] InputActionReference umbrellaAction;
+        [SerializeField] InputActionReference stompAction;
+        [SerializeField] InputActionReference dashAction;
 
         [SerializeField] Animator animator;
         [SerializeField] Oscillator oscillator;
@@ -25,11 +25,11 @@ namespace Game.InputsController
         private HeightSpringBehaviour heightSpringBehaviour;
         private MoveBehaviour moveBehaviour;
         private JumpBehaviour jumpBehaviour;
-        //private DoubleJumpBehaviour doubleJumpBehaviour;
+        private DoubleJumpBehaviour doubleJumpBehaviour;
         private AirBehaviour airBehaviour;
-        //private AirUmbrellaBehaviour airUmbrellaBehaviour;
-        //private StompBehaviour stompBehaviour;
-        //private DashBehaviour dashBehaviour;
+        private AirUmbrellaBehaviour airUmbrellaBehaviour;
+        private StompBehaviour stompBehaviour;
+        private DashBehaviour dashBehaviour;
 
         private void Awake()
         {
@@ -42,15 +42,15 @@ namespace Game.InputsController
             moveAction.action.performed += AirMoveAction;
 
             jumpAction.action.started += JumpAction;
-            //umbrellaAction.action.started += UmbrellaAction;
-            //stompAction.action.started += StompAction;
-            //dashAction.action.started += DashAction;
+            umbrellaAction.action.started += UmbrellaAction;
+            stompAction.action.started += StompAction;
+            dashAction.action.started += DashAction;
 
             moveAction.action.Enable();
             jumpAction.action.Enable();
-            //umbrellaAction.action.Enable();
-            //stompAction.action.Enable();
-            //dashAction.action.Enable();
+            umbrellaAction.action.Enable();
+            stompAction.action.Enable();
+            dashAction.action.Enable();
         }
 
         private void Start()
@@ -60,11 +60,11 @@ namespace Game.InputsController
 
             moveBehaviour = animator.GetBehaviour<MoveBehaviour>();
             jumpBehaviour = animator.GetBehaviour<JumpBehaviour>();
-            //doubleJumpBehaviour = animator.GetBehaviour<DoubleJumpBehaviour>();
+            doubleJumpBehaviour = animator.GetBehaviour<DoubleJumpBehaviour>();
             airBehaviour = animator.GetBehaviour<AirBehaviour>();
-            //airUmbrellaBehaviour = animator.GetBehaviour<AirUmbrellaBehaviour>();
-            //stompBehaviour = animator.GetBehaviour<StompBehaviour>();
-            //dashBehaviour = animator.GetBehaviour<DashBehaviour>();
+            airUmbrellaBehaviour = animator.GetBehaviour<AirUmbrellaBehaviour>();
+            stompBehaviour = animator.GetBehaviour<StompBehaviour>();
+            dashBehaviour = animator.GetBehaviour<DashBehaviour>();
         }
 
         private void OnDestroy()
@@ -78,16 +78,16 @@ namespace Game.InputsController
             moveAction.action.performed -= AirMoveAction;
 
             jumpAction.action.started -= JumpAction;
-            //umbrellaAction.action.started -= UmbrellaAction;
-            //stompAction.action.started -= StompAction;
-            //dashAction.action.started -= DashAction;
+            umbrellaAction.action.started -= UmbrellaAction;
+            stompAction.action.started -= StompAction;
+            dashAction.action.started -= DashAction;
 
 
             moveAction.action.Disable();
             jumpAction.action.Disable();
-            //umbrellaAction.action.Disable();
-            //stompAction.action.Disable();
-            //dashAction.action.Enable();
+            umbrellaAction.action.Disable();
+            stompAction.action.Disable();
+            dashAction.action.Enable();
         }
 
         private void SwitchDebug(InputAction.CallbackContext context) => GizmosRT.Enabled = !GizmosRT.Enabled;
@@ -100,7 +100,7 @@ namespace Game.InputsController
             Vector3 right = Vector3.ProjectOnPlane(Camera.main.transform.right, Vector3.up).normalized;
 
             moveBehaviour.Move(moveDir.x * right + moveDir.y * forward);
-            //airUmbrellaBehaviour.Move(moveDir.x * right + moveDir.y * forward);
+            airUmbrellaBehaviour.Move(moveDir.x * right + moveDir.y * forward);
         }
 
         private void AirMoveAction(InputAction.CallbackContext context)
@@ -116,13 +116,13 @@ namespace Game.InputsController
         private void JumpAction(InputAction.CallbackContext context)
         {
             jumpBehaviour.Jump(animator);
-            //doubleJumpBehaviour.Jump(animator);
+            doubleJumpBehaviour.Jump(animator);
         }
 
-        //private void UmbrellaAction(InputAction.CallbackContext context) => airUmbrellaBehaviour.UseUmbrella(animator);
+        private void UmbrellaAction(InputAction.CallbackContext context) => airUmbrellaBehaviour.UseUmbrella(animator);
 
-        //private void StompAction(InputAction.CallbackContext context) => stompBehaviour.Stomp(animator);
+        private void StompAction(InputAction.CallbackContext context) => stompBehaviour.Stomp(animator);
 
-        //private void DashAction(InputAction.CallbackContext context) => dashBehaviour.Dash(animator);
+        private void DashAction(InputAction.CallbackContext context) => dashBehaviour.Dash(animator);
     }
 }

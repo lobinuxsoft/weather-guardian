@@ -10,7 +10,7 @@ namespace WeatherGuardian.Behaviours
         int exitTagHash = Animator.StringToHash("EXIT");
 
         int umbrellaHash = Animator.StringToHash("UMBRELLA");
-        int umbrellaStateHash = Animator.StringToHash("UmbrellaState");
+        //int umbrellaStateHash = Animator.StringToHash("UmbrellaState");
         int groundedHash = Animator.StringToHash("GROUNDED");
 
         [Header("Movement:")]
@@ -67,7 +67,7 @@ namespace WeatherGuardian.Behaviours
             umbrellaStateValue += animator.GetBool(umbrellaHash) ? Time.deltaTime : -Time.deltaTime;
             umbrellaStateValue = Mathf.Clamp01(umbrellaStateValue);
 
-            animator.SetFloat(umbrellaStateHash, umbrellaStateValue);
+            //animator.SetFloat(umbrellaStateHash, umbrellaStateValue);
 
             animator.SetBool(groundedHash, verticalVelocity < 0f && heightSpringBehaviour.GroundedInfo.grounded);
 
