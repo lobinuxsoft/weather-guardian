@@ -164,8 +164,8 @@ public class VolumetricLightScatteringSettings
     public float resolutionScale = 0.5f;
 
     [Range(0.0f, 1.0f)]
-    public float intensity = 1.0f;
+    public float intensity = 0.75f;
 
     [Range(0.0f, 1.0f)]
-    public float blurWidth = 0.85f;
+    public float blurWidth = 0.75f;
 }
