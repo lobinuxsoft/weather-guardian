@@ -73,6 +73,8 @@ MonoBehaviour:
   m_Name: VolumetricLightScattering
   m_EditorClassIdentifier: 
   m_Active: 1
+  occludersMaterial: {fileID: 0}
+  radialBlurMaterial: {fileID: 0}
   settings:
     resolutionScale: 0.5
     intensity: 0.25

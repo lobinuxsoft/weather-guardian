@@ -23,7 +23,6 @@ public class VolumetricCloudsFeature : ScriptableRendererFeature
     }
 
     public Settings settings = new Settings();
-
     private VolumetricCloudsPass volumetricCloudPass;
     private CloudUrpProxy cloudSettings;
     private NoiseGenerator noiseGenerator;
@@ -89,6 +88,8 @@ public class VolumetricCloudsFeature : ScriptableRendererFeature
 
     private void UpdateBasics()
     {
+        if (!noiseGenerator || !weatherMap) return;
+
         noiseGenerator.UpdateNoise();
 
         if (!Application.isPlaying)

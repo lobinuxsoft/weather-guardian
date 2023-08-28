@@ -19,11 +19,11 @@ public class VolumetricLightScattering : ScriptableRendererFeature
         private FilteringSettings filteringSettings = new FilteringSettings(RenderQueueRange.opaque);
         private RTHandle destinationColor;
 
-        public LightScatteringPass(VolumetricLightScatteringSettings settings)
+        public LightScatteringPass(VolumetricLightScatteringSettings settings, Material occludersMaterial, Material radialBlurMaterial)
         {
             occluders = RTHandles.Alloc("_OccludersMap", name: "_OccludersMap");
-            occludersMaterial = new Material(Shader.Find("Hidden/RW/UnlitColor"));
-            radialBlurMaterial = new Material(Shader.Find("Hidden/RW/RadialBlur"));
+            this.occludersMaterial = occludersMaterial;
+            this.radialBlurMaterial = radialBlurMaterial;
             resolutionScale = settings.resolutionScale;
             intensity = settings.intensity;
             blurWidth = settings.blurWidth;
@@ -109,7 +109,7 @@ public class VolumetricLightScattering : ScriptableRendererFeature
                 radialBlurMaterial.SetFloat("_BlurWidth", blurWidth);
                 radialBlurMaterial.SetColor("_LightColor", sunColor);
 
-                cmd.Blit(occluders.nameID, destinationColor.nameID, radialBlurMaterial, 0);
+                cmd.Blit(occluders.nameID, destinationColor.nameID, radialBlurMaterial, -1);
             }
 
             context.ExecuteCommandBuffer(cmd);
@@ -127,12 +127,14 @@ public class VolumetricLightScattering : ScriptableRendererFeature
 
     LightScatteringPass lightScatteringPass;
 
+    public Material occludersMaterial;
+    public Material radialBlurMaterial;
     public VolumetricLightScatteringSettings settings = new VolumetricLightScatteringSettings();
 
     /// <inheritdoc/>
     public override void Create()
     {
-        lightScatteringPass = new LightScatteringPass(settings);
+        lightScatteringPass = new LightScatteringPass(settings, occludersMaterial, radialBlurMaterial);
 
         // Configures where the render pass should be injected.
         lightScatteringPass.renderPassEvent = RenderPassEvent.BeforeRenderingPostProcessing;
