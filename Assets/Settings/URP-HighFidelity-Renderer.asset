@@ -13,25 +13,6 @@ MonoBehaviour:
   m_Name: DepthNormalsFeature
   m_EditorClassIdentifier: 
   m_Active: 1
---- !u!114 &-4498054604466944043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d88b203fe4757bf4bbca690526aa4ac8, type: 3}
-  m_Name: VolumetricLightScattering
-  m_EditorClassIdentifier: 
-  m_Active: 1
-  occludersMaterial: {fileID: 2100000, guid: 3afb2d7b05db5534ba3e69fc664c490a, type: 2}
-  radialBlurMaterial: {fileID: 2100000, guid: 3133791c77eb4dc49972f1c5d5231342, type: 2}
-  settings:
-    resolutionScale: 0.5
-    intensity: 0.75
-    blurWidth: 0.75
 --- !u!114 &-1878332245247344467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,7 +48,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 3302065f671a8450b82c9ddf07426f3a, type: 3}
   - {fileID: 2800000, guid: 56a77a3e8d64f47b6afe9e3c95cb57d5, type: 3}
   m_Shader: {fileID: 4800000, guid: 0849e84e3d62649e8882e9d6f056a017, type: 3}
---- !u!114 &-466536237323737860
+--- !u!114 &-736767332475488720
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -76,18 +57,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 804bf49869d3b4315a850958d8530433, type: 3}
-  m_Name: VolumetricCloudsFeature
+  m_Script: {fileID: 11500000, guid: d88b203fe4757bf4bbca690526aa4ac8, type: 3}
+  m_Name: VolumetricLightScattering
   m_EditorClassIdentifier: 
   m_Active: 1
+  occludersMaterial: {fileID: 2100000, guid: 3afb2d7b05db5534ba3e69fc664c490a, type: 2}
+  radialBlurMaterial: {fileID: 2100000, guid: 3133791c77eb4dc49972f1c5d5231342, type: 2}
   settings:
-    renderPassEvent: 400
-    blitMaterial: {fileID: 2100000, guid: 92038553a61f11a419e4ef6c9abbed48, type: 2}
-    blitMaterialPassIndex: -1
-    sourceType: 0
-    destinationType: 0
-    sourceTextureId: _MainTex
-    destinationTextureId: _MainTex
+    resolutionScale: 0.5
+    intensity: 0.75
+    blurWidth: 0.75
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,9 +86,9 @@ MonoBehaviour:
   m_RendererFeatures:
   - {fileID: -1878332245247344467}
   - {fileID: 6867415521480433188}
-  - {fileID: -4498054604466944043}
-  - {fileID: -466536237323737860}
-  m_RendererFeatureMap: adc0de57c6d2eee5245ed81a08f64d5fd50770402bb393c1fca47893c38786f9
+  - {fileID: -736767332475488720}
+  - {fileID: 6436408417316416396}
+  m_RendererFeatureMap: adc0de57c6d2eee5245ed81a08f64d5f30b6afc1037ac6f58cab7a9f5ab75259
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   shaders:
@@ -151,6 +130,27 @@ MonoBehaviour:
   m_CopyDepthMode: 0
   m_AccurateGbufferNormals: 0
   m_IntermediateTextureMode: 0
+--- !u!114 &6436408417316416396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804bf49869d3b4315a850958d8530433, type: 3}
+  m_Name: VolumetricCloudsFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    renderPassEvent: 550
+    blitMaterial: {fileID: 2100000, guid: 92038553a61f11a419e4ef6c9abbed48, type: 2}
+    blitMaterialPassIndex: -1
+    sourceType: 0
+    destinationType: 0
+    sourceTextureId: _MainTex
+    destinationTextureId: _MainTex
 --- !u!114 &6867415521480433188
 MonoBehaviour:
   m_ObjectHideFlags: 0
