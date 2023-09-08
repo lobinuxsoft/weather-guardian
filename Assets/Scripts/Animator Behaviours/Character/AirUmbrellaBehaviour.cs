@@ -91,9 +91,7 @@ namespace WeatherGuardian.Behaviours
             uprightSpringBehaviour.LockDirection = false;
             uprightSpringBehaviour.LookDirection = Vector3.zero;
 
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Umbrella/Close");
-
-            Debug.Log("Paraguas se cierra");
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Umbrella/Close");            
         }
 
         public void UseUmbrella(Animator animator)
