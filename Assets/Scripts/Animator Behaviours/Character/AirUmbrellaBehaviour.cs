@@ -1,5 +1,5 @@
-using WeatherGuardian.Behaviours.Configs;
 using UnityEngine;
+using WeatherGuardian.Behaviours.Configs;
 
 namespace WeatherGuardian.Behaviours
 {
@@ -37,10 +37,10 @@ namespace WeatherGuardian.Behaviours
         // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            if(heightSpringBehaviour == null)
+            if (heightSpringBehaviour == null)
                 heightSpringBehaviour = animator.GetBehaviour<HeightSpringBehaviour>();
 
-            if(uprightSpringBehaviour == null)
+            if (uprightSpringBehaviour == null)
                 uprightSpringBehaviour = animator.GetBehaviour<UprightSpringBehaviour>();
 
             if (stateInfo.tagHash != enterTagHash) return;
@@ -49,16 +49,12 @@ namespace WeatherGuardian.Behaviours
 
             heightSpringBehaviour.Body.drag = airDragConfig.Drag.Evaluate(0);
             uprightSpringBehaviour.LockDirection = true;
-
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Umbrella/Open");
-
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Umbrella/Flapping");
         }
 
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            if(stateInfo.tagHash != idleTagHash) return;
+            if (stateInfo.tagHash != idleTagHash) return;
 
             uprightSpringBehaviour.LookDirection = lookDir;
 
@@ -78,20 +74,18 @@ namespace WeatherGuardian.Behaviours
             if (animator.GetBool(groundedHash))
                 animator.SetBool(umbrellaHash, false);
             else
-                AirMovement(moveDir);            
+                AirMovement(moveDir);
         }
 
         // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            if(stateInfo.tagHash != exitTagHash) return;
+            if (stateInfo.tagHash != exitTagHash) return;
 
             animator.SetBool(umbrellaHash, false);
             heightSpringBehaviour.Body.drag = 0.0f;
             uprightSpringBehaviour.LockDirection = false;
             uprightSpringBehaviour.LookDirection = Vector3.zero;
-
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Umbrella/Close");            
         }
 
         public void UseUmbrella(Animator animator)
@@ -101,7 +95,7 @@ namespace WeatherGuardian.Behaviours
 
             if (heightSpringBehaviour.GroundedInfo.grounded) return;
 
-            animator.SetBool(umbrellaHash, !animator.GetBool(umbrellaHash));            
+            animator.SetBool(umbrellaHash, !animator.GetBool(umbrellaHash));
         }
 
         public void UmbrellaOpenForced(Animator animator) => animator.SetBool(umbrellaHash, true);
@@ -130,7 +124,7 @@ namespace WeatherGuardian.Behaviours
             heightSpringBehaviour.Body.AddForceAtPosition(
                 Vector3.Scale(neededAccel * heightSpringBehaviour.Body.mass, moveConfig.MoveForceScale),
                 heightSpringBehaviour.Body.worldCenterOfMass + new Vector3(0f, heightSpringBehaviour.Body.transform.localScale.y * moveConfig.LeanFactor, 0f)
-            );                                   
+            );
         }
     }
 }

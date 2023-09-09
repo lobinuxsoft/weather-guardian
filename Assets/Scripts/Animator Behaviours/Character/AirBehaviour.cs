@@ -1,5 +1,5 @@
-using WeatherGuardian.Behaviours.Configs;
 using UnityEngine;
+using WeatherGuardian.Behaviours.Configs;
 
 namespace WeatherGuardian.Behaviours
 {

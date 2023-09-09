@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Playables;
 using WeatherGuardian.Behaviours;
 
-public class FootStepController : MonoBehaviour
+public class CharacterEffectController : MonoBehaviour
 {
     [Header("Visual Effects")]
     [SerializeField] private ParticleSystem stepsParticles;
@@ -17,7 +17,12 @@ public class FootStepController : MonoBehaviour
     [SerializeField] private Gradient forwardGradient;
 
     [Header("FMOD Events")]
-    [SerializeField] private FMODUnity.EventReference FootstepSound;
+    [SerializeField] private FMODUnity.EventReference footstepSfx;
+    [SerializeField] private FMODUnity.EventReference landingSfx;
+    [SerializeField] private FMODUnity.EventReference jumpSfx;
+    [SerializeField] private FMODUnity.EventReference openUmbrellaSfx;
+    [SerializeField] private FMODUnity.EventReference closeUmbrellaSfx;
+    [SerializeField] private FMODUnity.EventReference dashSfx;
 
     Animator animator;
     HeightSpringBehaviour heightSpringBehaviour;
@@ -52,7 +57,8 @@ public class FootStepController : MonoBehaviour
         stepsParticles.transform.forward = forward;
         stepsParticles.Play();
 
-        FMODUnity.RuntimeManager.PlayOneShotAttached(FootstepSound, gameObject);
+        if (!footstepSfx.IsNull)
+            FMODUnity.RuntimeManager.PlayOneShotAttached(footstepSfx, gameObject);
     }
 
     public void JumpEffect()
@@ -61,6 +67,9 @@ public class FootStepController : MonoBehaviour
         jumpParticles.transform.up = normal;
         jumpParticles.transform.forward = forward;
         jumpParticles.Play();
+
+        if (!jumpSfx.IsNull)
+            FMODUnity.RuntimeManager.PlayOneShotAttached(jumpSfx, gameObject);
     }
 
     public void LandEffect()
@@ -69,7 +78,26 @@ public class FootStepController : MonoBehaviour
         landParticles.transform.up = normal;
         landParticles.transform.forward = forward;
         landParticles.Play();
-        
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Land");
+
+        if (!landingSfx.IsNull)
+            FMODUnity.RuntimeManager.PlayOneShotAttached(landingSfx, gameObject);
+    }
+
+    public void OpenUmbrellaEffect()
+    {
+        if (!openUmbrellaSfx.IsNull)
+            FMODUnity.RuntimeManager.PlayOneShotAttached(openUmbrellaSfx, gameObject);
+    }
+
+    public void CloseUmbrellaEffect()
+    {
+        if (!closeUmbrellaSfx.IsNull)
+            FMODUnity.RuntimeManager.PlayOneShotAttached(closeUmbrellaSfx, gameObject);
+    }
+
+    public void DashEffect()
+    {
+        if (!dashSfx.IsNull)
+            FMODUnity.RuntimeManager.PlayOneShotAttached(dashSfx, gameObject);
     }
 }
