@@ -1,5 +1,51 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1600321263047428412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 317834571480622976}
+  - component: {fileID: 8320445262459625782}
+  m_Layer: 0
+  m_Name: CloudsContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &317834571480622976
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600321263047428412}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 250, z: 0}
+  m_LocalScale: {x: 5000, y: 500, z: 5000}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7236914372106268229}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8320445262459625782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600321263047428412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 924b5bdeeb7d94edc8ab0a130f79abde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colour: {r: 1, g: 0.6868738, b: 0, a: 0.4392157}
+  displayOutline: 1
 --- !u!1 &7020603498918745367
 GameObject:
   m_ObjectHideFlags: 0
@@ -14,7 +60,7 @@ GameObject:
   - component: {fileID: 8518358705851208076}
   - component: {fileID: 5439073904366993873}
   m_Layer: 0
-  m_Name: Weather Map
+  m_Name: CoudUrpProxy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +78,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 317834571480622976}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4873896217476131207
@@ -47,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d7adeea83c3e54eaffb5ca4daf45f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  container: {fileID: 0}
+  container: {fileID: 317834571480622976}
   cloudTestParams: {x: 0, y: 0, z: 0}
   numStepsLight: 8
   rayOffsetStrength: 9.19
@@ -132,7 +179,7 @@ MonoBehaviour:
   resolution: 512
   weatherMap: {fileID: 0}
   testParams: {x: 0.5, y: 1, z: 1, w: 0}
-  container: {fileID: 0}
+  container: {fileID: 317834571480622976}
   viewerEnabled: 0
   showSettingsEditor: 1
   minMax: {x: 0, y: 0.5}

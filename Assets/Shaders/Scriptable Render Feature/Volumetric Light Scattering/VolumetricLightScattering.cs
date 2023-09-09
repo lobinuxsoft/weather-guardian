@@ -134,10 +134,12 @@ public class VolumetricLightScattering : ScriptableRendererFeature
     /// <inheritdoc/>
     public override void Create()
     {
+        if (!occludersMaterial || !radialBlurMaterial) return;
+
         lightScatteringPass = new LightScatteringPass(settings, occludersMaterial, radialBlurMaterial);
 
         // Configures where the render pass should be injected.
-        lightScatteringPass.renderPassEvent = RenderPassEvent.BeforeRenderingPostProcessing;
+        lightScatteringPass.renderPassEvent = settings.renderPassEvent;
     }
 
     // Here you can inject one or multiple render passes in the renderer.
@@ -161,13 +163,16 @@ public class VolumetricLightScattering : ScriptableRendererFeature
 [System.Serializable]
 public class VolumetricLightScatteringSettings
 {
+    [Header("Render Pass")]
+    public RenderPassEvent renderPassEvent = RenderPassEvent.BeforeRenderingPostProcessing;
+
     [Header("Properties")]
     [Range(0.1f, 1f)]
     public float resolutionScale = 0.5f;
 
     [Range(0.0f, 1.0f)]
-    public float intensity = 0.75f;
+    public float intensity = 0.1f;
 
     [Range(0.0f, 1.0f)]
-    public float blurWidth = 0.75f;
+    public float blurWidth = 0.95f;
 }

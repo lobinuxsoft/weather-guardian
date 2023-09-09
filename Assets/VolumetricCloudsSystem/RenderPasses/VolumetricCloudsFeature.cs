@@ -12,7 +12,7 @@ public class VolumetricCloudsFeature : ScriptableRendererFeature
     [System.Serializable]
     public class Settings
     {
-        public RenderPassEvent renderPassEvent = RenderPassEvent.AfterRenderingSkybox;
+        public RenderPassEvent renderPassEvent = RenderPassEvent.BeforeRenderingPostProcessing;
 
         public Material blitMaterial;
         public int blitMaterialPassIndex = -1;
@@ -30,30 +30,30 @@ public class VolumetricCloudsFeature : ScriptableRendererFeature
 
     public override void Create()
     {
-        volumetricCloudPass = new VolumetricCloudsPass(name);
-
         cloudSettings = FindObjectOfType<CloudUrpProxy>();
-        if (cloudSettings == null)
+        if (!cloudSettings)
         {
             Debug.LogError("Could not find Cloud URP Proxy Script in Scene!");
             return;
         }
 
         noiseGenerator = FindObjectOfType<NoiseGenerator>();
-        if (noiseGenerator == null)
+        if (!noiseGenerator)
         {
             Debug.LogError("Could not find Noise Generator Script in Scene!");
             return;
         }
 
         weatherMap = FindObjectOfType<WeatherMap>();
-        if (weatherMap == null)
+        if (!weatherMap)
         {
             Debug.LogError("Could not find Weather Map Script in Scene!");
             return;
         }
 
         cloudSettings.TriggerUpdate = true;
+
+        volumetricCloudPass = new VolumetricCloudsPass(name);
     }
 
     public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
