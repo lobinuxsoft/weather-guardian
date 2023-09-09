@@ -3,6 +3,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Playables;
 using WeatherGuardian.Behaviours;
+using WeatherGuardian.FMOD.Configs;
 
 public class CharacterEffectController : MonoBehaviour
 {
@@ -16,13 +17,8 @@ public class CharacterEffectController : MonoBehaviour
     [SerializeField] private Gradient normalGradient;
     [SerializeField] private Gradient forwardGradient;
 
-    [Header("FMOD Events")]
-    [SerializeField] private FMODUnity.EventReference footstepSfx;
-    [SerializeField] private FMODUnity.EventReference landingSfx;
-    [SerializeField] private FMODUnity.EventReference jumpSfx;
-    [SerializeField] private FMODUnity.EventReference openUmbrellaSfx;
-    [SerializeField] private FMODUnity.EventReference closeUmbrellaSfx;
-    [SerializeField] private FMODUnity.EventReference dashSfx;
+    [Header("FMOD Event Config")]
+    [SerializeField] private SFXEventsConfigs sfxEvents;
 
     Animator animator;
     HeightSpringBehaviour heightSpringBehaviour;
@@ -57,8 +53,8 @@ public class CharacterEffectController : MonoBehaviour
         stepsParticles.transform.forward = forward;
         stepsParticles.Play();
 
-        if (!footstepSfx.IsNull)
-            FMODUnity.RuntimeManager.PlayOneShotAttached(footstepSfx, gameObject);
+        if (!sfxEvents.footstepSfx.IsNull)
+            FMODUnity.RuntimeManager.PlayOneShotAttached(sfxEvents.footstepSfx, gameObject);
     }
 
     public void JumpEffect()
@@ -68,8 +64,8 @@ public class CharacterEffectController : MonoBehaviour
         jumpParticles.transform.forward = forward;
         jumpParticles.Play();
 
-        if (!jumpSfx.IsNull)
-            FMODUnity.RuntimeManager.PlayOneShotAttached(jumpSfx, gameObject);
+        if (!sfxEvents.jumpSfx.IsNull)
+            FMODUnity.RuntimeManager.PlayOneShotAttached(sfxEvents.jumpSfx, gameObject);
     }
 
     public void LandEffect()
@@ -79,25 +75,25 @@ public class CharacterEffectController : MonoBehaviour
         landParticles.transform.forward = forward;
         landParticles.Play();
 
-        if (!landingSfx.IsNull)
-            FMODUnity.RuntimeManager.PlayOneShotAttached(landingSfx, gameObject);
+        if (!sfxEvents.landingSfx.IsNull)
+            FMODUnity.RuntimeManager.PlayOneShotAttached(sfxEvents.landingSfx, gameObject);
     }
 
     public void OpenUmbrellaEffect()
     {
-        if (!openUmbrellaSfx.IsNull)
-            FMODUnity.RuntimeManager.PlayOneShotAttached(openUmbrellaSfx, gameObject);
+        if (!sfxEvents.openUmbrellaSfx.IsNull)
+            FMODUnity.RuntimeManager.PlayOneShotAttached(sfxEvents.openUmbrellaSfx, gameObject);
     }
 
     public void CloseUmbrellaEffect()
     {
-        if (!closeUmbrellaSfx.IsNull)
-            FMODUnity.RuntimeManager.PlayOneShotAttached(closeUmbrellaSfx, gameObject);
+        if (!sfxEvents.closeUmbrellaSfx.IsNull)
+            FMODUnity.RuntimeManager.PlayOneShotAttached(sfxEvents.closeUmbrellaSfx, gameObject);
     }
 
     public void DashEffect()
     {
-        if (!dashSfx.IsNull)
-            FMODUnity.RuntimeManager.PlayOneShotAttached(dashSfx, gameObject);
+        if (!sfxEvents.dashSfx.IsNull)
+            FMODUnity.RuntimeManager.PlayOneShotAttached(sfxEvents.dashSfx, gameObject);
     }
 }
