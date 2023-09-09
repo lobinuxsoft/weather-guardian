@@ -16,6 +16,9 @@ public class FootStepController : MonoBehaviour
     [SerializeField] private Gradient normalGradient;
     [SerializeField] private Gradient forwardGradient;
 
+    [Header("FMOD Events")]
+    [SerializeField] private FMODUnity.EventReference FootstepSound;
+
     Animator animator;
     HeightSpringBehaviour heightSpringBehaviour;
 
@@ -48,6 +51,8 @@ public class FootStepController : MonoBehaviour
         stepsParticles.transform.up = normal;
         stepsParticles.transform.forward = forward;
         stepsParticles.Play();
+
+        FMODUnity.RuntimeManager.PlayOneShotAttached(FootstepSound, gameObject);
     }
 
     public void JumpEffect()
@@ -64,5 +69,7 @@ public class FootStepController : MonoBehaviour
         landParticles.transform.up = normal;
         landParticles.transform.forward = forward;
         landParticles.Play();
+        
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Land");
     }
 }

@@ -12,7 +12,7 @@ namespace WeatherGuardian.Behaviours
         [SerializeField] JumpConfig jumpConfig;
 
         [Header("Animation Exit Time")]
-        [SerializeField, Range(0, 1)] float exitTimeNormalized = 0.2f;
+        [SerializeField, Range(0, 1)] float exitTimeNormalized = 0.2f;                
 
         private HeightSpringBehaviour heightSpringBehaviour;
 
@@ -28,6 +28,11 @@ namespace WeatherGuardian.Behaviours
         //    animator.SetBool(jumpHash, false);
         //}
 
+        public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        {
+            Debug.Log("Jump Sound!");
+        }
+
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             if (heightSpringBehaviour.LastGroundedTime > jumpConfig.CoyoteTime) return;
@@ -38,7 +43,7 @@ namespace WeatherGuardian.Behaviours
             heightSpringBehaviour.Body.AddForce(Vector3.up * jumpConfig.JumpForceFactor, ForceMode.Impulse);
 
             animator.SetBool(groundedHash, false);
-            animator.SetBool(jumpHash, false);
+            animator.SetBool(jumpHash, false);            
         }
 
         public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -54,6 +59,8 @@ namespace WeatherGuardian.Behaviours
             if (!heightSpringBehaviour.GroundedInfo.grounded) return;
 
             animator.SetBool(jumpHash, true);
+                        
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Jump");
         }
     }
 }

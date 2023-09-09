@@ -49,6 +49,10 @@ namespace WeatherGuardian.Behaviours
 
             heightSpringBehaviour.Body.drag = airDragConfig.Drag.Evaluate(0);
             uprightSpringBehaviour.LockDirection = true;
+
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Umbrella/Open");
+
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Umbrella/Flapping");
         }
 
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -74,7 +78,7 @@ namespace WeatherGuardian.Behaviours
             if (animator.GetBool(groundedHash))
                 animator.SetBool(umbrellaHash, false);
             else
-                AirMovement(moveDir);
+                AirMovement(moveDir);            
         }
 
         // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
@@ -86,6 +90,8 @@ namespace WeatherGuardian.Behaviours
             heightSpringBehaviour.Body.drag = 0.0f;
             uprightSpringBehaviour.LockDirection = false;
             uprightSpringBehaviour.LookDirection = Vector3.zero;
+
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Umbrella/Close");            
         }
 
         public void UseUmbrella(Animator animator)
@@ -95,7 +101,7 @@ namespace WeatherGuardian.Behaviours
 
             if (heightSpringBehaviour.GroundedInfo.grounded) return;
 
-            animator.SetBool(umbrellaHash, !animator.GetBool(umbrellaHash));
+            animator.SetBool(umbrellaHash, !animator.GetBool(umbrellaHash));            
         }
 
         public void UmbrellaOpenForced(Animator animator) => animator.SetBool(umbrellaHash, true);
@@ -124,7 +130,7 @@ namespace WeatherGuardian.Behaviours
             heightSpringBehaviour.Body.AddForceAtPosition(
                 Vector3.Scale(neededAccel * heightSpringBehaviour.Body.mass, moveConfig.MoveForceScale),
                 heightSpringBehaviour.Body.worldCenterOfMass + new Vector3(0f, heightSpringBehaviour.Body.transform.localScale.y * moveConfig.LeanFactor, 0f)
-            );
+            );                                   
         }
     }
 }

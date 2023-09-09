@@ -97,6 +97,8 @@ namespace WeatherGuardian.Behaviours
             if ((Time.time - lastTimeUse) < dashConfig.Cooldown) return;
 
             animator.SetBool(dashHash, true);
+
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Dash");
         }
     }
 }

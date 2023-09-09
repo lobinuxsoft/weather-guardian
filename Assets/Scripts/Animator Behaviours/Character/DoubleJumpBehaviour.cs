@@ -20,6 +20,8 @@ namespace WeatherGuardian.Behaviours
             heightSpringBehaviour.Body.AddForce(Vector3.up * jumpConfig.JumpForceFactor, ForceMode.Impulse);
 
             animator.SetBool(jumpHash, false);
+
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Jump");
         }
 
         public void Jump(Animator animator)
