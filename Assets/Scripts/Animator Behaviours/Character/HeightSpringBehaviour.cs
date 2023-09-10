@@ -84,7 +84,7 @@ namespace WeatherGuardian.Behaviours
             Ray rayToGround = new Ray(position, direction);
 
             //bool rayHitGround = Physics.Raycast(rayToGround, out rayHit, heightSpringConfig.RayCastLength, heightSpringConfig.TerrainLayer.value);
-            bool rayHitGround = Physics.SphereCast(rayToGround, heightSpringConfig.RayCastRadius, out rayHit, heightSpringConfig.RayCastLength, heightSpringConfig.RayLayerMask);
+            bool rayHitGround = Physics.SphereCast(rayToGround, heightSpringConfig.RayCastRadius, out rayHit, heightSpringConfig.RayCastLength, heightSpringConfig.RayLayerMask, QueryTriggerInteraction.Ignore);
 
             return (rayHitGround, rayHit);
         }
