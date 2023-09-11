@@ -59,6 +59,10 @@ GameObject:
   - component: {fileID: 8884870950399335460}
   - component: {fileID: 8518358705851208076}
   - component: {fileID: 5439073904366993873}
+  - component: {fileID: 5229582842465921785}
+  - component: {fileID: 3304592645736714103}
+  - component: {fileID: 4286839091306589548}
+  - component: {fileID: 2318511495585121619}
   m_Layer: 0
   m_Name: CoudUrpProxy
   m_TagString: Untagged
@@ -196,3 +200,107 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slicer: {fileID: 7200000, guid: 21b2f0659c6bd434f81825e14415969a, type: 3}
+--- !u!320 &5229582842465921785
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7020603498918745367}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: d382251c494ae9b469fb32fa07d23da6, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 6852635698940215718, guid: d382251c494ae9b469fb32fa07d23da6, type: 2}
+    value: {fileID: 3304592645736714103}
+  - key: {fileID: -310019875476238843, guid: a2fd492f240efaf4c9f0145e405d2909, type: 2}
+    value: {fileID: 3304592645736714103}
+  - key: {fileID: 6852635698940215718, guid: 2d98fdc1c96c30b4bbb3dbeb434304dd, type: 2}
+    value: {fileID: 3304592645736714103}
+  m_ExposedReferences:
+    m_References: []
+--- !u!95 &3304592645736714103
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7020603498918745367}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4286839091306589548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7020603498918745367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba270225b1269da44b9879a2c0111b03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  notificationSignal: {fileID: 11400000, guid: 666000cd6bc6a264889b2ac47be193bb, type: 2}
+  onSignalEmit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5229582842465921785}
+        m_TargetAssemblyTypeName: UnityEngine.Playables.PlayableDirector, UnityEngine
+        m_MethodName: Play
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: d382251c494ae9b469fb32fa07d23da6,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Playables.PlayableAsset,
+            UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2318511495585121619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7020603498918745367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba270225b1269da44b9879a2c0111b03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  notificationSignal: {fileID: 11400000, guid: 04bb9db900024734f94bbeb133d6b09a, type: 2}
+  onSignalEmit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5229582842465921785}
+        m_TargetAssemblyTypeName: UnityEngine.Playables.PlayableDirector, UnityEngine
+        m_MethodName: Play
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 2d98fdc1c96c30b4bbb3dbeb434304dd,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Playables.PlayableAsset,
+            UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
