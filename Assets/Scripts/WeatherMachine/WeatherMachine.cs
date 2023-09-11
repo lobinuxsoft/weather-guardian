@@ -1,5 +1,7 @@
+using Cinemachine;
 using CryingOnion.GizmosRT.Runtime;
 using CryingOnion.Timeline.Conditions;
+using CryingOnion.Timeline.Notification;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -14,11 +16,13 @@ namespace WeatherGuardian.Gameplay
         private const string MACHINE_ANIMATOR_TRACK = "MachineAnimator";
         private const string PLAYER_ANIMATOR_TRACK = "PlayerAnimator";
         private const string PLAYER_TRANSFORM_TRACK = "PlayerTransform";
+        private const string CAMERA_TRACK = "MainCamera";
 
         [Header("Timeline config")]
         [SerializeField] private PlayableDirector director;
         [SerializeField] private Animator machineAnimator;
         [SerializeField] private BoolCondition machineState;
+        [SerializeField] private NotificationSignal playerEndInteraction;
         [SerializeField] private TimelineAsset weatherMachineTimeline;
 
         [Space]
@@ -38,6 +42,7 @@ namespace WeatherGuardian.Gameplay
 
         private BoxCollider boxTrigger;
         private Transform camTransform;
+        private CinemachineBrain cinemachineBrain;
         private GameObject player;
 
         private Dictionary<string, UnityEngine.Object> bindingDic = new Dictionary<string, UnityEngine.Object>();
@@ -48,21 +53,26 @@ namespace WeatherGuardian.Gameplay
             boxTrigger.isTrigger = true;
 
             camTransform = Camera.main.transform;
+            cinemachineBrain = Camera.main.gameObject.GetComponent<CinemachineBrain>();
 
             uiButton.gameObject.SetActive(false);
 
             inputAction.action.started += OnActionStarted;
 
             TimelineBinding(ref weatherMachineTimeline, MACHINE_ANIMATOR_TRACK, machineAnimator);
+            TimelineBinding(ref weatherMachineTimeline, CAMERA_TRACK, cinemachineBrain);
 
             machineState.Value = director.playOnAwake;
 
             director.stopped += OnDirectorStop;
+
+            playerEndInteraction.signal += UnbindPlayer;
         }
 
         private void OnDestroy()
         {
             director.stopped -= OnDirectorStop;
+            playerEndInteraction.signal -= UnbindPlayer;
         }
 
         private void OnTriggerEnter(Collider other)
@@ -108,15 +118,23 @@ namespace WeatherGuardian.Gameplay
             }
         }
 
+        private void UnbindPlayer()
+        {
+            var time = director.time;
+            bindingDic.Clear();
+
+            bindingDic.Add(PLAYER_ANIMATOR_TRACK, null);
+            bindingDic.Add(PLAYER_TRANSFORM_TRACK, null);
+            TimelineBinding(ref weatherMachineTimeline, bindingDic);
+            director.RebuildGraph();
+            director.time = time;
+        }
+
         private void OnDirectorStop(PlayableDirector director)
         {
             director.time = 0;
 
-            bindingDic.Clear();
-            bindingDic.Add(PLAYER_ANIMATOR_TRACK, null);
-            bindingDic.Add(PLAYER_TRANSFORM_TRACK, null);
-
-            TimelineBinding(ref weatherMachineTimeline, bindingDic);
+            UnbindPlayer();
         }
 
         private void LateUpdate()
