@@ -5,6 +5,8 @@ namespace CryingOnion.Timeline.Behaviour
 {
     public class ConditionalLoopMixerBehaviour : PlayableBehaviour
     {
+        private const float thresholdLoop = 0.01f;
+
         private PlayableDirector director;
 
         public override void OnPlayableCreate(Playable playable)
@@ -21,10 +23,8 @@ namespace CryingOnion.Timeline.Behaviour
                 ScriptPlayable<ConditionalLoopBehaviour> inputPlayable = (ScriptPlayable<ConditionalLoopBehaviour>)playable.GetInput(i);
                 ConditionalLoopBehaviour input = inputPlayable.GetBehaviour();
 
-                if (input.condition && input.condition.ConditionMet() && Mathf.Abs((float)(input.end - director.time)) < 0.01f)
-                {
+                if (input.condition && input.condition.ConditionMet() && Mathf.Abs(input.end - (float)director.time) <= thresholdLoop)
                     director.time = input.start;
-                }
             }
         }
     }
