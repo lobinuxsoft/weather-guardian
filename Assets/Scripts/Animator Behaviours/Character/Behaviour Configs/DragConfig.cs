@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace WeatherGuardian.Behaviours.Configs
 {
-    [CreateAssetMenu(fileName = nameof(DragConfig), menuName = "TesisBand/Behaviours/Configs/Drag Config")]
+    [CreateAssetMenu(fileName = nameof(DragConfig), menuName = "Weather Guardian/Behaviours/Configs/Drag Config")]
     public class DragConfig : ScriptableObject
     {
         [field: Header("Drag:")]
