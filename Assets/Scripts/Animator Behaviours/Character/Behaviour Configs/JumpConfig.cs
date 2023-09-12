@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace WeatherGuardian.Behaviours.Configs
 {
-    [CreateAssetMenu(fileName = nameof(JumpConfig), menuName = "TesisBand/Behaviours/Configs/Jump Config")]
+    [CreateAssetMenu(fileName = nameof(JumpConfig), menuName = "Weather Guardian/Behaviours/Configs/Jump Config")]
     public class JumpConfig : ScriptableObject
     {
         [field: Header("Jump:")]

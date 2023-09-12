@@ -8,7 +8,7 @@ namespace CryingOnion.Timeline.Behaviour
     {
         public ScriptableCondition condition;
 
-        public double start;
-        public double end;
+        public float start;
+        public float end;
     }
 }

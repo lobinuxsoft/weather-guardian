@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace WeatherGuardian.Behaviours.Configs
 {
-    [CreateAssetMenu(fileName = nameof(DashConfig), menuName = "TesisBand/Behaviours/Configs/Dash Config")]
+    [CreateAssetMenu(fileName = nameof(DashConfig), menuName = "Weather Guardian/Behaviours/Configs/Dash Config")]
     public class DashConfig : ScriptableObject
     {
         [field: Tooltip("Use umbrella when dash end")]

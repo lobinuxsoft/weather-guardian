@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace WeatherGuardian.FMOD.Configs 
 {
-    [CreateAssetMenu(fileName = nameof(SFXEventsConfigs), menuName = "TesisBand/FMOD/Configs/SFXEventsConfigs")]
+    [CreateAssetMenu(fileName = nameof(SFXEventsConfigs), menuName = "Weather Guardian/FMOD/Configs/SFXEventsConfigs")]
     public class SFXEventsConfigs : ScriptableObject
     {
         [field: SerializeField] public FMODUnity.EventReference footstepSfx { get; private set; }

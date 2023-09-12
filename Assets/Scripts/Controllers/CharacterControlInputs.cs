@@ -25,7 +25,7 @@ namespace Game.InputsController
         private HeightSpringBehaviour heightSpringBehaviour;
         private MoveBehaviour moveBehaviour;
         private JumpBehaviour jumpBehaviour;
-        private DoubleJumpBehaviour doubleJumpBehaviour;
+        private AirJumpBehaviour doubleJumpBehaviour;
         private AirBehaviour airBehaviour;
         private AirUmbrellaBehaviour airUmbrellaBehaviour;
         private StompBehaviour stompBehaviour;
@@ -60,7 +60,7 @@ namespace Game.InputsController
 
             moveBehaviour = animator.GetBehaviour<MoveBehaviour>();
             jumpBehaviour = animator.GetBehaviour<JumpBehaviour>();
-            doubleJumpBehaviour = animator.GetBehaviour<DoubleJumpBehaviour>();
+            doubleJumpBehaviour = animator.GetBehaviour<AirJumpBehaviour>();
             airBehaviour = animator.GetBehaviour<AirBehaviour>();
             airUmbrellaBehaviour = animator.GetBehaviour<AirUmbrellaBehaviour>();
             stompBehaviour = animator.GetBehaviour<StompBehaviour>();
