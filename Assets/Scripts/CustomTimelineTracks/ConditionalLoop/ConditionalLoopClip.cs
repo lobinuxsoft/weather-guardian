@@ -13,13 +13,10 @@ namespace CryingOnion.Timeline.Clip
         public ConditionalLoopBehaviour template = new ConditionalLoopBehaviour();
 
         public ScriptableCondition condition;
-        public double start;
-        public double end;
+        public float start;
+        public float end;
 
-        public ClipCaps clipCaps
-        {
-            get { return ClipCaps.None; }
-        }
+        public ClipCaps clipCaps => ClipCaps.None;
 
         public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)
         {

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace WeatherGuardian.Behaviours.Configs
 {
-    [CreateAssetMenu(fileName = nameof(StompConfig), menuName = "TesisBand/Behaviours/Configs/Stomp Config")]
+    [CreateAssetMenu(fileName = nameof(StompConfig), menuName = "Weather Guardian/Behaviours/Configs/Stomp Config")]
     public class StompConfig : ScriptableObject
     {
         [field: Header("Stomp:")]

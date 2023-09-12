@@ -22,7 +22,8 @@ namespace WeatherGuardian.Gameplay
         [SerializeField] private PlayableDirector director;
         [SerializeField] private Animator machineAnimator;
         [SerializeField] private BoolCondition machineState;
-        [SerializeField] private NotificationSignal playerEndInteraction;
+        [SerializeField] private NotificationSignal machineOnNotification;
+        [SerializeField] private NotificationSignal machineOffNotification;
         [SerializeField] private TimelineAsset weatherMachineTimeline;
 
         [Space]
@@ -66,13 +67,15 @@ namespace WeatherGuardian.Gameplay
 
             director.stopped += OnDirectorStop;
 
-            playerEndInteraction.signal += UnbindPlayer;
+            machineOnNotification.signal += UnbindPlayer;
+            machineOffNotification.signal += UnbindPlayer;
         }
 
         private void OnDestroy()
         {
             director.stopped -= OnDirectorStop;
-            playerEndInteraction.signal -= UnbindPlayer;
+            machineOnNotification.signal -= UnbindPlayer;
+            machineOffNotification.signal -= UnbindPlayer;
         }
 
         private void OnTriggerEnter(Collider other)

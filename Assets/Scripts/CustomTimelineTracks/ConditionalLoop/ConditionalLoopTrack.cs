@@ -21,8 +21,8 @@ namespace CryingOnion.Timeline.Track
             foreach (var c in GetClips())
             {
                 ConditionalLoopClip clip = (ConditionalLoopClip)c.asset;
-                clip.end = c.end;
-                clip.start = c.start;
+                clip.end = (float)c.end;
+                clip.start = (float)c.start;
                 string displayName = clip.condition != null ? clip.condition.name : "NULL";
                 c.displayName = $"↩ {displayName}";
             }
