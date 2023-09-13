@@ -31,6 +31,9 @@
 		<relationship name="timeline">
 			<destination>{5371aab3-6678-4786-887a-9ee34f7e52bd}</destination>
 		</relationship>
+		<relationship name="banks">
+			<destination>{6ba9b1e1-90f2-47c9-929b-715fde49225d}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixer" id="{e35b6b07-b7b7-40e7-a0df-a2c6aa876d98}">
 		<relationship name="masterBus">
@@ -122,6 +125,13 @@
 	</object>
 	<object class="MixerBusPanner" id="{8010abaa-9635-4504-bd78-5668d2123dd2}" />
 	<object class="MixerBusFader" id="{a983a1b0-92dc-411c-9605-4a34b682b661}" />
-	<object class="SpatialiserEffect" id="{9a087e46-6779-41d4-8d44-83e7da0858df}" />
+	<object class="SpatialiserEffect" id="{9a087e46-6779-41d4-8d44-83e7da0858df}">
+		<property name="maximumDistance">
+			<value>50</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{893cb185-b485-4961-9f7d-851831013e24}" />
 </objects>
