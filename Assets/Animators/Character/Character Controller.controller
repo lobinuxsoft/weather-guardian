@@ -762,7 +762,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Double Jump State
+  m_Name: Air Jump State
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -1022,7 +1022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c9bad209c41cf94898a37149613a8c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpConfig: {fileID: 11400000, guid: 63144352a8749cf4585f37e3cb288513, type: 2}
+  airJumpConfig: {fileID: 11400000, guid: 1b53d04a85d8fe641bfea71a9f268b8c, type: 2}
 --- !u!114 &723625853733239619
 MonoBehaviour:
   m_ObjectHideFlags: 1

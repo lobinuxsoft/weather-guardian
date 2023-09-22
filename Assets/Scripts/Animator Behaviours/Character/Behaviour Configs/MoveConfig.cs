@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace WeatherGuardian.Behaviours.Configs
 {
-    [CreateAssetMenu(fileName = nameof(MoveConfig), menuName = "TesisBand/Behaviours/Configs/Move Config")]
+    [CreateAssetMenu(fileName = nameof(MoveConfig), menuName = "Weather Guardian/Behaviours/Configs/Move Config")]
     public class MoveConfig : ScriptableObject
     {
         [field: Header("Movement:")]

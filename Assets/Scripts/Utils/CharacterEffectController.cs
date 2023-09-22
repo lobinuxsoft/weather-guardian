@@ -20,16 +20,16 @@ public class CharacterEffectController : MonoBehaviour
     [Header("FMOD Event Config")]
     [SerializeField] private SFXEventsConfigs sfxEvents;
 
-    Animator animator;
-    HeightSpringBehaviour heightSpringBehaviour;
+    private Animator animator;
+    private HeightSpringBehaviour heightSpringBehaviour;
 
-    Vector3 center;
+    private Vector3 center;
 
-    Guid normalId = Guid.NewGuid();
-    Vector3 normal;
+    private Guid normalId = Guid.NewGuid();
+    private Vector3 normal;
 
-    Guid forwardId = Guid.NewGuid();
-    Vector3 forward;
+    private Guid forwardId = Guid.NewGuid();
+    private Vector3 forward;
 
     private void Start()
     {

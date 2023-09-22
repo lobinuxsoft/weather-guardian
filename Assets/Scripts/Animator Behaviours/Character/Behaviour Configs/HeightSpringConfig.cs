@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace WeatherGuardian.Behaviours.Configs
 {
-    [CreateAssetMenu(fileName = nameof(HeightSpringConfig), menuName = "TesisBand/Behaviours/Configs/Height Spring Config")]
+    [CreateAssetMenu(fileName = nameof(HeightSpringConfig), menuName = "Weather Guardian/Behaviours/Configs/Height Spring Config")]
     public class HeightSpringConfig : ScriptableObject
     {
         [field: Header("Height Spring:")]

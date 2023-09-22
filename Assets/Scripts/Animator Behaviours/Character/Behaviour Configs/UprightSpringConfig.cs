@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace WeatherGuardian.Behaviours
 {
-    [CreateAssetMenu(fileName = nameof(UprightSpringConfig), menuName = "TesisBand/Behaviours/Configs/Upright Spring Config")]
+    [CreateAssetMenu(fileName = nameof(UprightSpringConfig), menuName = "Weather Guardian/Behaviours/Configs/Upright Spring Config")]
     public class UprightSpringConfig : ScriptableObject
     {
         [field: Header("Upright Spring:")]
