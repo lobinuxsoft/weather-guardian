@@ -31,7 +31,6 @@ namespace WeatherGuardian.Behaviours
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-
             float currentSpeed = Mathf.Clamp(heightSpringBehaviour.Body.velocity.magnitude / moveConfig.MaxSpeed, 0, 2);
             isMoving = currentSpeed > 0.1f;
             canSprint = currentSpeed > 0.75f;
@@ -61,6 +60,10 @@ namespace WeatherGuardian.Behaviours
         private void GroundMovement(in Vector3 moveInput)
         {
             if (heightSpringBehaviour == null) return;
+
+            bool hitWall = Physics.Raycast(heightSpringBehaviour.Body.worldCenterOfMass, moveInput, 1, moveConfig.RayLayerMask, QueryTriggerInteraction.Ignore);
+
+            if (hitWall) return;
 
             Vector3 unitGoal = moveInput;
             Vector3 unitVel = this.goalVel.normalized;

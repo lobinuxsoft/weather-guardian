@@ -15,5 +15,8 @@ namespace WeatherGuardian.Behaviours.Configs
         [field: SerializeField] public Vector3 MoveForceScale { get; private set; } = new Vector3(1f, 0f, 1f);
         [field: SerializeField] public float SprintMultiplier { get; private set; } = 2.0f;
         [field: SerializeField] public float TimerToSprint { get; private set; } = 1.5f;
+
+        [field: Tooltip("Layer for ray check.")]
+        [field: SerializeField] public LayerMask RayLayerMask { get; private set; }
     }
 }

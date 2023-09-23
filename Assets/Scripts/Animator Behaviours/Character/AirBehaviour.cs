@@ -18,7 +18,7 @@ namespace WeatherGuardian.Behaviours
         private float speedFactor = 1f;
         private float maxAccelForceFactor = 1f;
         private Vector3 goalVel = Vector3.zero;
-        float verticalVelocity = 0.0f;
+        private float verticalVelocity = 0.0f;
 
         // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -60,6 +60,10 @@ namespace WeatherGuardian.Behaviours
         public void AirMovement(Animator animator, Vector3 moveInput)
         {
             if (heightSpringBehaviour == null || heightSpringBehaviour.GroundedInfo.grounded || animator.GetBool(umbrellaHash)) return;
+
+            bool hitWall = Physics.Raycast(heightSpringBehaviour.Body.worldCenterOfMass, moveInput, 1, moveConfig.RayLayerMask, QueryTriggerInteraction.Ignore);
+
+            if (hitWall) return;
 
             Vector3 unitGoal = Vector3.ClampMagnitude(moveInput.normalized, 1.0f);
             Vector3 unitVel = this.goalVel.normalized;

@@ -28,7 +28,7 @@ namespace WeatherGuardian.Behaviours
         // OnStateUpdate is called before OnStateUpdate is called on any state inside this state machine
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            CalculateTargetRotation(heightSpringBehaviour.Body, GetLookDirection(heightSpringBehaviour.Body, heightSpringBehaviour.GravitationalForce), heightSpringBehaviour.GroundedInfo.rayHit);
+            CalculateTargetRotation(heightSpringBehaviour.Body, GetLookDirection(heightSpringBehaviour.Body, heightSpringBehaviour.GravitationalForce), heightSpringBehaviour.GroundedInfo);
 
             Quaternion currentRot = heightSpringBehaviour.Body.rotation;
             Quaternion toGoal = MathsUtils.ShortestRotation(uprightTargetRot, currentRot);
@@ -49,7 +49,7 @@ namespace WeatherGuardian.Behaviours
         /// </summary>
         /// <param name="yLookAt">The input look rotation.</param>
         /// <param name="rayHit">The rayHit towards the platform.</param>
-        private void CalculateTargetRotation(in Rigidbody body, in Vector3 yLookAt, in RaycastHit rayHit)
+        private void CalculateTargetRotation(in Rigidbody body, in Vector3 yLookAt, in (bool grounded, RaycastHit rayHit) groundedInfo)
         {
             if (didLastRayHit)
             {
@@ -65,14 +65,14 @@ namespace WeatherGuardian.Behaviours
                 }
             }
 
-            if (rayHit.rigidbody == null)
+            if (groundedInfo.rayHit.rigidbody == null)
                 didLastRayHit = true;
             else
                 didLastRayHit = false;
 
             if (yLookAt != Vector3.zero)
             {
-                uprightTargetRot = Quaternion.LookRotation(yLookAt, Vector3.up);
+                uprightTargetRot = Quaternion.LookRotation(yLookAt, groundedInfo.grounded ? groundedInfo.rayHit.normal : Vector3.up);
 
                 lastTargetRot = uprightTargetRot;
                 try

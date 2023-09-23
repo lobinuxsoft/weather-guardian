@@ -25,5 +25,8 @@ namespace WeatherGuardian.Behaviours.Configs
 
         [field: Tooltip("Dampener of spring.")]
         [field: SerializeField] public float Damper { get; private set; } = 10.0f;
+
+        [field: Tooltip("The angle is calculated with the dot product.")]
+        [field: SerializeField, Range(0, 1)] public float DotGroundAngle { get; private set; } = 0.45f;
     }
 }
