@@ -24,7 +24,9 @@ namespace WeatherGuardian.Behaviours
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            if (!heightSpringBehaviour.GroundedInfo.grounded) return;
+            float stompDot = Vector3.Dot(heightSpringBehaviour.GroundedInfo.rayHit.normal, Vector3.up);
+
+            if (stompDot <= 0) return;
 
             heightSpringBehaviour.ShouldMaintainHeight = false;
 

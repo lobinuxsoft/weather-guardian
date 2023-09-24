@@ -1,9 +1,7 @@
 using CryingOnion.OscillatorSystem;
+using UnityEngine;
 using WeatherGuardian.Behaviours.Configs;
 using WeatherGuardian.PlatformObjects;
-using UnityEngine;
-using System;
-using CryingOnion.GizmosRT.Runtime;
 
 namespace WeatherGuardian.Behaviours
 {
@@ -38,7 +36,7 @@ namespace WeatherGuardian.Behaviours
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            var data = RaycastToGround(body.worldCenterOfMass, Physics.gravity * body.mass);
+            var data = RaycastToGround(body.worldCenterOfMass, -body.transform.up * body.mass);
             SetPlatform(data.rayhit, body.transform);
 
             bool grounded = CheckIfGrounded(data.rayHitGround, data.rayhit);
@@ -48,7 +46,7 @@ namespace WeatherGuardian.Behaviours
             Vector3 oscillationForce = Vector3.zero;
 
             if (data.rayHitGround && ShouldMaintainHeight)
-                oscillationForce = MaintainHeight(body, data.rayhit, Physics.gravity,  Physics.gravity * body.mass);
+                oscillationForce = MaintainHeight(body, data.rayhit, Physics.gravity, Physics.gravity * body.mass);
 
             if (Oscillator != null)
                 Oscillator.ApplyForce(oscillationForce);
@@ -65,9 +63,11 @@ namespace WeatherGuardian.Behaviours
         private bool CheckIfGrounded(in bool rayHitGround, in RaycastHit rayHit)
         {
             bool grounded;
+            float dotAngle = Vector3.Dot(-Physics.gravity.normalized, rayHit.normal);
 
             if (rayHitGround == true)
-                grounded = rayHit.distance <= heightSpringConfig.RideHeight * 1.7f; // 1.3f allows for greater leniancy (as the value will oscillate about the rideHeight).
+                grounded = rayHit.distance <= heightSpringConfig.RideHeight * 1.7f &&
+                    1 - heightSpringConfig.DotGroundAngle < dotAngle; // 1.3f allows for greater leniancy (as the value will oscillate about the rideHeight).
             else
                 grounded = false;
 
@@ -83,8 +83,14 @@ namespace WeatherGuardian.Behaviours
             RaycastHit rayHit;
             Ray rayToGround = new Ray(position, direction);
 
-            //bool rayHitGround = Physics.Raycast(rayToGround, out rayHit, heightSpringConfig.RayCastLength, heightSpringConfig.TerrainLayer.value);
-            bool rayHitGround = Physics.SphereCast(rayToGround, heightSpringConfig.RayCastRadius, out rayHit, heightSpringConfig.RayCastLength, heightSpringConfig.RayLayerMask, QueryTriggerInteraction.Ignore);
+            bool rayHitGround = Physics.SphereCast(
+                rayToGround,
+                heightSpringConfig.RayCastRadius,
+                out rayHit,
+                heightSpringConfig.RayCastLength - heightSpringConfig.RayCastRadius / 2,
+                heightSpringConfig.RayLayerMask,
+                QueryTriggerInteraction.Ignore
+                );
 
             return (rayHitGround, rayHit);
         }
