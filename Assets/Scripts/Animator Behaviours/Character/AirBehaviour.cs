@@ -38,6 +38,8 @@ namespace WeatherGuardian.Behaviours
 
             animator.SetBool(groundedHash, verticalVelocity < 0.0f && heightSpringBehaviour.GroundedInfo.grounded);
 
+            GravityInfluence(animator);
+
             if (!heightSpringBehaviour.GroundedInfo.grounded && moveDir.magnitude > 0.5f)
                 AirMovement(animator, moveDir);
             else
@@ -57,7 +59,16 @@ namespace WeatherGuardian.Behaviours
                 this.moveDir = Vector3.zero;
         }
 
-        public void AirMovement(Animator animator, Vector3 moveInput)
+        private void GravityInfluence(Animator animator)
+        {
+            if (heightSpringBehaviour == null || heightSpringBehaviour.GroundedInfo.grounded || animator.GetBool(umbrellaHash)) return;
+
+            float gravityInfluence = moveConfig.GravityFactorFromDot.Evaluate(verticalVelocity) * moveConfig.GravityMultiplier;
+
+            heightSpringBehaviour.Body.velocity += heightSpringBehaviour.GravitationalForce * gravityInfluence * Time.fixedDeltaTime;
+        }
+
+        private void AirMovement(Animator animator, Vector3 moveInput)
         {
             if (heightSpringBehaviour == null || heightSpringBehaviour.GroundedInfo.grounded || animator.GetBool(umbrellaHash)) return;
 
