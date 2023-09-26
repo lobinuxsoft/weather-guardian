@@ -71,6 +71,8 @@ namespace WeatherGuardian.Behaviours
 
             animator.SetBool(groundedHash, verticalVelocity < 0f && heightSpringBehaviour.GroundedInfo.grounded);
 
+            GravityInfluence(animator);
+
             if (animator.GetBool(groundedHash))
                 animator.SetBool(umbrellaHash, false);
             else
@@ -83,9 +85,11 @@ namespace WeatherGuardian.Behaviours
             if (stateInfo.tagHash != exitTagHash) return;
 
             animator.SetBool(umbrellaHash, false);
-            heightSpringBehaviour.Body.drag = 0.0f;
             uprightSpringBehaviour.LockDirection = false;
             uprightSpringBehaviour.LookDirection = Vector3.zero;
+            //heightSpringBehaviour.ShouldMaintainHeight = true;
+            heightSpringBehaviour.Body.drag = 0.0f;
+            heightSpringBehaviour.Body.velocity = Vector3.zero;
         }
 
         public void UseUmbrella(Animator animator)
@@ -104,9 +108,22 @@ namespace WeatherGuardian.Behaviours
 
         public void Move(Vector3 moveDir) => this.moveDir = Vector3.ClampMagnitude(moveDir, 1.0f);
 
+        private void GravityInfluence(Animator animator)
+        {
+            if (animator.GetBool(groundedHash)) return;
+
+            float gravityInfluence = moveConfig.GravityFactorFromDot.Evaluate(verticalVelocity) * moveConfig.GravityMultiplier;
+
+            heightSpringBehaviour.Body.velocity += heightSpringBehaviour.GravitationalForce * gravityInfluence * Time.fixedDeltaTime;
+        }
+
         private void AirMovement(in Vector3 moveInput)
         {
-            if (heightSpringBehaviour == null && uprightSpringBehaviour == null) return;
+            if (heightSpringBehaviour == null || uprightSpringBehaviour == null) return;
+
+            bool hitWall = Physics.Raycast(heightSpringBehaviour.Body.worldCenterOfMass, moveInput, 1, moveConfig.RayLayerMask, QueryTriggerInteraction.Ignore);
+
+            if (hitWall) return;
 
             Vector3 unitGoal = moveInput;
             Vector3 unitVel = this.goalVel.normalized;

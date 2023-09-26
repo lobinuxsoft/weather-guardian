@@ -72,7 +72,9 @@ namespace WeatherGuardian.Behaviours
 
             if (yLookAt != Vector3.zero)
             {
-                uprightTargetRot = Quaternion.LookRotation(yLookAt, groundedInfo.grounded ? groundedInfo.rayHit.normal : Vector3.up);
+                uprightTargetRot = Quaternion.LookRotation(yLookAt, groundedInfo.grounded ?
+                    groundedInfo.rayHit.normal :
+                    -heightSpringBehaviour.GravitationalForce.normalized);
 
                 lastTargetRot = uprightTargetRot;
                 try
@@ -90,8 +92,9 @@ namespace WeatherGuardian.Behaviours
                 {
                     Vector3 platformRot = body.transform.parent.rotation.eulerAngles;
                     Vector3 deltaPlatformRot = platformRot - platformInitRot;
-                    float yAngle = lastTargetRot.eulerAngles.y + deltaPlatformRot.y;
-                    uprightTargetRot = Quaternion.Euler(new Vector3(0f, yAngle, 0f));
+                    //float yAngle = lastTargetRot.eulerAngles.y + deltaPlatformRot.y;
+                    //uprightTargetRot = Quaternion.Euler(new Vector3(0f, yAngle, 0f));
+                    uprightTargetRot = Quaternion.Euler(lastTargetRot.eulerAngles + deltaPlatformRot);
                 }
                 catch { }
             }

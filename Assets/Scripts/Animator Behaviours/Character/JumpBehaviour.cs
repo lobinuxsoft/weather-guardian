@@ -16,18 +16,6 @@ namespace WeatherGuardian.Behaviours
 
         private HeightSpringBehaviour heightSpringBehaviour;
 
-        // OnStateEnter is called before OnStateEnter is called on any state inside this state machine
-        //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-        //{
-        //    if (heightSpringBehaviour.LastGroundedTime > jumpConfig.CoyoteTime) return;
-
-        //    heightSpringBehaviour.ShouldMaintainHeight = false;
-        //    heightSpringBehaviour.Body.AddForce(Vector3.up * jumpConfig.JumpForceFactor, ForceMode.Impulse);
-
-        //    animator.SetBool(groundedHash, false);
-        //    animator.SetBool(jumpHash, false);
-        //}
-
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             if (heightSpringBehaviour.LastGroundedTime > jumpConfig.CoyoteTime) return;
