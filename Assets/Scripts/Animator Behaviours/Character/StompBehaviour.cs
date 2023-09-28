@@ -26,15 +26,18 @@ namespace WeatherGuardian.Behaviours
         {
             float stompDot = Vector3.Dot(heightSpringBehaviour.GroundedInfo.rayHit.normal, Vector3.up);
 
+            GravityInfluence(animator);
+
             if (stompDot <= 0) return;
 
             heightSpringBehaviour.ShouldMaintainHeight = false;
 
-            Vector3 force = heightSpringBehaviour.GravitationalForce.normalized * stompConfig.BounceForce;
-
-            heightSpringBehaviour.Body.AddForce(-force, ForceMode.Impulse);
-
             Debug.Log($"Stomp to something valid? {(1 << heightSpringBehaviour.GroundedInfo.rayHit.transform.gameObject.layer) == stompConfig.LayerMask.value}");
+
+            Vector3 force = heightSpringBehaviour.GroundedInfo.rayHit.normal * stompConfig.BounceForce;
+
+            heightSpringBehaviour.Body.AddForce(force, ForceMode.Impulse);
+            heightSpringBehaviour.Oscillator.ApplyForce(force);
 
             float bodyVelDot = Vector3.Dot(heightSpringBehaviour.Body.velocity, Vector3.up);
             animator.SetBool(stompHash, !(bodyVelDot > 0.0f));
@@ -58,6 +61,13 @@ namespace WeatherGuardian.Behaviours
                 animator.SetBool(stompHash, true);
                 airUmbrellaBehaviour.UmbrellaCloseForced(animator);
             }
+        }
+
+        private void GravityInfluence(Animator animator)
+        {
+            if (heightSpringBehaviour == null || heightSpringBehaviour.GroundedInfo.grounded) return;
+
+            heightSpringBehaviour.Body.velocity += heightSpringBehaviour.GravitationalForce * stompConfig.GravityMultiplier * Time.fixedDeltaTime;
         }
     }
 }

@@ -46,7 +46,7 @@ namespace WeatherGuardian.Gameplay
         private CinemachineBrain cinemachineBrain;
         private GameObject player;
 
-        private Dictionary<string, UnityEngine.Object> bindingDic = new Dictionary<string, UnityEngine.Object>();
+        private Dictionary<string, Object> bindingDic = new Dictionary<string, Object>();
 
         private void Awake()
         {
@@ -149,10 +149,10 @@ namespace WeatherGuardian.Gameplay
             }
 
             if (GizmosRT.Enabled)
-                GizmosRT.Cube(Matrix4x4.TRS(transform.position + boxTrigger.center, transform.rotation, boxTrigger.size), debugColor);
+                GizmosRT.Cube(Matrix4x4.TRS(boxTrigger.bounds.center, transform.rotation, boxTrigger.size), debugColor);
         }
 
-        private void TimelineBinding(ref TimelineAsset playableAsset, string trackName, UnityEngine.Object bindingObj)
+        private void TimelineBinding(ref TimelineAsset playableAsset, string trackName, Object bindingObj)
         {
             foreach (var output in playableAsset.outputs)
             {
@@ -161,7 +161,7 @@ namespace WeatherGuardian.Gameplay
             }
         }
 
-        private void TimelineBinding(ref TimelineAsset playableAsset, Dictionary<string, UnityEngine.Object> bindingDic)
+        private void TimelineBinding(ref TimelineAsset playableAsset, Dictionary<string, Object> bindingDic)
         {
             foreach (var output in playableAsset.outputs)
             {

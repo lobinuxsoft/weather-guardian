@@ -36,7 +36,7 @@ namespace WeatherGuardian.Behaviours
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            var data = RaycastToGround(body.worldCenterOfMass, -body.transform.up * body.mass);
+            var data = RaycastToGround(body.worldCenterOfMass, GravitationalForce);
             SetPlatform(data.rayhit, body.transform);
 
             bool grounded = CheckIfGrounded(data.rayHitGround, data.rayhit);
@@ -46,7 +46,7 @@ namespace WeatherGuardian.Behaviours
             Vector3 oscillationForce = Vector3.zero;
 
             if (data.rayHitGround && ShouldMaintainHeight)
-                oscillationForce = MaintainHeight(body, data.rayhit, Physics.gravity, Physics.gravity * body.mass);
+                oscillationForce = MaintainHeight(body, data.rayhit, Physics.gravity, GravitationalForce);
 
             if (Oscillator != null)
                 Oscillator.ApplyForce(oscillationForce);
@@ -139,14 +139,14 @@ namespace WeatherGuardian.Behaviours
             float relVel = rayDirVel - otherDirVel;
             float currHeight = rayHit.distance - heightSpringConfig.RideHeight;
             float springForce = (currHeight * heightSpringConfig.Strength) - (relVel * heightSpringConfig.Damper);
-            Vector3 maintainHeightForce = -gravitationalForce + springForce * Vector3.down;
+            Vector3 maintainHeightForce = gravitationalForce + springForce * Vector3.down;
             Vector3 ocillationForce = springForce * Vector3.down;
 
             body.AddForce(maintainHeightForce);
 
             // Apply force to objects beneath
             if (hitBody != null)
-                hitBody.AddForceAtPosition(-maintainHeightForce, rayHit.point);
+                hitBody.AddForceAtPosition(maintainHeightForce, rayHit.point);
 
             return ocillationForce;
         }

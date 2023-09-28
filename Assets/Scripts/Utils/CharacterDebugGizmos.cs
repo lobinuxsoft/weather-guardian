@@ -37,11 +37,11 @@ namespace WeatherGuardian.Utils
                 Vector3 forward = Vector3.ProjectOnPlane(transform.forward, Vector3.up);
                 Vector3 velocityDir = Vector3.ProjectOnPlane(hsb.Body.velocity, Vector3.up);
 
-                Vector3 pos = transform.position + transform.up * capsuleCollider.center.y;
+                Vector3 pos = hsb.Body.worldCenterOfMass;
 
                 GizmosRT.Arrow(id1, pos, forward, 1, Vector3.ClampMagnitude(forward, 2).magnitude, primaryGradient);
 
-                Matrix4x4 capsuleMatrix = Matrix4x4.TRS(pos, transform.rotation, transform.localScale);
+                Matrix4x4 capsuleMatrix = Matrix4x4.TRS(pos, hsb.Body.rotation, transform.localScale);
                 GizmosRT.Capsule(id1, capsuleMatrix, primaryGradient.Evaluate(0), capsuleCollider.height * 0.5f, capsuleCollider.radius);
 
                 float lerp = Mathf.Clamp01(velocityDir.magnitude / moveConfig.MaxSpeed);
