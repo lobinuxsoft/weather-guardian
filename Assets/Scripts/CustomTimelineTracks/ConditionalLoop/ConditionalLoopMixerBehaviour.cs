@@ -5,7 +5,7 @@ namespace CryingOnion.Timeline.Behaviour
 {
     public class ConditionalLoopMixerBehaviour : PlayableBehaviour
     {
-        private const float thresholdLoop = 0.025f;
+        private const float thresholdLoop = 0.05f;
 
         private PlayableDirector director;
 
