@@ -6,10 +6,12 @@ namespace WeatherGuardian.Behaviours
     public class AirUmbrellaBehaviour : StateMachineBehaviour
     {
         int enterTagHash = Animator.StringToHash("ENTER");
-        int idleTagHash = Animator.StringToHash("LOOP");
+        int loopTagHash = Animator.StringToHash("LOOP");
         int exitTagHash = Animator.StringToHash("EXIT");
 
         int umbrellaHash = Animator.StringToHash("UMBRELLA");
+        int umbrellaHVelocityHash = Animator.StringToHash("UmbrellaHVelocity");
+        int umbrellaVVelocityHash = Animator.StringToHash("UmbrellaVVelocity");
         //int umbrellaStateHash = Animator.StringToHash("UmbrellaState");
         int groundedHash = Animator.StringToHash("GROUNDED");
 
@@ -25,13 +27,15 @@ namespace WeatherGuardian.Behaviours
 
         private float verticalVelocity = 0.0f;
         private float forwardVelocity = 0.0f;
+        private float horizontalVelocity = 0.0f;
 
         private Vector3 moveDir = Vector3.zero;
         private float speedFactor = 1f;
         private float maxAccelForceFactor = 1f;
         private Vector3 goalVel = Vector3.zero;
 
-        private Vector3 lookDir;
+        private Vector3 forwardDir;
+        private Vector3 rightDir;
         private float umbrellaStateValue = 0.0f;
 
         // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
@@ -45,7 +49,8 @@ namespace WeatherGuardian.Behaviours
 
             if (stateInfo.tagHash != enterTagHash) return;
 
-            lookDir = animator.transform.forward;
+            forwardDir = animator.transform.forward;
+            rightDir = animator.transform.right;
 
             heightSpringBehaviour.Body.drag = airDragConfig.Drag.Evaluate(0);
             uprightSpringBehaviour.LockDirection = true;
@@ -54,13 +59,15 @@ namespace WeatherGuardian.Behaviours
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            if (stateInfo.tagHash != idleTagHash) return;
+            if (stateInfo.tagHash != loopTagHash) return;
 
-            uprightSpringBehaviour.LookDirection = lookDir;
+            uprightSpringBehaviour.ForwardDirection = forwardDir;
+            uprightSpringBehaviour.RightDirection = rightDir;
 
             verticalVelocity = Vector3.Dot(heightSpringBehaviour.Body.velocity, Vector3.up);
 
-            forwardVelocity = Vector3.Dot(heightSpringBehaviour.Body.velocity, uprightSpringBehaviour.LookDirection);
+            forwardVelocity = Vector3.Dot(heightSpringBehaviour.Body.velocity, uprightSpringBehaviour.ForwardDirection);
+            horizontalVelocity = Vector3.Dot(heightSpringBehaviour.Body.velocity, uprightSpringBehaviour.RightDirection);
 
             heightSpringBehaviour.Body.drag = airDragConfig.Drag.Evaluate(forwardVelocity);
 
@@ -68,6 +75,9 @@ namespace WeatherGuardian.Behaviours
             umbrellaStateValue = Mathf.Clamp01(umbrellaStateValue);
 
             //animator.SetFloat(umbrellaStateHash, umbrellaStateValue);
+
+            animator.SetFloat(umbrellaHVelocityHash, horizontalVelocity);
+            animator.SetFloat(umbrellaVVelocityHash, forwardVelocity);
 
             animator.SetBool(groundedHash, verticalVelocity < 0f && heightSpringBehaviour.GroundedInfo.grounded);
 
@@ -86,7 +96,8 @@ namespace WeatherGuardian.Behaviours
 
             animator.SetBool(umbrellaHash, false);
             uprightSpringBehaviour.LockDirection = false;
-            uprightSpringBehaviour.LookDirection = Vector3.zero;
+            uprightSpringBehaviour.ForwardDirection = Vector3.zero;
+            uprightSpringBehaviour.RightDirection = Vector3.zero;
             //heightSpringBehaviour.ShouldMaintainHeight = true;
             heightSpringBehaviour.Body.drag = 0.0f;
             heightSpringBehaviour.Body.velocity = Vector3.zero;

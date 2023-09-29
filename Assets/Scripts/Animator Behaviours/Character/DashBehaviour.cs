@@ -31,7 +31,8 @@ namespace WeatherGuardian.Behaviours
 
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            if (stateInfo.tagHash != enterTagHash) return;
+            //if (stateInfo.tagHash != enterTagHash) return;
+            if (stateInfo.tagHash != loopTagHash) return;
 
             if (heightSpringBehaviour == null)
                 heightSpringBehaviour = animator.GetBehaviour<HeightSpringBehaviour>();

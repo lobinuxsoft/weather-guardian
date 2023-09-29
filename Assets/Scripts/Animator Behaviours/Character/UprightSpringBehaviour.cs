@@ -9,7 +9,8 @@ namespace WeatherGuardian.Behaviours
         [SerializeField] private UprightSpringConfig uprightSpringConfig;
 
         public bool LockDirection { get; set; } = false;
-        public Vector3 LookDirection { get; set; } = Vector3.forward;
+        public Vector3 ForwardDirection { get; set; } = Vector3.zero;
+        public Vector3 RightDirection { get; set; } = Vector3.zero;
 
         private HeightSpringBehaviour heightSpringBehaviour;
         private Quaternion uprightTargetRot = Quaternion.identity; // Adjust y value to match the desired direction to face.
@@ -108,7 +109,7 @@ namespace WeatherGuardian.Behaviours
             Vector3 velocity = body.velocity.sqrMagnitude > 0.2f * 0.2f ?
             Vector3.ProjectOnPlane(body.velocity, -gravitationalForce).normalized : lastLookDirection;
 
-            return LockDirection ? LookDirection : velocity;
+            return LockDirection ? ForwardDirection : velocity;
         }
     }
 }
