@@ -38,6 +38,7 @@ namespace WeatherGuardian.Behaviours
 
             heightSpringBehaviour.Body.AddForce(force, ForceMode.Impulse);
             heightSpringBehaviour.Oscillator.ApplyForce(force);
+            heightSpringBehaviour.GroundedInfo.rayHit.rigidbody?.AddForceAtPosition(-force, heightSpringBehaviour.GroundedInfo.rayHit.point);
 
             float bodyVelDot = Vector3.Dot(heightSpringBehaviour.Body.velocity, Vector3.up);
             animator.SetBool(stompHash, !(bodyVelDot > 0.0f));

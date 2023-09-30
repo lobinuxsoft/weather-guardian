@@ -4972,8 +4972,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <LocalEquilibriumPosition>k__BackingField: {x: 0, y: 1.2, z: 0}
   <ForceScale>k__BackingField: {x: 1, y: 1, z: 1}
-  <Stiffness>k__BackingField: 250
-  <Damper>k__BackingField: 6
+  <Stiffness>k__BackingField: 40
+  <Damper>k__BackingField: 20
   <Mass>k__BackingField: 1
   gradient:
     serializedVersion: 2
@@ -6935,10 +6935,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8281b5fe1aa83b44db4b77fcb401a6eb,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3054259517603248554}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8281b5fe1aa83b44db4b77fcb401a6eb,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 8059270345670926642}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8281b5fe1aa83b44db4b77fcb401a6eb,
         type: 3}
@@ -7052,21 +7048,6 @@ MonoBehaviour:
     type: 3}
   animator: {fileID: 9059265217326955357}
   oscillator: {fileID: 9059265217933965970}
---- !u!114 &3054259517603248554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7055216021935876817}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 025c222265f23b149a0c2543fbdaf5c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  extraBounceMultiplier: 2.5
-  shouldBounceBack: 1
-  optionalOscillator: {fileID: 9059265217933965970}
 --- !u!114 &8059270345670926642
 MonoBehaviour:
   m_ObjectHideFlags: 0
