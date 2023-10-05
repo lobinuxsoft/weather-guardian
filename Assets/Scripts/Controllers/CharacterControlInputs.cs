@@ -23,6 +23,7 @@ namespace Game.InputsController
         [SerializeField] Oscillator oscillator;
 
         private HeightSpringBehaviour heightSpringBehaviour;
+        private UprightSpringBehaviour uprightSpringBehaviour;
         private MoveBehaviour moveBehaviour;
         private JumpBehaviour jumpBehaviour;
         private AirJumpBehaviour doubleJumpBehaviour;
@@ -58,6 +59,8 @@ namespace Game.InputsController
             heightSpringBehaviour = animator.GetBehaviour<HeightSpringBehaviour>();
             heightSpringBehaviour.Oscillator = oscillator;
 
+            uprightSpringBehaviour = animator.GetBehaviour<UprightSpringBehaviour>();
+
             moveBehaviour = animator.GetBehaviour<MoveBehaviour>();
             jumpBehaviour = animator.GetBehaviour<JumpBehaviour>();
             doubleJumpBehaviour = animator.GetBehaviour<AirJumpBehaviour>();
@@ -65,6 +68,12 @@ namespace Game.InputsController
             airUmbrellaBehaviour = animator.GetBehaviour<AirUmbrellaBehaviour>();
             stompBehaviour = animator.GetBehaviour<StompBehaviour>();
             dashBehaviour = animator.GetBehaviour<DashBehaviour>();
+        }
+
+        private void LateUpdate()
+        {
+            if (!heightSpringBehaviour.GroundedInfo.grounded && uprightSpringBehaviour.LockDirection)
+                UmbrellaLookDirection();
         }
 
         private void OnDestroy()
@@ -88,6 +97,14 @@ namespace Game.InputsController
             umbrellaAction.action.Disable();
             stompAction.action.Disable();
             dashAction.action.Enable();
+        }
+
+        private void UmbrellaLookDirection()
+        {
+            Vector3 forward = Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up).normalized;
+            Vector3 right = Vector3.ProjectOnPlane(Camera.main.transform.right, Vector3.up).normalized;
+
+            airUmbrellaBehaviour.LookDir(forward, right);
         }
 
         private void SwitchDebug(InputAction.CallbackContext context) => GizmosRT.Enabled = !GizmosRT.Enabled;
