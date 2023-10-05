@@ -119,6 +119,13 @@ namespace WeatherGuardian.Behaviours
 
         public void Move(Vector3 moveDir) => this.moveDir = Vector3.ClampMagnitude(moveDir, 1.0f);
 
+        public void LookDir(Vector3 forwardDir, Vector3 rightDir)
+        {
+            if (!moveConfig.UseCameraOrientation) return;
+            this.forwardDir = forwardDir;
+            this.rightDir = rightDir;
+        }
+
         private void GravityInfluence(Animator animator)
         {
             if (animator.GetBool(groundedHash)) return;
