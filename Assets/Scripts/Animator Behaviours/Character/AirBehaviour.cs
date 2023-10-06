@@ -19,6 +19,8 @@ namespace WeatherGuardian.Behaviours
         private float maxAccelForceFactor = 1f;
         private Vector3 goalVel = Vector3.zero;
         private float verticalVelocity = 0.0f;
+        private float maxVerticalVel = 1.0f;
+
 
         // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -34,9 +36,14 @@ namespace WeatherGuardian.Behaviours
         {
             verticalVelocity = Vector3.Dot(heightSpringBehaviour.Body.velocity, Vector3.up);
 
-            animator.SetFloat(airVelocityHash, verticalVelocity);
+            if (maxVerticalVel < float.Epsilon)
+                maxVerticalVel = Mathf.Abs(verticalVelocity);
 
-            animator.SetBool(groundedHash, verticalVelocity < 0.0f && heightSpringBehaviour.GroundedInfo.grounded);
+            float deltaVerticalVel = verticalVelocity / maxVerticalVel;
+
+             animator.SetFloat(airVelocityHash, deltaVerticalVel);
+
+            animator.SetBool(groundedHash, deltaVerticalVel < 0.0f && heightSpringBehaviour.GroundedInfo.grounded);
 
             GravityInfluence(animator);
 
@@ -49,6 +56,7 @@ namespace WeatherGuardian.Behaviours
         public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             animator.SetFloat(airVelocityHash, 0);
+            maxVerticalVel = 0.0f;
         }
 
         public void Move(Vector3 moveDir)
