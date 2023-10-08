@@ -11,9 +11,9 @@ namespace WeatherGuardian.Utils
         [SerializeField] private Color triggerDebugColor = Color.yellow;
         [SerializeField] private Color colliderDebugColor = Color.red;
         
-        private Collider collider;
+        private Collider killerCol;
 
-        private void Awake() => collider = GetComponent<Collider>();
+        private void Awake() => killerCol = GetComponent<Collider>();
 
         private void OnCollisionEnter(Collision collision)
         {
@@ -61,17 +61,17 @@ namespace WeatherGuardian.Utils
         {
             if (!GizmosRT.Enabled) return;
 
-            Color color = collider.isTrigger ? triggerDebugColor : colliderDebugColor;
+            Color color = killerCol.isTrigger ? triggerDebugColor : colliderDebugColor;
 
-            if(collider is BoxCollider)
+            if(killerCol is BoxCollider)
             {
-                BoxCollider bc = collider as BoxCollider;
+                BoxCollider bc = killerCol as BoxCollider;
                 Vector3 scale = new Vector3(bc.size.x * bc.transform.localScale.x, bc.size.y * bc.transform.localScale.y, bc.size.z * bc.transform.localScale.z);
                 GizmosRT.Cube(Matrix4x4.TRS(bc.bounds.center, bc.transform.rotation, scale), color);
             }
-            else if(collider is SphereCollider)
+            else if(killerCol is SphereCollider)
             {
-                SphereCollider sc = collider as SphereCollider;
+                SphereCollider sc = killerCol as SphereCollider;
                 float scalar = Mathf.Max(Mathf.Abs(Mathf.Max(sc.transform.localScale.x, sc.transform.localScale.y)), Mathf.Abs(sc.transform.localScale.z));
                 GizmosRT.Sphere(sc.bounds.center, sc.radius * scalar, color);
             }

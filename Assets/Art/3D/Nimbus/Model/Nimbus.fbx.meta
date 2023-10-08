@@ -3,7 +3,22 @@ guid: 8281b5fe1aa83b44db4b77fcb401a6eb
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NimbusCharacter_Rig_nuevo_Nimbus_mat
+    second: {fileID: 2100000, guid: 2d91ab09f105fdb4391041f494e1e279, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NimbusCharacter_Rig_nuevo_Paraguas_v4_MAT_Paraguas
+    second: {fileID: 2100000, guid: 777af35505c0418448c0350a9b5d9929, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NimbusCharacter_Rig_nuevo_lambert2
+    second: {fileID: 2100000, guid: 552c9f1e618a3e94dbf38faf16b40b48, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -67,7 +82,7 @@ ModelImporter:
     secondaryUVMinLightmapResolution: 40
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
     strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60

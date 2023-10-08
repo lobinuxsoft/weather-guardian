@@ -18,5 +18,8 @@ namespace WeatherGuardian.Behaviours.Configs
 
         [field: Tooltip("Layer for ray check.")]
         [field: SerializeField] public LayerMask RayLayerMask { get; private set; }
+
+        [field: Tooltip("Only for Umbrella Air Behaviour.")]
+        [field: SerializeField] public bool UseCameraOrientation { get; private set; } = false;
     }
 }

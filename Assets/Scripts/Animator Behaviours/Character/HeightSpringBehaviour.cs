@@ -139,14 +139,14 @@ namespace WeatherGuardian.Behaviours
             float relVel = rayDirVel - otherDirVel;
             float currHeight = rayHit.distance - heightSpringConfig.RideHeight;
             float springForce = (currHeight * heightSpringConfig.Strength) - (relVel * heightSpringConfig.Damper);
-            Vector3 maintainHeightForce = gravitationalForce + springForce * Vector3.down;
+            Vector3 maintainHeightForce = -gravitationalForce + springForce * Vector3.down;
             Vector3 ocillationForce = springForce * Vector3.down;
 
             body.AddForce(maintainHeightForce);
 
             // Apply force to objects beneath
             if (hitBody != null)
-                hitBody.AddForceAtPosition(maintainHeightForce, rayHit.point);
+                hitBody.AddForceAtPosition(-maintainHeightForce, rayHit.point);
 
             return ocillationForce;
         }

@@ -22,6 +22,7 @@ namespace WeatherGuardian.Behaviours
         [SerializeField] private DashConfig dashConfig;
 
         HeightSpringBehaviour heightSpringBehaviour = null;
+        UprightSpringBehaviour uprightSpringBehaviour = null;
         float dragDefault = 0;
         float dragModifier = 0;
         Vector3 forward = Vector3.zero;
@@ -31,10 +32,14 @@ namespace WeatherGuardian.Behaviours
 
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            if (stateInfo.tagHash != enterTagHash) return;
+            //if (stateInfo.tagHash != enterTagHash) return;
+            if (stateInfo.tagHash != loopTagHash) return;
 
             if (heightSpringBehaviour == null)
                 heightSpringBehaviour = animator.GetBehaviour<HeightSpringBehaviour>();
+
+            if(uprightSpringBehaviour == null)
+                uprightSpringBehaviour = animator.GetBehaviour<UprightSpringBehaviour>();
 
             dragDefault = heightSpringBehaviour.Body.drag;
             dragModifier = dashConfig.Distance * dashConfig.Duration;
@@ -82,10 +87,13 @@ namespace WeatherGuardian.Behaviours
 
             lerpDuration = 0;
             heightSpringBehaviour.Body.constraints = RigidbodyConstraints.None;
+            heightSpringBehaviour.Body.drag = 0;
             heightSpringBehaviour.Body.useGravity = true;
             heightSpringBehaviour.ShouldMaintainHeight = true;
 
             heightSpringBehaviour.Body.velocity -= heightSpringBehaviour.Body.velocity;
+
+            uprightSpringBehaviour.LockDirection = animator.GetBool(umbrellaHash);
 
             lastTimeUse = Time.time;
         }
@@ -96,9 +104,7 @@ namespace WeatherGuardian.Behaviours
 
             if ((Time.time - lastTimeUse) < dashConfig.Cooldown) return;
 
-            animator.SetBool(dashHash, true);
-
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Dash");
+            animator.SetBool(dashHash, true);            
         }
     }
 }
