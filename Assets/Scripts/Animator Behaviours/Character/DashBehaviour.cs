@@ -41,6 +41,8 @@ namespace WeatherGuardian.Behaviours
             if(uprightSpringBehaviour == null)
                 uprightSpringBehaviour = animator.GetBehaviour<UprightSpringBehaviour>();
 
+            lastTimeUse = Time.time;
+
             dragDefault = heightSpringBehaviour.Body.drag;
             dragModifier = dashConfig.Distance * dashConfig.Duration;
 
@@ -60,6 +62,8 @@ namespace WeatherGuardian.Behaviours
 
             heightSpringBehaviour.Body.useGravity = false;
             heightSpringBehaviour.ShouldMaintainHeight = false;
+
+            lastTimeUse = Time.time;
 
             // Aca se modifica el uso del paraguas...
             animator.SetBool(
