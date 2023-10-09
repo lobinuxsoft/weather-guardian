@@ -11,11 +11,13 @@ namespace WeatherGuardian.Obstacles
         
         float timer = 0.0f;
 
-        private void Awake()
+        private void Start()
         {
             path = GetComponent<SplineFollowPath>();
 
             path.Rotate = false;
+
+            path.Moving = true;
 
             path.OnHalfPath += StopMoving;
         }
