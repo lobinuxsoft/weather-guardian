@@ -1,7 +1,6 @@
 using CryingOnion.OscillatorSystem;
 using System;
 using Unity.Mathematics;
-using UnityEditor.Experimental;
 using UnityEngine;
 using UnityEngine.Splines;
 
@@ -20,8 +19,8 @@ public class SplineFollowPath : MonoBehaviour
     //New vars
     private float localTime = 0.0f;
 
-    private bool moving = true;
-    private bool rotate = true;
+    private bool moving;
+    private bool rotate;
     private bool halfPathAchived = false;
 
     public bool Moving 
@@ -40,7 +39,7 @@ public class SplineFollowPath : MonoBehaviour
         }
     } 
 
-    private void Start()
+    private void Awake()
     {
         oscillator = GetComponent<Oscillator>();
         rb = GetComponent<Rigidbody>();
@@ -80,29 +79,45 @@ public class SplineFollowPath : MonoBehaviour
                 halfPathAchived = false;
             }
 
-            time = moveBehaviour.Evaluate(Mathf.PingPong(localTime, 1));                        
+            time = moveBehaviour.Evaluate(Mathf.PingPong(localTime, 1));
 
-            path.Evaluate(time, out float3 pos, out float3 tangent, out float3 upVector);
-            Vector3 localPos = path.transform.InverseTransformPoint(pos);
-            Vector3 forward = (Vector3)tangent;
-
-            if (rotate)
-            { 
-                rb.MoveRotation(Quaternion.LookRotation(localPos + forward, upVector));
-            }
-
-            oscillator.LocalEquilibriumPosition = localPos;
-            Vector3 tempPos = Vector3.zero;
-
-            for (int i = 0; i < 3; i++)
-            {
-                if (oscillator.ForceScale[i] == 0)
-                    tempPos[i] = localPos[i];
-                else
-                    tempPos[i] = transform.position[i];
-            }
-
-            rb.MovePosition(tempPos);
+            CalculatePosition();
         }
+    }
+
+    public void ResetPath() 
+    {
+        moving = false;
+
+        localTime = 0.0f;
+
+        time = 0.0f;
+
+        CalculatePosition();
+    }
+
+    private void CalculatePosition() 
+    {
+        path.Evaluate(time, out float3 pos, out float3 tangent, out float3 upVector);
+        Vector3 localPos = path.transform.InverseTransformPoint(pos);
+        Vector3 forward = (Vector3)tangent;
+
+        if (rotate)
+        {
+            rb.MoveRotation(Quaternion.LookRotation(localPos + forward, upVector));
+        }
+
+        oscillator.LocalEquilibriumPosition = localPos;
+        Vector3 tempPos = Vector3.zero;
+
+        for (int i = 0; i < 3; i++)
+        {
+            if (oscillator.ForceScale[i] == 0)
+                tempPos[i] = localPos[i];
+            else
+                tempPos[i] = transform.position[i];
+        }
+
+        rb.MovePosition(tempPos);
     }
 }
