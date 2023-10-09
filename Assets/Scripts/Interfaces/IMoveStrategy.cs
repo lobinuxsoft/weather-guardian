@@ -2,6 +2,6 @@ namespace WeatherGuardian.Interfaces
 {
     public interface IMoveStrategy
     {
-        public void MoveObject();
+        public void MoveBehaviour();
     }
 }
