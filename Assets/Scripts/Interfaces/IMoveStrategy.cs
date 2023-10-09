@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace WeatherGuardian.Interfaces 
 {
     public interface IMoveStrategy
