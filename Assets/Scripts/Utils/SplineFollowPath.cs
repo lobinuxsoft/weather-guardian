@@ -1,5 +1,7 @@
 using CryingOnion.OscillatorSystem;
+using System;
 using Unity.Mathematics;
+using UnityEditor.Experimental;
 using UnityEngine;
 using UnityEngine.Splines;
 
@@ -9,9 +11,34 @@ public class SplineFollowPath : MonoBehaviour
     [SerializeField, Range(0, 1)] private float speed = 0.005f;
     [SerializeField] private AnimationCurve moveBehaviour;
 
+    public Action OnHalfPath;
+    
     private Oscillator oscillator;
     private Rigidbody rb;
     private float time = 0;
+    
+    //New vars
+    private float localTime = 0.0f;
+
+    private bool moving = true;
+    private bool rotate = true;
+    private bool halfPathAchived = false;
+
+    public bool Moving 
+    {
+        set 
+        {
+            moving = value;
+        }
+    }
+
+    public bool Rotate 
+    {
+        set 
+        {
+            rotate = value;
+        }
+    } 
 
     private void Start()
     {
@@ -26,14 +53,43 @@ public class SplineFollowPath : MonoBehaviour
 
     private void OnValidate()
     {
-        if(oscillator != null)
+        if(oscillator != null && moving)
         {
-            time = moveBehaviour.Evaluate(Mathf.PingPong(Time.time * speed, 1));
+            //Old time code
+            //time = moveBehaviour.Evaluate(Mathf.PingPong(Time.time * speed, 1));
+
+            //New time Code
+            if (localTime < 1.0f)
+            {
+                localTime += Time.deltaTime * speed;
+
+                if (localTime >= 0.5f) 
+                {
+                    if (!halfPathAchived) 
+                    {
+                        OnHalfPath?.Invoke();
+
+                        halfPathAchived = true;
+                    }
+                }                
+            }
+            else 
+            {
+                localTime = 0.0f;
+
+                halfPathAchived = false;
+            }
+
+            time = moveBehaviour.Evaluate(Mathf.PingPong(localTime, 1));                        
+
             path.Evaluate(time, out float3 pos, out float3 tangent, out float3 upVector);
             Vector3 localPos = path.transform.InverseTransformPoint(pos);
             Vector3 forward = (Vector3)tangent;
 
-            rb.MoveRotation(Quaternion.LookRotation(localPos + forward, upVector));
+            if (rotate)
+            { 
+                rb.MoveRotation(Quaternion.LookRotation(localPos + forward, upVector));
+            }
 
             oscillator.LocalEquilibriumPosition = localPos;
             Vector3 tempPos = Vector3.zero;
