@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{856c24e5-8b09-4908-b1eb-3656c0544463}">
+		<property name="name">
+			<value>Sad Music Switches</value>
+		</property>
+		<relationship name="folder">
+			<destination>{fd1adb46-1652-41b2-aa70-d06bd0d39392}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{0e3fb214-5a29-438b-874f-70d9d859992d}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{0e3fb214-5a29-438b-874f-70d9d859992d}">
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
