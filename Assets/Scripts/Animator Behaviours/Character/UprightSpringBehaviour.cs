@@ -24,6 +24,9 @@ namespace WeatherGuardian.Behaviours
         {
             if(heightSpringBehaviour == null)
                 heightSpringBehaviour = animator.GetBehaviour<HeightSpringBehaviour>();
+
+            if(lastLookDirection == Vector3.zero)
+                lastLookDirection = heightSpringBehaviour.Body.transform.forward;
         }
 
         // OnStateUpdate is called before OnStateUpdate is called on any state inside this state machine
@@ -93,8 +96,6 @@ namespace WeatherGuardian.Behaviours
                 {
                     Vector3 platformRot = body.transform.parent.rotation.eulerAngles;
                     Vector3 deltaPlatformRot = platformRot - platformInitRot;
-                    //float yAngle = lastTargetRot.eulerAngles.y + deltaPlatformRot.y;
-                    //uprightTargetRot = Quaternion.Euler(new Vector3(0f, yAngle, 0f));
                     uprightTargetRot = Quaternion.Euler(lastTargetRot.eulerAngles + deltaPlatformRot);
                 }
                 catch { }
@@ -106,10 +107,11 @@ namespace WeatherGuardian.Behaviours
         /// </summary>
         private Vector3 GetLookDirection(in Rigidbody body, in Vector3 gravitationalForce)
         {
-            Vector3 velocity = body.velocity.sqrMagnitude > 0.2f * 0.2f ?
-            Vector3.ProjectOnPlane(body.velocity, -gravitationalForce).normalized : lastLookDirection;
+            Vector3 velocity = Vector3.ProjectOnPlane(body.velocity, -gravitationalForce);
 
-            return LockDirection ? ForwardDirection : velocity;
+            lastLookDirection = velocity.magnitude > 0.25f ? velocity.normalized : lastLookDirection;
+
+            return LockDirection ? ForwardDirection : lastLookDirection;
         }
     }
 }
