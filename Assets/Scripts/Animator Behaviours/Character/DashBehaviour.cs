@@ -32,7 +32,6 @@ namespace WeatherGuardian.Behaviours
 
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            //if (stateInfo.tagHash != enterTagHash) return;
             if (stateInfo.tagHash != loopTagHash) return;
 
             if (heightSpringBehaviour == null)
@@ -108,7 +107,7 @@ namespace WeatherGuardian.Behaviours
 
             if ((Time.time - lastTimeUse) < dashConfig.Cooldown) return;
 
-            animator.SetBool(dashHash, true);            
+            animator.SetBool(dashHash, true);
         }
     }
 }
