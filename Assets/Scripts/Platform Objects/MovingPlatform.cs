@@ -1,16 +1,15 @@
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
 using WeatherGuardian.Interfaces;
-using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 namespace WeatherGuardian.PlatformObjects
 {
     [RequireComponent(typeof(SplineFollowPath))]
     public class MovingPlatform : MonoBehaviour, IMoveStrategy
     {
-        [SerializeField] [Range(10.0f, 200.0f)] private float maxSeparationDistance = 20.0f;        
+        [SerializeField][Range(10.0f, 200.0f)] private float maxSeparationDistance = 20.0f;
 
-        private SplineFollowPath path;        
+        private SplineFollowPath path;
 
         private Transform playerTransform;
 
@@ -22,7 +21,7 @@ namespace WeatherGuardian.PlatformObjects
         }
 
         private void Start()
-        {           
+        {
             path.Rotate = false;
 
             path.Moving = false;
@@ -41,10 +40,10 @@ namespace WeatherGuardian.PlatformObjects
         }
         public void MoveBehaviour()
         {
-            if (playerTransform != null) 
+            if (playerTransform != null)
             {
-                if (Vector3.Distance(playerTransform.transform.position, transform.position) > maxSeparationDistance) 
-                {                
+                if (Vector3.Distance(playerTransform.transform.position, transform.position) > maxSeparationDistance)
+                {
                     playerTransform = null;
 
                     path.ResetPath();
@@ -54,20 +53,20 @@ namespace WeatherGuardian.PlatformObjects
 
         private void OnCollisionEnter(Collision collision)
         {
-            if(collision.transform.tag == "Player") 
+            if (collision.transform.tag == "Player")
             {
-                if (playerTransform != collision.transform) 
+                if (playerTransform != collision.transform)
                 {
                     playerTransform = collision.transform;
-                }                
+                }
 
                 path.Moving = true;
             }
-        }        
+        }
 
         private void StopMoving()
         {
-            path.Moving = false;            
+            path.Moving = false;
         }
     }
 }

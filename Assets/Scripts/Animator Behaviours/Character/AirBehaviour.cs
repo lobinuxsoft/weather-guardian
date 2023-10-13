@@ -41,7 +41,7 @@ namespace WeatherGuardian.Behaviours
 
             float deltaVerticalVel = verticalVelocity / maxVerticalVel;
 
-             animator.SetFloat(airVelocityHash, deltaVerticalVel);
+            animator.SetFloat(airVelocityHash, deltaVerticalVel);
 
             //animator.SetBool(groundedHash, deltaVerticalVel < 0.0f && heightSpringBehaviour.GroundedInfo.grounded);
 

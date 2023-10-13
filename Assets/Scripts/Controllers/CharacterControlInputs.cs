@@ -1,8 +1,8 @@
+using CryingOnion.GizmosRT.Runtime;
 using CryingOnion.OscillatorSystem;
-using WeatherGuardian.Behaviours;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using CryingOnion.GizmosRT.Runtime;
+using WeatherGuardian.Behaviours;
 
 namespace Game.InputsController
 {
