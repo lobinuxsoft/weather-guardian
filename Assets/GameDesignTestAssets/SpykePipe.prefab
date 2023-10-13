@@ -491,7 +491,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!114 &9163558198686988981
@@ -506,7 +506,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionType: -1
+  tagToCollide: Player
+  detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &2362625236011349414
@@ -1000,7 +1001,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!114 &7842078223856464182
@@ -1015,7 +1016,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionType: -1
+  tagToCollide: Player
+  detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &2798871085501975706
@@ -1509,7 +1511,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!114 &8713763210907729042
@@ -1524,7 +1526,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionType: -1
+  tagToCollide: Player
+  detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &2991428756019287761
@@ -2018,7 +2021,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!114 &8760664451726888475
@@ -2033,7 +2036,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionType: -1
+  tagToCollide: Player
+  detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &4076860877605634794
@@ -2527,7 +2531,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!114 &2098686979628315112
@@ -2542,7 +2546,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionType: -1
+  tagToCollide: Player
+  detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &6518368091667252288
@@ -3036,7 +3041,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!114 &3324185962002327840
@@ -3051,7 +3056,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionType: -1
+  tagToCollide: Player
+  detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &8224460362884406090
@@ -5393,5 +5399,5 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 5
   m_Convex: 0
-  m_CookingOptions: 30
+  m_CookingOptions: -1
   m_Mesh: {fileID: 0}
