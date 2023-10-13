@@ -12,31 +12,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2266780b2466af24c8aec2894b42055c, type: 3}
   m_Name: CharacterDashConfig
   m_EditorClassIdentifier: 
-  <UseUmbrella>k__BackingField: 1
-  <Cooldown>k__BackingField: 1
+  <UseUmbrella>k__BackingField: 0
+  <Cooldown>k__BackingField: 0.5
   <Duration>k__BackingField: 0.25
-  <Distance>k__BackingField: 20
+  <Distance>k__BackingField: 15
   <VelocityBehaviourCurve>k__BackingField:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 1.9952774
-      outSlope: 1.9952774
+      time: -0.0000011802185
+      value: 0.99527025
+      inSlope: -9.559103
+      outSlope: -9.559103
       tangentMode: 34
-      weightedMode: 0
+      weightedMode: 2
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.5
-      value: 0.9976387
+      time: 0.08492898
+      value: 0.1834141
+      inSlope: 0.20614599
+      outSlope: 0.20614599
+      tangentMode: 1
+      weightedMode: 3
+      inWeight: 0.33333337
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.15548712
+      value: 0.8086845
+      inSlope: 2.6483836
+      outSlope: 2.6483836
+      tangentMode: 1
+      weightedMode: 3
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.381963
+      value: 1.0164714
+      inSlope: 0.40686592
+      outSlope: 0.054396108
+      tangentMode: 1
+      weightedMode: 3
+      inWeight: 0.33268905
+      outWeight: 0.35232574
+    - serializedVersion: 3
+      time: 0.512146
+      value: 1.0189171
       inSlope: 0
       outSlope: 0.005157663
       tangentMode: 1
       weightedMode: 3
-      inWeight: 0.33333334
-      outWeight: 0.9156463
+      inWeight: 0.33333322
+      outWeight: 0.5221998
+    - serializedVersion: 3
+      time: 0.9004955
+      value: 0.7334678
+      inSlope: -2.287814
+      outSlope: -2.287814
+      tangentMode: 1
+      weightedMode: 3
+      inWeight: 0.17571557
+      outWeight: 0.8410077
     - serializedVersion: 3
       time: 1
       value: 0
@@ -44,7 +80,7 @@ MonoBehaviour:
       outSlope: -73.15312
       tangentMode: 0
       weightedMode: 1
-      inWeight: 0.013605475
+      inWeight: 0.03713562
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
