@@ -96,8 +96,6 @@ namespace WeatherGuardian.Behaviours
                 {
                     Vector3 platformRot = body.transform.parent.rotation.eulerAngles;
                     Vector3 deltaPlatformRot = platformRot - platformInitRot;
-                    //float yAngle = lastTargetRot.eulerAngles.y + deltaPlatformRot.y;
-                    //uprightTargetRot = Quaternion.Euler(new Vector3(0f, yAngle, 0f));
                     uprightTargetRot = Quaternion.Euler(lastTargetRot.eulerAngles + deltaPlatformRot);
                 }
                 catch { }
