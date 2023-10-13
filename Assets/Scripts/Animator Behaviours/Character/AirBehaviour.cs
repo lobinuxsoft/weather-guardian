@@ -43,7 +43,13 @@ namespace WeatherGuardian.Behaviours
 
              animator.SetFloat(airVelocityHash, deltaVerticalVel);
 
-            animator.SetBool(groundedHash, deltaVerticalVel < 0.0f && heightSpringBehaviour.GroundedInfo.grounded);
+            //animator.SetBool(groundedHash, deltaVerticalVel < 0.0f && heightSpringBehaviour.GroundedInfo.grounded);
+
+            if (deltaVerticalVel < 0.0f && heightSpringBehaviour.GroundedInfo.grounded)
+            {
+                heightSpringBehaviour.Body.velocity = heightSpringBehaviour.GravitationalForce.normalized * heightSpringBehaviour.Body.velocity.magnitude;
+                animator.SetBool(groundedHash, true);
+            }
 
             GravityInfluence(animator);
 

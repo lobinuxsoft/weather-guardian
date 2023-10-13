@@ -32,7 +32,6 @@ namespace WeatherGuardian.Behaviours
 
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            //if (stateInfo.tagHash != enterTagHash) return;
             if (stateInfo.tagHash != loopTagHash) return;
 
             if (heightSpringBehaviour == null)
@@ -40,6 +39,8 @@ namespace WeatherGuardian.Behaviours
 
             if(uprightSpringBehaviour == null)
                 uprightSpringBehaviour = animator.GetBehaviour<UprightSpringBehaviour>();
+
+            lastTimeUse = Time.time;
 
             dragDefault = heightSpringBehaviour.Body.drag;
             dragModifier = dashConfig.Distance * dashConfig.Duration;
@@ -60,6 +61,8 @@ namespace WeatherGuardian.Behaviours
 
             heightSpringBehaviour.Body.useGravity = false;
             heightSpringBehaviour.ShouldMaintainHeight = false;
+
+            lastTimeUse = Time.time;
 
             // Aca se modifica el uso del paraguas...
             animator.SetBool(
@@ -104,7 +107,7 @@ namespace WeatherGuardian.Behaviours
 
             if ((Time.time - lastTimeUse) < dashConfig.Cooldown) return;
 
-            animator.SetBool(dashHash, true);            
+            animator.SetBool(dashHash, true);
         }
     }
 }
