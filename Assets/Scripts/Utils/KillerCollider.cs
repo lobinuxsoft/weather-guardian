@@ -5,6 +5,7 @@ namespace WeatherGuardian.Utils
 {
     public class KillerCollider : MonoBehaviour
     {
+        [SerializeField] private string tagToCollide = "Player";
         [SerializeField] private DetectionType detectionType;
 
         [Header("Only for debug mode")]
@@ -19,6 +20,26 @@ namespace WeatherGuardian.Utils
         {
             if ((detectionType & DetectionType.ENTER) == 0) return;
 
+            if(!collision.collider.CompareTag(tagToCollide)) return;
+
+            CheckPoint.JumpToLastCheckPoint(collision.gameObject);
+        }
+
+        private void OnCollisionStay(Collision collision)
+        {
+            if ((detectionType & DetectionType.STAY) == 0) return;
+
+            if (!collision.collider.CompareTag(tagToCollide)) return;
+
+            CheckPoint.JumpToLastCheckPoint(collision.gameObject);
+        }
+
+        private void OnCollisionExit(Collision collision)
+        {
+            if ((detectionType & DetectionType.EXIT) == 0) return;
+
+            if (!collision.collider.CompareTag(tagToCollide)) return;
+
             CheckPoint.JumpToLastCheckPoint(collision.gameObject);
         }
 
@@ -26,33 +47,25 @@ namespace WeatherGuardian.Utils
         {
             if ((detectionType & DetectionType.ENTER) == 0) return;
 
+            if (!other.CompareTag(tagToCollide)) return;
+
             CheckPoint.JumpToLastCheckPoint(other.gameObject);
-        }
-
-        private void OnCollisionStay(Collision collision)
-        {
-            if ((detectionType & DetectionType.STAY) == 0) return;
-
-            CheckPoint.JumpToLastCheckPoint(collision.gameObject);
         }
 
         private void OnTriggerStay(Collider other)
         {
             if ((detectionType & DetectionType.STAY) == 0) return;
 
+            if (!other.CompareTag(tagToCollide)) return;
+
             CheckPoint.JumpToLastCheckPoint(other.gameObject);
-        }
-
-        private void OnCollisionExit(Collision collision)
-        {
-            if ((detectionType & DetectionType.EXIT) == 0) return;
-
-            CheckPoint.JumpToLastCheckPoint(collision.gameObject);
         }
 
         private void OnTriggerExit(Collider other)
         {
             if ((detectionType & DetectionType.EXIT) == 0) return;
+
+            if (!other.CompareTag(tagToCollide)) return;
 
             CheckPoint.JumpToLastCheckPoint(other.gameObject);
         }
