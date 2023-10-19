@@ -83,6 +83,9 @@ public class CharacterEffectController : MonoBehaviour
     {
         if (!sfxEvents.openUmbrellaSfx.IsNull)
             FMODUnity.RuntimeManager.PlayOneShotAttached(sfxEvents.openUmbrellaSfx, gameObject);
+
+        if (!sfxEvents.glideSfx.IsNull)
+            FMODUnity.RuntimeManager.PlayOneShotAttached(sfxEvents.glideSfx, gameObject);
     }
 
     public void CloseUmbrellaEffect()
