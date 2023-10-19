@@ -11,5 +11,6 @@ namespace WeatherGuardian.FMOD.Configs
         [field: SerializeField] public FMODUnity.EventReference openUmbrellaSfx { get; private set; }
         [field: SerializeField] public FMODUnity.EventReference closeUmbrellaSfx { get; private set; }
         [field: SerializeField] public FMODUnity.EventReference dashSfx { get; private set; }
+        [field: SerializeField] public FMODUnity.EventReference glideSfx { get; private set; }
     }
 }
