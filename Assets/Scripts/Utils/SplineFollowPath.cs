@@ -9,6 +9,7 @@ public class SplineFollowPath : MonoBehaviour
     [SerializeField] private SplineContainer path;
     [SerializeField, Range(0, 1)] private float speed = 0.005f;
     [SerializeField] private AnimationCurve moveBehaviour;
+    [SerializeField, Range(0.0f, 20.0f)] private float startDelay = 1.0f;
 
     public Action OnHalfPath;
     
@@ -47,7 +48,14 @@ public class SplineFollowPath : MonoBehaviour
 
     private void FixedUpdate()
     {
-        OnValidate();
+        if (startDelay > 0.0f) 
+        {
+            startDelay -= Time.deltaTime;
+        }
+        else 
+        {
+            OnValidate();
+        }
     }
 
     private void OnValidate()
