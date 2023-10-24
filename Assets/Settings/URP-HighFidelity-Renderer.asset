@@ -13,26 +13,6 @@ MonoBehaviour:
   m_Name: DepthNormalsFeature
   m_EditorClassIdentifier: 
   m_Active: 1
---- !u!114 &-5139264724674056658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d88b203fe4757bf4bbca690526aa4ac8, type: 3}
-  m_Name: VolumetricLightScattering
-  m_EditorClassIdentifier: 
-  m_Active: 1
-  occludersMaterial: {fileID: 2100000, guid: 3afb2d7b05db5534ba3e69fc664c490a, type: 2}
-  radialBlurMaterial: {fileID: 2100000, guid: 3133791c77eb4dc49972f1c5d5231342, type: 2}
-  settings:
-    renderPassEvent: 400
-    resolutionScale: 0.5
-    intensity: 0.1
-    blurWidth: 0.95
 --- !u!114 &-1878332245247344467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,8 +67,7 @@ MonoBehaviour:
   m_RendererFeatures:
   - {fileID: -1878332245247344467}
   - {fileID: 6867415521480433188}
-  - {fileID: -5139264724674056658}
-  m_RendererFeatureMap: adc0de57c6d2eee5245ed81a08f64d5f2e6e1b3ff6a9adb8
+  m_RendererFeatureMap: adc0de57c6d2eee5245ed81a08f64d5f
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   shaders:

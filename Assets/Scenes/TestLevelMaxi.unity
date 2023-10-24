@@ -7959,44 +7959,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 964950359}
   m_PrefabAsset: {fileID: 0}
---- !u!84 &966822210
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: DetailNoise
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 64
-  m_Height: 64
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 0
-  m_ColorFormat: 24
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 1
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_EnableRandomWrite: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 0
-    m_WrapV: 0
-    m_WrapW: 0
-  m_Dimension: 3
-  m_VolumeDepth: 64
-  m_ShadowSamplingMode: 2
 --- !u!1001 &982480453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8432,99 +8394,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1137435224}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1152652935
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7020603498918745367, guid: d693c14962946ec498dfbf0235ecc43c,
-        type: 3}
-      propertyPath: m_Name
-      value: CoudUrpProxy
-      objectReference: {fileID: 0}
-    - target: {fileID: 7236914372106268229, guid: d693c14962946ec498dfbf0235ecc43c,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7236914372106268229, guid: d693c14962946ec498dfbf0235ecc43c,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7236914372106268229, guid: d693c14962946ec498dfbf0235ecc43c,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7236914372106268229, guid: d693c14962946ec498dfbf0235ecc43c,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7236914372106268229, guid: d693c14962946ec498dfbf0235ecc43c,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7236914372106268229, guid: d693c14962946ec498dfbf0235ecc43c,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7236914372106268229, guid: d693c14962946ec498dfbf0235ecc43c,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7236914372106268229, guid: d693c14962946ec498dfbf0235ecc43c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7236914372106268229, guid: d693c14962946ec498dfbf0235ecc43c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7236914372106268229, guid: d693c14962946ec498dfbf0235ecc43c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8518358705851208076, guid: d693c14962946ec498dfbf0235ecc43c,
-        type: 3}
-      propertyPath: weatherMap
-      value: 
-      objectReference: {fileID: 1831738284}
-    - target: {fileID: 8884870950399335460, guid: d693c14962946ec498dfbf0235ecc43c,
-        type: 3}
-      propertyPath: shapeTexture
-      value: 
-      objectReference: {fileID: 1306880933}
-    - target: {fileID: 8884870950399335460, guid: d693c14962946ec498dfbf0235ecc43c,
-        type: 3}
-      propertyPath: activeChannel
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8884870950399335460, guid: d693c14962946ec498dfbf0235ecc43c,
-        type: 3}
-      propertyPath: detailTexture
-      value: 
-      objectReference: {fileID: 966822210}
-    - target: {fileID: 8884870950399335460, guid: d693c14962946ec498dfbf0235ecc43c,
-        type: 3}
-      propertyPath: activeTextureType
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d693c14962946ec498dfbf0235ecc43c, type: 3}
 --- !u!1001 &1158606528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8793,44 +8662,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1264906251}
   m_PrefabAsset: {fileID: 0}
---- !u!84 &1306880933
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: ShapeNoise
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 132
-  m_Height: 132
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 0
-  m_ColorFormat: 24
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 1
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_EnableRandomWrite: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 0
-    m_WrapV: 0
-    m_WrapW: 0
-  m_Dimension: 3
-  m_VolumeDepth: 132
-  m_ShadowSamplingMode: 2
 --- !u!4 &1416077550 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3096456297563099707, guid: ae7afff7719457a47b5543313554f060,
@@ -11558,44 +11389,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1825406992}
   m_PrefabAsset: {fileID: 0}
---- !u!84 &1831738284
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: CoudUrpProxy
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 512
-  m_Height: 512
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 0
-  m_ColorFormat: 24
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 1
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_EnableRandomWrite: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 512
-  m_ShadowSamplingMode: 2
 --- !u!1001 &1859405059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13422,7 +13215,6 @@ SceneRoots:
   - {fileID: 1750430415}
   - {fileID: 1919883419}
   - {fileID: 813018319}
-  - {fileID: 1152652935}
   - {fileID: 772954433}
   - {fileID: 913815410}
   - {fileID: 476175953}
