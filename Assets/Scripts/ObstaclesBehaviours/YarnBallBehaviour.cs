@@ -5,7 +5,9 @@ using UnityEngine;
 public class YarnBallBehaviour : ObstacleBehaviour
 {
     [Tooltip("If true when behaviuor ends balls reset position and visibility otherwise it doesnt change")]
-    [SerializeField] private bool respawnObject = true;    
+    [SerializeField] private bool respawnObject = true;
+
+    [SerializeField] [Range(0.01f, 30.0f)] private float ballAceleration;
 
     private Rigidbody myRigidBody;
 
@@ -21,7 +23,14 @@ public class YarnBallBehaviour : ObstacleBehaviour
 
         myRigidBody.isKinematic = true;
     }
-    
+
+    void Update()
+    {
+        if (!myRigidBody.isKinematic) 
+        {
+            myRigidBody.velocity += new Vector3(0.0f, -1.0f, 1.0f) * ballAceleration * Time.deltaTime;
+        }
+    }
 
     public override void AwakeConfigs()
     {
@@ -32,16 +41,17 @@ public class YarnBallBehaviour : ObstacleBehaviour
     {
         myRigidBody.isKinematic = false;
 
-        ResetTransform();
-        
-        ResetVisibility();
+        if (!MyMeshRenderer.isVisible) 
+        {
+            MyMeshRenderer.enabled = true;
+        }
+
+        ResetTransform();               
     }
 
     public override void FinishBehaviour()
     {
         myRigidBody.isKinematic = true;
-
-        myRigidBody.velocity = Vector3.zero;
         
         if (respawnObject) 
         {
@@ -58,8 +68,8 @@ public class YarnBallBehaviour : ObstacleBehaviour
 
     public void ResetTransform() 
     {
-        myRigidBody.MovePosition(ballInitialPosition);
-
-        myRigidBody.MoveRotation(ballInitialRotation);
+        transform.localPosition = ballInitialPosition;
+        
+        transform.localRotation = ballInitialRotation;
     }
 }
