@@ -9,11 +9,13 @@ public class ObstacleManager : MonoBehaviour
     [Tooltip("If behaviour can be used more than once if true and only ones if false")]
     [SerializeField] bool loopBehaviour = true;
 
+    [SerializeField] private ObstacleActivationTrigger activationTrigger;
+
+    [SerializeField] private ObstacleActivationTrigger deactivationTrigger;
+
     private Timer behaviourLifeTime = null;
 
     private ObstacleBehaviour behaviour = null;
-
-    private ObstacleActivationTrigger activationTrigger = null;
 
     private void Awake()
     {
@@ -27,30 +29,46 @@ public class ObstacleManager : MonoBehaviour
 
     private void Start()
     {
-        activationTrigger.OnTriggerCollisionDetected += behaviour.StartBehaviour;
+        if (activationTrigger != null) 
+        {
+            activationTrigger.OnTriggerCollisionDetected += behaviour.StartBehaviour;
 
-        activationTrigger.OnTriggerCollisionDetected += DeactivateTrigger;
+            activationTrigger.OnTriggerCollisionDetected += DeactivateTrigger;
+        }
+
+        if (deactivationTrigger != null) 
+        {
+            deactivationTrigger.OnTriggerCollisionDetected += behaviour.FinishBehaviour;
+        }
 
         behaviour.OnCollision += CollisionFunction;
 
-        if (loopBehaviour) 
+        if (loopBehaviour && behaviourLifeTime != null) 
         {
             behaviourLifeTime.OnTimerEnds += ActivateTrigger;
         }
 
         if (behaviourLifeTime != null) 
         {
-            behaviourLifeTime.OnTimerEnds += behaviour.FinishBehaviour;            
+            behaviourLifeTime.OnTimerEnds += behaviour.FinishBehaviour;          
         }
     }
 
     private void OnDestroy()
     {
-        activationTrigger.OnTriggerCollisionDetected -= behaviour.StartBehaviour;
+        if (activationTrigger != null) 
+        {
+            activationTrigger.OnTriggerCollisionDetected -= behaviour.StartBehaviour;
+        }
+
+        if (deactivationTrigger != null)
+        {
+            deactivationTrigger.OnTriggerCollisionDetected -= behaviour.FinishBehaviour;
+        }
 
         behaviour.OnCollision -= CollisionFunction;
 
-        if (loopBehaviour)
+        if (loopBehaviour && behaviourLifeTime != null)
         {
             behaviourLifeTime.OnTimerEnds -= ActivateTrigger;
         }
@@ -71,11 +89,6 @@ public class ObstacleManager : MonoBehaviour
 
     private void GetScriptsInChildrenObjects() 
     {
-        activationTrigger = gameObject.GetComponentInChildren<ObstacleActivationTrigger>(true);
-
-        if (activationTrigger == null)
-            Debug.LogError("There is no ObstacleActivationTrigger script in any child object!");
-
         behaviour = gameObject.GetComponentInChildren<ObstacleBehaviour>(true);
 
         if(behaviour == null)
