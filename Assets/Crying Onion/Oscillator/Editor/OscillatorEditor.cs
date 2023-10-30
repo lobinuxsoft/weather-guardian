@@ -30,13 +30,11 @@ namespace CryingOnion.OscillatorSystem
         [DrawGizmo(GizmoType.Selected | GizmoType.NonSelected)]
         static void RenderCustomGizmo(Oscillator oscillator, GizmoType gizmoType)
         {
-            Vector3 bob = oscillator.transform.localPosition;
-            Vector3 equilibrium = oscillator.LocalEquilibriumPosition;
-            if (oscillator.transform.parent != null)
-            {
-                bob += oscillator.transform.parent.position;
-                equilibrium += oscillator.transform.parent.position;
-            }
+            if (!Application.isPlaying)
+                oscillator.EquilibriumPosition = oscillator.transform.position;
+
+            Vector3 bob = oscillator.transform.position;
+            Vector3 equilibrium = oscillator.EquilibriumPosition;
 
             /* Draw (wire) equilibrium position */
             Color color = Color.green;

@@ -11,9 +11,32 @@ namespace WeatherGuardian.Utils
 
         private float time;
 
+        private bool isRunning;
+
+        public bool IsRunning 
+        {
+            set 
+            { 
+                isRunning = value;
+            }
+            get 
+            {
+                return isRunning;
+            }
+        }
+
+        public Timer(float timerDuration, bool isRunning)
+        {
+            TimerDuration = timerDuration;
+
+            this.isRunning = isRunning;
+        }
+
         public Timer(float timerDuration)
         {
             TimerDuration = timerDuration;
+
+            isRunning = true;
         }
 
         public float TimerDuration
@@ -32,7 +55,7 @@ namespace WeatherGuardian.Utils
 
         public void UpdateTimer()
         {
-            if (time > 0.0f)
+            if (time > 0.0f && isRunning)
             {
                 time -= Time.deltaTime;
 
@@ -45,7 +68,7 @@ namespace WeatherGuardian.Utils
 
         public void UpdateTimerWithReset() 
         {
-            if (time > 0.0f)
+            if (time > 0.0f && isRunning)
             {
                 time -= Time.deltaTime;
 
