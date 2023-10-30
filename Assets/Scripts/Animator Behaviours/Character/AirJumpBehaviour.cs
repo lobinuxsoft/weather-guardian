@@ -11,13 +11,15 @@ namespace WeatherGuardian.Behaviours
         [SerializeField] private AirJumpConfig airJumpConfig;
 
         private HeightSpringBehaviour heightSpringBehaviour;
-        private float verticalVelocity = 0.0f;
         private int jumpCount = 0;
 
         // OnStateEnter is called before OnStateEnter is called on any state inside this state machine
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             heightSpringBehaviour.ShouldMaintainHeight = false;
+            float verticalDot = Vector3.Dot(heightSpringBehaviour.Body.velocity, Vector3.up);
+
+            heightSpringBehaviour.Body.velocity -= Vector3.up * verticalDot;
             heightSpringBehaviour.Body.AddForce(Vector3.up * airJumpConfig.JumpForceFactor, ForceMode.Impulse);
 
             animator.SetBool(jumpHash, false);
@@ -33,10 +35,6 @@ namespace WeatherGuardian.Behaviours
                 jumpCount = 0;
                 return;
             }
-
-            verticalVelocity = Vector3.Dot(heightSpringBehaviour.Body.velocity, Vector3.up);
-
-            if (verticalVelocity < 0.0f) return;
 
             if (jumpCount >= airJumpConfig.JumpAmount) return;
 
