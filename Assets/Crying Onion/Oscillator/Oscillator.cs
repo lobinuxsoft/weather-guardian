@@ -7,10 +7,11 @@ namespace CryingOnion.OscillatorSystem
     /// A dampened oscillator using the objects transform local position.
     /// </summary>
     [DisallowMultipleComponent]
+
     public class Oscillator : MonoBehaviour
     {
         [Tooltip("The local position about which oscillations are centered.")]
-        [field: SerializeField] public Vector3 LocalEquilibriumPosition { get; set; } = Vector3.zero;
+        [field: SerializeField] public Vector3 EquilibriumPosition { get; set; } = Vector3.zero;
 
         [Tooltip("The axes over which the oscillator applies force. Within range [0, 1].")]
         [field: SerializeField] public Vector3 ForceScale { get; set; } = Vector3.one;
@@ -31,6 +32,8 @@ namespace CryingOnion.OscillatorSystem
 
         private readonly Guid id = Guid.NewGuid();
 
+        private void Awake() => EquilibriumPosition = transform.position;
+
         /// <summary>
         /// Update the position of the oscillator, by calculating and applying the restorative force.
         /// </summary>
@@ -48,7 +51,7 @@ namespace CryingOnion.OscillatorSystem
         private Vector3 CalculateRestoringForce()
         {
             /* Displacement from the rest point. Displacement is the difference in position. */
-            Vector3 displacement = transform.localPosition - LocalEquilibriumPosition;
+            Vector3 displacement = transform.position - EquilibriumPosition;
             Vector3 deltaDisplacement = displacement - previousDisplacement;
             previousDisplacement = displacement;
 
@@ -88,7 +91,7 @@ namespace CryingOnion.OscillatorSystem
             else
             {
                 Vector3 displacement = CalculateDisplacementDueToForce(force);
-                transform.localPosition += Vector3.Scale(displacement, ForceScale);
+                transform.position += Vector3.Scale(displacement, ForceScale);
             }
         }
 
@@ -122,16 +125,8 @@ namespace CryingOnion.OscillatorSystem
         {
             if (GizmosRT.Runtime.GizmosRT.Enabled)
             {
-                Vector3 bob = transform.localPosition;
-                Vector3 equilibrium = LocalEquilibriumPosition;
-
-                if (transform.parent != null)
-                {
-                    bob += transform.parent.position;
-                    equilibrium += transform.parent.position;
-                }
-
-                
+                Vector3 bob = transform.position;
+                Vector3 equilibrium = EquilibriumPosition;
 
                 /* Draw (solid) bob position. */
                 /* Color goes from green (0,1,0,0) to yellow (1,1,0,0) to red (1,0,0,0). */

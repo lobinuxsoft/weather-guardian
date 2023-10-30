@@ -12,11 +12,11 @@ public class SplineFollowPath : MonoBehaviour
     [SerializeField, Range(0.0f, 20.0f)] private float startDelay = 1.0f;
 
     public Action OnHalfPath;
-    
+
     private Oscillator oscillator;
     private Rigidbody rb;
     private float time = 0;
-    
+
     //New vars
     private float localTime = 0.0f;
 
@@ -24,21 +24,21 @@ public class SplineFollowPath : MonoBehaviour
     private bool rotate;
     private bool halfPathAchived = false;
 
-    public bool Moving 
+    public bool Moving
     {
-        set 
+        set
         {
             moving = value;
         }
     }
 
-    public bool Rotate 
+    public bool Rotate
     {
-        set 
+        set
         {
             rotate = value;
         }
-    } 
+    }
 
     private void Awake()
     {
@@ -48,11 +48,11 @@ public class SplineFollowPath : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (startDelay > 0.0f) 
+        if (startDelay > 0.0f)
         {
             startDelay -= Time.deltaTime;
         }
-        else 
+        else
         {
             OnValidate();
         }
@@ -60,7 +60,7 @@ public class SplineFollowPath : MonoBehaviour
 
     private void OnValidate()
     {
-        if(oscillator != null && moving)
+        if (oscillator != null && moving)
         {
             //Old time code
             //time = moveBehaviour.Evaluate(Mathf.PingPong(Time.time * speed, 1));
@@ -70,17 +70,17 @@ public class SplineFollowPath : MonoBehaviour
             {
                 localTime += Time.deltaTime * speed;
 
-                if (localTime >= 0.5f) 
+                if (localTime >= 0.5f)
                 {
-                    if (!halfPathAchived) 
+                    if (!halfPathAchived)
                     {
                         OnHalfPath?.Invoke();
 
                         halfPathAchived = true;
                     }
-                }                
+                }
             }
-            else 
+            else
             {
                 localTime = 0.0f;
 
@@ -93,7 +93,7 @@ public class SplineFollowPath : MonoBehaviour
         }
     }
 
-    public void ResetPath() 
+    public void ResetPath()
     {
         moving = false;
 
@@ -104,28 +104,15 @@ public class SplineFollowPath : MonoBehaviour
         CalculatePosition();
     }
 
-    private void CalculatePosition() 
+    private void CalculatePosition()
     {
         path.Evaluate(time, out float3 pos, out float3 tangent, out float3 upVector);
         Vector3 localPos = path.transform.InverseTransformPoint(pos);
         Vector3 forward = (Vector3)tangent;
 
         if (rotate)
-        {
             rb.MoveRotation(Quaternion.LookRotation(localPos + forward, upVector));
-        }
 
-        oscillator.LocalEquilibriumPosition = localPos;
-        Vector3 tempPos = Vector3.zero;
-
-        for (int i = 0; i < 3; i++)
-        {
-            if (oscillator.ForceScale[i] == 0)
-                tempPos[i] = localPos[i];
-            else
-                tempPos[i] = transform.position[i];
-        }
-
-        rb.MovePosition(tempPos);
+        oscillator.EquilibriumPosition = pos;
     }
 }
