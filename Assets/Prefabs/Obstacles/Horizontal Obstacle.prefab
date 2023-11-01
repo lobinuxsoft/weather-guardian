@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f9da017541ee44aa825ceb29e73f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <LocalEquilibriumPosition>k__BackingField: {x: 0, y: 0, z: 0}
+  <EquilibriumPosition>k__BackingField: {x: 0, y: 0, z: 0}
   <ForceScale>k__BackingField: {x: 1, y: 1, z: 1}
   <Stiffness>k__BackingField: 200
   <Damper>k__BackingField: 20
@@ -289,6 +289,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  startDelay: 1
 --- !u!114 &1283118163995425043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -610,5 +611,5 @@ MonoBehaviour:
   m_Sides: 8
   m_SegmentsPerUnit: 4
   m_Capped: 1
-  m_Radius: 0.05
+  m_Radius: 0.001
   m_Range: {x: 0, y: 1}

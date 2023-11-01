@@ -5,7 +5,7 @@ namespace WeatherGuardian.Obstacles
     [RequireComponent(typeof(SplineFollowPath))]
     public class HorizontalObstacle : Obstacle
     {
-        [SerializeField] [Range(1.0f, 10.0f)] private float timeStoped = 1.0f;
+        [SerializeField] [Range(0.05f, 10.0f)] private float timeStoped = 1.0f;
 
         private SplineFollowPath path;
         
