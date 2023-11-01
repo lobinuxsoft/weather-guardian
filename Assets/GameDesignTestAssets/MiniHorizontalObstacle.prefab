@@ -423,7 +423,7 @@ MonoBehaviour:
   m_Sides: 8
   m_SegmentsPerUnit: 4
   m_Capped: 1
-  m_Radius: 0.05
+  m_Radius: 0.001
   m_Range: {x: 0, y: 1}
 --- !u!1 &8479786240591989941
 GameObject:
@@ -488,7 +488,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 118
-  m_CollisionDetection: 3
+  m_CollisionDetection: 2
 --- !u!114 &3050050918340182691
 MonoBehaviour:
   m_ObjectHideFlags: 0
