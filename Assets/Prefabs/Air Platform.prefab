@@ -151,8 +151,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.0733451, y: 0.99999976, z: 1.0705246}
+  m_Center: {x: -0.005642279, y: 0, z: 0.0014102533}
 --- !u!54 &3117202686191176519
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f9da017541ee44aa825ceb29e73f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <LocalEquilibriumPosition>k__BackingField: {x: 0, y: 0, z: 0}
+  <EquilibriumPosition>k__BackingField: {x: 0, y: 0, z: 0}
   <ForceScale>k__BackingField: {x: 1, y: 1, z: 1}
   <Stiffness>k__BackingField: 40
   <Damper>k__BackingField: 20
