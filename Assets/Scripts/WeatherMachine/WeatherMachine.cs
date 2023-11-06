@@ -1,7 +1,6 @@
 using CryingOnion.GizmosRT.Runtime;
 using CryingOnion.OhMy.WeatherSystem.Core;
 using CryingOnion.OhMy.WeatherSystem.Data;
-using CryingOnion.OhMy.WeatherSystem.Utility;
 using FMODUnity;
 using System.Collections;
 using UnityEngine;
@@ -56,7 +55,7 @@ namespace WeatherGuardian.Gameplay
         [Space]
         [Header("Weather Config")]
         [SerializeField] private OMWSWeatherProfile weatherProfile;
-        [SerializeField] private OMWSBiome biome;
+        [SerializeField, Range(0, 15)] private float trasitionDuration = 2.5f;
 
         [Space]
         [Header("Machine State Event Config")]
@@ -102,8 +101,8 @@ namespace WeatherGuardian.Gameplay
                 smokeVfx.Play();
                 onMachineOn?.Invoke();
 
-                biome.weatherSelectionMode = OMWSEcosystem.EcosystemStyle.manual;
-                biome.SetWeather(weatherProfile, 2);
+                OMWSWeather.instance.weatherSelectionMode = OMWSEcosystem.EcosystemStyle.manual;
+                OMWSWeather.instance.SetWeather(weatherProfile, trasitionDuration);
             }
             else
             {
@@ -210,8 +209,8 @@ namespace WeatherGuardian.Gameplay
                 loopSfxEvent.Play();
                 smokeVfx.Play();
 
-                biome.weatherSelectionMode = OMWSEcosystem.EcosystemStyle.manual;
-                biome.SetWeather(weatherProfile, 2);
+                OMWSWeather.instance.weatherSelectionMode = OMWSEcosystem.EcosystemStyle.manual;
+                OMWSWeather.instance.SetWeather(weatherProfile, trasitionDuration);
                 onMachineOn?.Invoke();
             }
             else
@@ -221,10 +220,10 @@ namespace WeatherGuardian.Gameplay
                 smokeVfx.Stop();
 
                 onMachineOff?.Invoke();
-                biome.weatherSelectionMode = OMWSEcosystem.EcosystemStyle.forecast;
-                biome.SetWeather(
-                    biome.forecastProfile.profilesToForecast[UnityEngine.Random.Range(0, biome.forecastProfile.profilesToForecast.Count)],
-                    2);
+                OMWSWeather.instance.weatherSelectionMode = OMWSEcosystem.EcosystemStyle.forecast;
+                OMWSWeather.instance.SetWeather(
+                    OMWSWeather.instance.forecastProfile.initialProfile,
+                    trasitionDuration);
             }
         }
 
