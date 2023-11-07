@@ -13,6 +13,14 @@ namespace WeatherGuardian.Utils
 
         private bool isRunning;
 
+        public float CurrentTime 
+        {
+            get 
+            {
+                return time;
+            }
+        }
+
         public bool IsRunning 
         {
             set 
