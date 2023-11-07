@@ -1,34 +1,48 @@
-using Cinemachine;
-using CryingOnion.GizmosRT.Runtime;
-using CryingOnion.Timeline.Conditions;
-using CryingOnion.Timeline.Notification;
-using System.Collections.Generic;
+using CryingOnion.OhMy.WeatherSystem.Core;
+using CryingOnion.OhMy.WeatherSystem.Data;
+using CryingOnion.Tools.Runtime;
+using FMODUnity;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
-using UnityEngine.Playables;
-using UnityEngine.Timeline;
+using UnityEngine.VFX;
+using WeatherGuardian.Behaviours;
 
 namespace WeatherGuardian.Gameplay
 {
     public class WeatherMachine : MonoBehaviour
     {
         private const string PLAYER_TAG = "Player";
-        private const string MACHINE_ANIMATOR_TRACK = "MachineAnimator";
-        private const string PLAYER_ANIMATOR_TRACK = "PlayerAnimator";
-        private const string PLAYER_TRANSFORM_TRACK = "PlayerTransform";
-        private const string CAMERA_TRACK = "MainCamera";
+        private const float cameraChangeDuration = 2.5f;
+        private const float playerInactiveDuration = 2.5f;
+        private const float machineChangeStateDelay = 1.0f;
 
-        [Header("Timeline config")]
-        [SerializeField] private PlayableDirector director;
-        [SerializeField] private Animator machineAnimator;
-        [SerializeField] private BoolCondition machineState;
-        [SerializeField] private NotificationSignal machineOnNotification;
-        [SerializeField] private NotificationSignal machineOffNotification;
-        [SerializeField] private TimelineAsset weatherMachineTimeline;
+        [Tooltip("The machine ON/OFF state on game start.")]
+        [SerializeField] private bool machineActiveOnStart = true;
 
         [Space]
-        [Header("Tween Config")]
-        [SerializeField] private Transform startPoint;
+        [Header("Animator Config")]
+        [SerializeField] private Animator machineAnimator;
+
+        [Space]
+        [Header("Camera Config")]
+        [SerializeField] private GameObject virtualCamera;
+
+        [Space]
+        [Header("Player Position Config")]
+        [SerializeField] private Transform playerInteractionTransform;
+        [SerializeField] private AnimationCurve lerpBehaviour;
+
+        [Space]
+        [Header("VFX Config")]
+        [SerializeField] private VisualEffect smokeVfx;
+
+        [Space]
+        [Header("FMOD Config")]
+        [SerializeField] private StudioEventEmitter startSfxEvent;
+        [SerializeField] private StudioEventEmitter loopSfxEvent;
+        [SerializeField] private StudioEventEmitter stopSfxEvent;
 
         [Space]
         [Header("UI Config")]
@@ -38,15 +52,28 @@ namespace WeatherGuardian.Gameplay
         [Header("Input Config")]
         [SerializeField] private InputActionReference inputAction;
 
+        [Space]
+        [Header("Weather Config")]
+        [SerializeField] private OMWSWeatherProfile weatherProfile;
+        [SerializeField, Range(0, 15)] private float trasitionDuration = 2.5f;
+
+        [Space]
+        [Header("Machine State Event Config")]
+        [Space]
+        [SerializeField] private UnityEvent onMachineOn;
+        [Space]
+        [SerializeField] private UnityEvent onMachineOff;
+
+        [Space]
         [Header("Only for debug mode")]
         [SerializeField] private Color debugColor = Color.red;
 
+        private int machineStateHash = Animator.StringToHash("STATE");
+        private int playerInteractHash = Animator.StringToHash("INTERACT");
+
         private BoxCollider boxTrigger;
         private Transform camTransform;
-        private CinemachineBrain cinemachineBrain;
         private GameObject player;
-
-        private Dictionary<string, Object> bindingDic = new Dictionary<string, Object>();
 
         private void Awake()
         {
@@ -54,28 +81,47 @@ namespace WeatherGuardian.Gameplay
             boxTrigger.isTrigger = true;
 
             camTransform = Camera.main.transform;
-            cinemachineBrain = Camera.main.gameObject.GetComponent<CinemachineBrain>();
 
             uiButton.gameObject.SetActive(false);
 
             inputAction.action.started += OnActionStarted;
-
-            TimelineBinding(ref weatherMachineTimeline, MACHINE_ANIMATOR_TRACK, machineAnimator);
-            TimelineBinding(ref weatherMachineTimeline, CAMERA_TRACK, cinemachineBrain);
-
-            machineState.Value = director.playOnAwake;
-
-            director.stopped += OnDirectorStop;
-
-            machineOnNotification.signal += UnbindPlayer;
-            machineOffNotification.signal += UnbindPlayer;
         }
 
-        private void OnDestroy()
+        private void Start() => StartCoroutine(MachineInitState(machineActiveOnStart));
+
+        private IEnumerator MachineInitState(bool state)
         {
-            director.stopped -= OnDirectorStop;
-            machineOnNotification.signal -= UnbindPlayer;
-            machineOffNotification.signal -= UnbindPlayer;
+            yield return new WaitForEndOfFrame();
+
+            machineAnimator.SetBool(machineStateHash, state);
+
+            if (state)
+            {
+                loopSfxEvent.Play();
+                smokeVfx.Play();
+                onMachineOn?.Invoke();
+
+                OMWSWeather.instance.weatherSelectionMode = OMWSEcosystem.EcosystemStyle.manual;
+                OMWSWeather.instance.SetWeather(weatherProfile, trasitionDuration);
+            }
+            else
+            {
+                loopSfxEvent.Stop();
+                smokeVfx.Stop();
+                onMachineOff?.Invoke();
+            }
+        }
+
+        private void LateUpdate()
+        {
+            if (uiButton.isVisible)
+            {
+                camTransform ??= Camera.main.transform;
+                uiButton.transform.rotation = Quaternion.LookRotation(-camTransform.forward);
+            }
+
+            if (OhMyGizmos.Enabled)
+                OhMyGizmos.Cube(Matrix4x4.TRS(boxTrigger.bounds.center, transform.rotation, boxTrigger.size), debugColor);
         }
 
         private void OnTriggerEnter(Collider other)
@@ -102,72 +148,85 @@ namespace WeatherGuardian.Gameplay
             {
                 uiButton.gameObject.SetActive(false);
 
-                startPoint.position = player.transform.position;
-                startPoint.rotation = player.transform.rotation;
-
-                bindingDic.Clear();
-
-                bindingDic.Add(PLAYER_ANIMATOR_TRACK, player != null ? player.GetComponent<Animator>() : null);
-                bindingDic.Add(PLAYER_TRANSFORM_TRACK, player != null ? player.transform : null);
-                TimelineBinding(ref weatherMachineTimeline, bindingDic);
-
-                machineState.Value = !machineState.Value;
-
-                if (machineState.Value)
-                {
-                    director.time = 0;
-                    director.Play(weatherMachineTimeline, DirectorWrapMode.None);
-                }
+                UpdateMachineState(!machineAnimator.GetBool(machineStateHash));
             }
         }
 
-        private void UnbindPlayer()
+        public void UpdateMachineState(bool value)
         {
-            var time = director.time;
-            bindingDic.Clear();
-
-            bindingDic.Add(PLAYER_ANIMATOR_TRACK, null);
-            bindingDic.Add(PLAYER_TRANSFORM_TRACK, null);
-            TimelineBinding(ref weatherMachineTimeline, bindingDic);
-            director.RebuildGraph();
-            director.time = time;
+            StartCoroutine(CameraChangeRoutine(cameraChangeDuration));
+            StartCoroutine(PlayerInactiveRoutine(playerInactiveDuration));
+            StartCoroutine(MachineStateRoutine(value, machineChangeStateDelay));
         }
 
-        private void OnDirectorStop(PlayableDirector director)
+        private IEnumerator CameraChangeRoutine(float duration)
         {
-            director.time = 0;
-
-            UnbindPlayer();
+            virtualCamera.gameObject.SetActive(true);
+            yield return new WaitForSeconds(duration);
+            virtualCamera.gameObject.SetActive(false);
         }
 
-        private void LateUpdate()
+        private IEnumerator PlayerInactiveRoutine(float duration)
         {
-            if (uiButton.isVisible)
+            float lerp = 0;
+            Animator playerAnim = player.GetComponent<Animator>();
+            MoveBehaviour mb = playerAnim.GetBehaviour<MoveBehaviour>();
+            HeightSpringBehaviour hsb = playerAnim.GetBehaviour<HeightSpringBehaviour>();
+
+            Vector3 startPos = hsb.Body.position;
+            Quaternion startRot = hsb.Body.rotation;
+
+            playerAnim.SetBool(playerInteractHash, true);
+            mb.CanMove = false;
+            hsb.Body.useGravity = false;
+
+            while (lerp < duration)
             {
-                camTransform ??= Camera.main.transform;
-                uiButton.transform.rotation = Quaternion.LookRotation(-camTransform.forward);
+                lerp += Time.deltaTime;
+
+                hsb.Body.position = Vector3.Lerp(startPos, playerInteractionTransform.position, lerpBehaviour.Evaluate(lerp / duration));
+                hsb.Body.rotation = Quaternion.Lerp(startRot, playerInteractionTransform.rotation, lerpBehaviour.Evaluate(lerp / duration));
+
+                yield return null;
             }
 
-            if (GizmosRT.Enabled)
-                GizmosRT.Cube(Matrix4x4.TRS(boxTrigger.bounds.center, transform.rotation, boxTrigger.size), debugColor);
+            hsb.Body.position = playerInteractionTransform.position;
+            hsb.Body.rotation = playerInteractionTransform.rotation;
+            hsb.Body.useGravity = true;
+
+            playerAnim.SetBool(playerInteractHash, false);
+            mb.CanMove = true;
         }
 
-        private void TimelineBinding(ref TimelineAsset playableAsset, string trackName, Object bindingObj)
+        private IEnumerator MachineStateRoutine(bool state, float delay)
         {
-            foreach (var output in playableAsset.outputs)
+            yield return new WaitForSeconds(delay);
+            machineAnimator.SetBool(machineStateHash, state);
+
+            if (state)
             {
-                if (output.streamName.Contains(trackName))
-                    director.SetGenericBinding(output.sourceObject, bindingObj);
+                startSfxEvent.Play();
+                loopSfxEvent.Play();
+                smokeVfx.Play();
+
+                OMWSWeather.instance.weatherSelectionMode = OMWSEcosystem.EcosystemStyle.manual;
+                OMWSWeather.instance.SetWeather(weatherProfile, trasitionDuration);
+                onMachineOn?.Invoke();
+            }
+            else
+            {
+                loopSfxEvent.Stop();
+                stopSfxEvent.Play();
+                smokeVfx.Stop();
+
+                onMachineOff?.Invoke();
+                OMWSWeather.instance.weatherSelectionMode = OMWSEcosystem.EcosystemStyle.forecast;
+                OMWSWeather.instance.SetWeather(
+                    OMWSWeather.instance.forecastProfile.initialProfile,
+                    trasitionDuration);
             }
         }
 
-        private void TimelineBinding(ref TimelineAsset playableAsset, Dictionary<string, Object> bindingDic)
-        {
-            foreach (var output in playableAsset.outputs)
-            {
-                if (bindingDic.ContainsKey(output.streamName))
-                    director.SetGenericBinding(output.sourceObject, bindingDic[output.streamName]);
-            }
-        }
+        public void EmitSmokeVFX() => smokeVfx.Reinit();
     }
 }

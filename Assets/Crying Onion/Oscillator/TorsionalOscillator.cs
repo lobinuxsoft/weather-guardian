@@ -1,3 +1,4 @@
+using CryingOnion.Tools.Runtime;
 using CryingOnion.Utils;
 using System;
 using UnityEngine;
@@ -101,7 +102,7 @@ namespace CryingOnion.OscillatorSystem
         //void OnDrawGizmos()
         private void LateUpdate()
         {
-            if (GizmosRT.Runtime.GizmosRT.Enabled)
+            if (OhMyGizmos.Enabled)
             {
                 Vector3 bob = transform.position;
                 Vector3 axis = rotAxis.normalized;
@@ -115,15 +116,15 @@ namespace CryingOnion.OscillatorSystem
                 Color color = arcGradient.Evaluate(Mathf.Clamp(angle / upperAmplitude, 0f, 1.0f));
 
                 // Draw (arc) angle to equilibrium
-                Vector3 equilibrium = GizmosRT.Runtime.GizmosRT.DrawArc(arcId, pivotPosition, bob, axis, 0f, -angle / 360f, 32, arcGradient);
+                Vector3 equilibrium = OhMyGizmos.DrawArc(arcId, pivotPosition, bob, axis, 0f, -angle / 360f, 32, arcGradient);
 
-                GizmosRT.Runtime.GizmosRT.Circle(circleId, pivotPosition, Quaternion.LookRotation(pivotPosition - equilibrium), Color.white, 0.5f);
+                OhMyGizmos.Circle(circleId, pivotPosition, Quaternion.LookRotation(pivotPosition - equilibrium), Color.white, 0.5f);
 
                 // Draw (solid) bob position
-                GizmosRT.Runtime.GizmosRT.Sphere(bob, 0.2f, color);
+                OhMyGizmos.Sphere(bob, 0.2f, color);
 
                 // Draw (wire) equilibrium position
-                GizmosRT.Runtime.GizmosRT.Cube(Matrix4x4.TRS(equilibrium, Quaternion.identity, Vector3.one * 0.3f), color);
+                OhMyGizmos.Cube(Matrix4x4.TRS(equilibrium, Quaternion.identity, Vector3.one * 0.3f), color);
             }
         }
     }

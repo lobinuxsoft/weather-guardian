@@ -20,6 +20,8 @@ namespace WeatherGuardian.Behaviours
         private bool canSprint = false;
         private float timerToSprint = 0f;
 
+        public bool CanMove { get; set; } = true;
+
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             if (heightSpringBehaviour == null)
@@ -31,6 +33,8 @@ namespace WeatherGuardian.Behaviours
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
+            if (!CanMove) return;
+
             float currentSpeed = Mathf.Clamp(heightSpringBehaviour.Body.velocity.magnitude / moveConfig.MaxSpeed, 0, 2);
             isMoving = currentSpeed > 0.1f;
             canSprint = currentSpeed > 0.75f;

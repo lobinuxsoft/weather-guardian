@@ -1,4 +1,4 @@
-using CryingOnion.GizmosRT.Runtime;
+using CryingOnion.Tools.Runtime;
 using UnityEngine;
 
 namespace WeatherGuardian.Utils
@@ -11,7 +11,7 @@ namespace WeatherGuardian.Utils
         [Header("Only for debug mode")]
         [SerializeField] private Color triggerDebugColor = Color.yellow;
         [SerializeField] private Color colliderDebugColor = Color.red;
-        
+
         private Collider killerCol;
 
         private void Awake() => killerCol = GetComponent<Collider>();
@@ -20,7 +20,7 @@ namespace WeatherGuardian.Utils
         {
             if ((detectionType & DetectionType.ENTER) == 0) return;
 
-            if(!collision.collider.CompareTag(tagToCollide)) return;
+            if (!collision.collider.CompareTag(tagToCollide)) return;
 
             CheckPoint.JumpToLastCheckPoint(collision.gameObject);
         }
@@ -72,21 +72,21 @@ namespace WeatherGuardian.Utils
 
         private void LateUpdate()
         {
-            if (!GizmosRT.Enabled) return;
+            if (!OhMyGizmos.Enabled) return;
 
             Color color = killerCol.isTrigger ? triggerDebugColor : colliderDebugColor;
 
-            if(killerCol is BoxCollider)
+            if (killerCol is BoxCollider)
             {
                 BoxCollider bc = killerCol as BoxCollider;
                 Vector3 scale = new Vector3(bc.size.x * bc.transform.localScale.x, bc.size.y * bc.transform.localScale.y, bc.size.z * bc.transform.localScale.z);
-                GizmosRT.Cube(Matrix4x4.TRS(bc.bounds.center, bc.transform.rotation, scale), color);
+                OhMyGizmos.Cube(Matrix4x4.TRS(bc.bounds.center, bc.transform.rotation, scale), color);
             }
-            else if(killerCol is SphereCollider)
+            else if (killerCol is SphereCollider)
             {
                 SphereCollider sc = killerCol as SphereCollider;
                 float scalar = Mathf.Max(Mathf.Abs(Mathf.Max(sc.transform.localScale.x, sc.transform.localScale.y)), Mathf.Abs(sc.transform.localScale.z));
-                GizmosRT.Sphere(sc.bounds.center, sc.radius * scalar, color);
+                OhMyGizmos.Sphere(sc.bounds.center, sc.radius * scalar, color);
             }
         }
     }
