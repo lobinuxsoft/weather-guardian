@@ -1,3 +1,4 @@
+using CryingOnion.Tools.Runtime;
 using System;
 using UnityEngine;
 
@@ -123,7 +124,7 @@ namespace CryingOnion.OscillatorSystem
         //void OnDrawGizmos()
         private void LateUpdate()
         {
-            if (GizmosRT.Runtime.GizmosRT.Enabled)
+            if (OhMyGizmos.Enabled)
             {
                 Vector3 bob = transform.position;
                 Vector3 equilibrium = EquilibriumPosition;
@@ -135,10 +136,10 @@ namespace CryingOnion.OscillatorSystem
                 Color color = gradient.Evaluate(Mathf.Clamp(Vector3.Magnitude(bob - equilibrium) * upperAmplitude, 0f, 1.0f));
 
                 /* Draw (wire) equilibrium position. */
-                GizmosRT.Runtime.GizmosRT.Cube(Matrix4x4.TRS(equilibrium, transform.rotation, Vector3.one * 0.3f), color);
+                OhMyGizmos.Cube(Matrix4x4.TRS(equilibrium, transform.rotation, Vector3.one * 0.3f), color);
 
-                GizmosRT.Runtime.GizmosRT.Sphere(bob, 0.2f, color);
-                GizmosRT.Runtime.GizmosRT.Line(id, bob, equilibrium, gradient);
+                OhMyGizmos.Sphere(bob, 0.2f, color);
+                OhMyGizmos.Line(id, bob, equilibrium, gradient);
             }
         }
     }

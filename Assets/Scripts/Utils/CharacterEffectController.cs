@@ -1,4 +1,4 @@
-using CryingOnion.GizmosRT.Runtime;
+using CryingOnion.Tools.Runtime;
 using System;
 using UnityEngine;
 using UnityEngine.Playables;
@@ -42,8 +42,8 @@ public class CharacterEffectController : MonoBehaviour
         center = heightSpringBehaviour.GroundedInfo.rayHit.point;
         normal = heightSpringBehaviour.GroundedInfo.rayHit.normal;
         forward = Vector3.ProjectOnPlane(transform.forward, normal != Vector3.zero ? normal : animator.transform.up).normalized;
-        GizmosRT.Arrow(normalId, center, normal != Vector3.zero ? normal : animator.transform.up, 1, 1, normalGradient);
-        GizmosRT.Arrow(forwardId, center, forward, 1, 1, forwardGradient);
+        OhMyGizmos.Arrow(normalId, center, normal != Vector3.zero ? normal : animator.transform.up, 1, 1, normalGradient);
+        OhMyGizmos.Arrow(forwardId, center, forward, 1, 1, forwardGradient);
     }
 
     public void FootStepEffect()

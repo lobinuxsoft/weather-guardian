@@ -1,5 +1,5 @@
-using CryingOnion.GizmosRT.Runtime;
 using CryingOnion.OscillatorSystem;
+using CryingOnion.Tools.Runtime;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using WeatherGuardian.Behaviours;
@@ -107,7 +107,7 @@ namespace Game.InputsController
             airUmbrellaBehaviour.LookDir(forward, right);
         }
 
-        private void SwitchDebug(InputAction.CallbackContext context) => GizmosRT.Enabled = !GizmosRT.Enabled;
+        private void SwitchDebug(InputAction.CallbackContext context) => OhMyGizmos.Enabled = !OhMyGizmos.Enabled;
 
         private void MoveAction(InputAction.CallbackContext context)
         {
