@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 253916293753147932}
   - component: {fileID: 1382355923548091442}
-  - component: {fileID: 1310217399495643809}
+  - component: {fileID: 9213212625981865174}
   m_Layer: 0
   m_Name: Trigger Box
   m_TagString: Untagged
@@ -54,7 +54,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1310217399495643809
+--- !u!114 &9213212625981865174
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,10 +63,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3555368676329171694}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 191e500bbf1ed7f4183086ad8d708adc, type: 3}
+  m_Script: {fileID: 11500000, guid: c0e1b5ae4eb5dc945a875b82042bbd53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ActivatorObjectTag: Player
+  activatorObjectTag:
+  - Player
+  triggerInitialStatus: 0
 --- !u!1 &6233991634844321315
 GameObject:
   m_ObjectHideFlags: 0
