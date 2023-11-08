@@ -89,6 +89,23 @@ namespace WeatherGuardian.Utils
             }
         }
 
+        public void UpdateTimerWithResetAndStop()
+        {
+            if (time > 0.0f && isRunning)
+            {
+                time -= Time.deltaTime;
+
+                if (time <= 0.0f)
+                {
+                    OnTimerEnds?.Invoke();
+
+                    ResetTimer();
+
+                    isRunning = false;
+                }
+            }
+        }
+
         public void ResetTimer()
         {
             time = timerDuration;
