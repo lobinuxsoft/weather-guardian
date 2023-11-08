@@ -3,7 +3,7 @@ using WeatherGuardian.Utils;
 
 public class SpikesManager : MonoBehaviour
 {
-    private ObstacleActivationTrigger activationTrigger;
+    private TriggerCollisionNotifier activationTrigger;
 
     private SpikesBehaviours spikesBehaviours;
 
@@ -13,7 +13,7 @@ public class SpikesManager : MonoBehaviour
 
     private void Awake()
     {
-        activationTrigger = gameObject.GetComponentInChildren<ObstacleActivationTrigger>(true);
+        activationTrigger = gameObject.GetComponentInChildren<TriggerCollisionNotifier>(true);
 
         spikesBehaviours = gameObject.GetComponentInChildren<SpikesBehaviours>(true);
 
