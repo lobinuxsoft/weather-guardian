@@ -1,8 +1,9 @@
 using System;
+using System.Drawing.Text;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class YarnBallBehaviour : ObstacleBehaviour
+public class Ball : ObstacleBehaviour
 {
     [Tooltip("If true when behaviuor ends balls reset position and visibility otherwise it doesnt change")]
     [SerializeField] private bool respawnObject = true;
@@ -13,7 +14,15 @@ public class YarnBallBehaviour : ObstacleBehaviour
 
     private Vector3 ballInitialPosition;
 
-    private Quaternion ballInitialRotation;
+    private Quaternion ballInitialRotation;    
+
+    public bool IsActive 
+    {
+        get 
+        {
+            return !myRigidBody.isKinematic;
+        }
+    }
     
     void Start()
     {
@@ -26,10 +35,7 @@ public class YarnBallBehaviour : ObstacleBehaviour
 
     void Update()
     {
-        if (!myRigidBody.isKinematic) 
-        {
-            myRigidBody.velocity += new Vector3(0.0f, -1.0f, 1.0f) * ballAceleration * Time.deltaTime;
-        }
+        BallAcceleration();
     }
 
     public override void AwakeConfigs()
@@ -71,5 +77,18 @@ public class YarnBallBehaviour : ObstacleBehaviour
         transform.localPosition = ballInitialPosition;
         
         transform.localRotation = ballInitialRotation;
+    }
+
+    /// <summary>
+    /// Accelerates the ball in the front direction
+    /// </summary>        
+    /// <returns>The oscillation force</returns>
+
+    private void BallAcceleration() 
+    {
+        if (!myRigidBody.isKinematic)
+        {
+            myRigidBody.velocity += new Vector3(0.0f, -1.0f, 1.0f) * ballAceleration * Time.deltaTime;
+        }
     }
 }
