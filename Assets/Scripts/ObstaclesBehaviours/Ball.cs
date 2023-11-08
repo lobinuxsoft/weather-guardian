@@ -1,3 +1,4 @@
+using FMODUnity;
 using System;
 using System.Drawing.Text;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Ball : ObstacleBehaviour
 {
+    [SerializeField] private GameObject ramp;
+
     [Tooltip("If true when behaviuor ends balls reset position and visibility otherwise it doesnt change")]
     [SerializeField] private bool respawnObject = true;
 
@@ -14,6 +17,8 @@ public class Ball : ObstacleBehaviour
 
     private Vector3 ballInitialPosition;
 
+    private Vector3 platformForward;
+
     private Quaternion ballInitialRotation;    
 
     public bool IsActive 
@@ -22,15 +27,15 @@ public class Ball : ObstacleBehaviour
         {
             return !myRigidBody.isKinematic;
         }
-    }
-    
+    }    
+
     void Start()
     {
         ballInitialPosition = transform.localPosition;
 
         ballInitialRotation = transform.localRotation;
 
-        myRigidBody.isKinematic = true;
+        myRigidBody.isKinematic = true;        
     }
 
     void Update()
@@ -40,6 +45,15 @@ public class Ball : ObstacleBehaviour
 
     public override void AwakeConfigs()
     {
+        if (ramp == null)
+        {
+            Debug.LogError("No ramp assigned in ramp GameObject!");
+        }
+        else 
+        {
+            transform.localRotation = ramp.transform.localRotation;
+        }
+
         myRigidBody = gameObject.GetComponent<Rigidbody>();
     }
 
@@ -80,15 +94,17 @@ public class Ball : ObstacleBehaviour
     }
 
     /// <summary>
-    /// Accelerates the ball in the front direction
+    /// Accelerates the ball in the front direction in regarding of the plataform that contins it
     /// </summary>        
     /// <returns>The oscillation force</returns>
 
     private void BallAcceleration() 
     {
-        if (!myRigidBody.isKinematic)
+        if (!myRigidBody.isKinematic && ramp != null)
         {
-            myRigidBody.velocity += new Vector3(0.0f, -1.0f, 1.0f) * ballAceleration * Time.deltaTime;
+            Vector3 frontAcceleration = ramp.transform.forward * ballAceleration * Time.deltaTime;
+
+            myRigidBody.velocity += new Vector3(0.0f, 0.0f, frontAcceleration.y);            
         }
     }
 }
