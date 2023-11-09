@@ -9,9 +9,9 @@ public class ObstacleManager : MonoBehaviour
     [Tooltip("If behaviour can be used more than once if true and only ones if false")]
     [SerializeField] bool loopBehaviour = true;
 
-    [SerializeField] private ObstacleActivationTrigger activationTrigger;
+    [SerializeField] private TriggerCollisionNotifier activationTrigger;
 
-    [SerializeField] private ObstacleActivationTrigger deactivationTrigger;
+    [SerializeField] private TriggerCollisionNotifier deactivationTrigger;
 
     private Timer behaviourLifeTime = null;
 
@@ -23,7 +23,7 @@ public class ObstacleManager : MonoBehaviour
 
         if (timeObjectWillBeActive != 0.0f) 
         {
-            behaviourLifeTime = new Timer(timeObjectWillBeActive);
+            behaviourLifeTime = new Timer(timeObjectWillBeActive, false);
         }
     }
 
@@ -32,6 +32,8 @@ public class ObstacleManager : MonoBehaviour
         if (activationTrigger != null) 
         {
             activationTrigger.OnTriggerCollisionDetected += behaviour.StartBehaviour;
+
+            activationTrigger.OnTriggerCollisionDetected += StartTimer;
 
             activationTrigger.OnTriggerCollisionDetected += DeactivateTrigger;
         }
@@ -59,6 +61,10 @@ public class ObstacleManager : MonoBehaviour
         if (activationTrigger != null) 
         {
             activationTrigger.OnTriggerCollisionDetected -= behaviour.StartBehaviour;
+
+            activationTrigger.OnTriggerCollisionDetected -= StartTimer;
+
+            activationTrigger.OnTriggerCollisionDetected -= DeactivateTrigger;
         }
 
         if (deactivationTrigger != null)
@@ -83,7 +89,7 @@ public class ObstacleManager : MonoBehaviour
     {
         if (behaviourLifeTime != null) 
         {            
-            behaviourLifeTime.UpdateTimerWithReset();
+            behaviourLifeTime.UpdateTimerWithResetAndStop();            
         }            
     }
 
@@ -124,5 +130,10 @@ public class ObstacleManager : MonoBehaviour
                 ActivateTrigger();
             }
         }
+    }
+
+    private void StartTimer() 
+    {
+        behaviourLifeTime.IsRunning = true;
     }
 }

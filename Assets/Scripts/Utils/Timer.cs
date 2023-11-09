@@ -13,6 +13,14 @@ namespace WeatherGuardian.Utils
 
         private bool isRunning;
 
+        public float CurrentTime 
+        {
+            get 
+            {
+                return time;
+            }
+        }
+
         public bool IsRunning 
         {
             set 
@@ -77,6 +85,23 @@ namespace WeatherGuardian.Utils
                     OnTimerEnds?.Invoke();
 
                     ResetTimer();
+                }
+            }
+        }
+
+        public void UpdateTimerWithResetAndStop()
+        {
+            if (time > 0.0f && isRunning)
+            {
+                time -= Time.deltaTime;
+
+                if (time <= 0.0f)
+                {
+                    OnTimerEnds?.Invoke();
+
+                    ResetTimer();
+
+                    isRunning = false;
                 }
             }
         }
