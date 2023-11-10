@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{2815a07a-2437-45d1-9f03-eb43baeb1231}">
 		<property name="name">
-			<value>BigBell_Loop</value>
+			<value>Cascabel_Loop</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
 		</property>
 		<relationship name="folder">
-			<destination>{e8797ca1-9424-4b79-9018-c943213f8546}</destination>
+			<destination>{cce1d544-3ce3-4ee2-99b9-0be84d0eae36}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{91bf8880-5c71-466c-be60-cb9b8dbe06c1}</destination>
@@ -64,7 +64,7 @@
 	<object class="MarkerTrack" id="{4f0e2725-d843-42ee-af78-0e136465f490}" />
 	<object class="GroupTrack" id="{649319f4-bed0-4b70-993a-bca6009b7f9e}">
 		<relationship name="modules">
-			<destination>{da745c0b-2498-4865-903c-9d249e9d2e8e}</destination>
+			<destination>{36f28cad-9c83-4a0a-8ed5-83682976dda2}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{e0a941ee-ab6d-4996-8e89-84d066b13292}</destination>
@@ -72,7 +72,7 @@
 	</object>
 	<object class="Timeline" id="{3af24d3a-1723-4ae6-a259-451c36aeb674}">
 		<relationship name="modules">
-			<destination>{da745c0b-2498-4865-903c-9d249e9d2e8e}</destination>
+			<destination>{36f28cad-9c83-4a0a-8ed5-83682976dda2}</destination>
 		</relationship>
 		<relationship name="markers">
 			<destination>{291bd186-439c-4ef0-bb30-c9bc04fbd7ea}</destination>
@@ -95,12 +95,12 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{c5a1ef43-aa4f-446d-b4fc-be3798df727c}" />
-	<object class="SingleSound" id="{da745c0b-2498-4865-903c-9d249e9d2e8e}">
+	<object class="SingleSound" id="{36f28cad-9c83-4a0a-8ed5-83682976dda2}">
 		<property name="length">
-			<value>13.312708333333333</value>
+			<value>16.280166666666666</value>
 		</property>
 		<relationship name="audioFile">
-			<destination>{a2b81054-ac91-4886-934b-9767c33b3621}</destination>
+			<destination>{82d768d0-17cf-4777-b0c4-e14f6aff9f4d}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{e0a941ee-ab6d-4996-8e89-84d066b13292}">
@@ -122,7 +122,7 @@
 			<value>0</value>
 		</property>
 		<property name="length">
-			<value>13.312708333333333</value>
+			<value>16.280166666666666</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{3af24d3a-1723-4ae6-a259-451c36aeb674}</destination>

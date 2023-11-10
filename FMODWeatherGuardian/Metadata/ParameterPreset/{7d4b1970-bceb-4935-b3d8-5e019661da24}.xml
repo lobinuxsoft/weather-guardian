@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{7d4b1970-bceb-4935-b3d8-5e019661da24}">
+		<property name="name">
+			<value>Plataforma Arena Velocidad</value>
+		</property>
+		<relationship name="folder">
+			<destination>{fd1adb46-1652-41b2-aa70-d06bd0d39392}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{1124cab5-5970-4482-bdda-550bdd88190d}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{1124cab5-5970-4482-bdda-550bdd88190d}">
+		<property name="maximum">
+			<value>10</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
