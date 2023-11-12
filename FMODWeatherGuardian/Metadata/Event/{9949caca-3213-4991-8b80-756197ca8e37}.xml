@@ -5,10 +5,10 @@
 			<value>Spikes_Hurt</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
-			<destination>{e8797ca1-9424-4b79-9018-c943213f8546}</destination>
+			<destination>{cce1d544-3ce3-4ee2-99b9-0be84d0eae36}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{76137576-8d76-4bed-8b86-f9da1286f00c}</destination>
@@ -97,6 +97,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{3d5504b4-243c-4a49-9a9b-008723121e79}">
+		<property name="volume">
+			<value>-5</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -113,6 +116,7 @@
 	<object class="MixerBusEffectChain" id="{148f8d86-6aba-401e-9f98-7e408a35e844}">
 		<relationship name="effects">
 			<destination>{c3ae11e3-dbe0-410d-b934-4c60af301ed8}</destination>
+			<destination>{1c32b16b-2b83-4a60-8616-e5c6a08b6521}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{b8fbb6ab-6d62-4dbb-9d24-f55878cd6142}" />
@@ -124,5 +128,6 @@
 	</object>
 	<object class="MixerBusPanner" id="{6415f74d-5b81-4f63-b89e-81d5661392bf}" />
 	<object class="MixerBusFader" id="{c3ae11e3-dbe0-410d-b934-4c60af301ed8}" />
+	<object class="SpatialiserEffect" id="{1c32b16b-2b83-4a60-8616-e5c6a08b6521}" />
 	<object class="MixerBusFader" id="{bbe59975-76ac-40f9-b7fd-b47d136a7484}" />
 </objects>
