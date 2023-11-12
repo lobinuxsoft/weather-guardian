@@ -1,5 +1,5 @@
+using CryingOnion.Tools.Runtime;
 using UnityEngine;
-using CryingOnion.GizmosRT.Runtime;
 
 namespace WeatherGuardian.Utils
 {
@@ -18,7 +18,7 @@ namespace WeatherGuardian.Utils
             trigerCollider = GetComponent<BoxCollider>();
             trigerCollider.isTrigger = true;
 
-            if ( LastPos == null && LastRot == null)
+            if (LastPos == null && LastRot == null)
             {
                 var player = GameObject.FindGameObjectWithTag("Player");
                 LastPos ??= player != null ? player.transform.position : Vector3.zero;
@@ -56,9 +56,6 @@ namespace WeatherGuardian.Utils
             go.transform.rotation = LastRot ?? Quaternion.identity;
         }
 
-        private void LateUpdate()
-        {
-            GizmosRT.Cube(transform.localToWorldMatrix, Color.green);
-        }
+        private void LateUpdate() => OhMyGizmos.Cube(transform.localToWorldMatrix, Color.green);
     }
 }

@@ -1,6 +1,6 @@
-using CryingOnion.GizmosRT.Runtime;
 using CryingOnion.OhMy.WeatherSystem.Core;
 using CryingOnion.OhMy.WeatherSystem.Data;
+using CryingOnion.Tools.Runtime;
 using FMODUnity;
 using System.Collections;
 using UnityEngine;
@@ -120,8 +120,8 @@ namespace WeatherGuardian.Gameplay
                 uiButton.transform.rotation = Quaternion.LookRotation(-camTransform.forward);
             }
 
-            if (GizmosRT.Enabled)
-                GizmosRT.Cube(Matrix4x4.TRS(boxTrigger.bounds.center, transform.rotation, boxTrigger.size), debugColor);
+            if (OhMyGizmos.Enabled)
+                OhMyGizmos.Cube(Matrix4x4.TRS(boxTrigger.bounds.center, transform.rotation, boxTrigger.size), debugColor);
         }
 
         private void OnTriggerEnter(Collider other)
