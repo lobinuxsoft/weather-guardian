@@ -23,6 +23,11 @@ namespace WeatherGuardian.Behaviours
 
         HeightSpringBehaviour heightSpringBehaviour = null;
         UprightSpringBehaviour uprightSpringBehaviour = null;
+        CapsuleCollider capsuleCollider = null;
+
+        public Vector3 defaultCapsuleCenter = Vector3.zero;
+        public float defaultCapsuleHeigth = 0;
+
         float dragDefault = 0;
         float dragModifier = 0;
         Vector3 forward = Vector3.zero;
@@ -32,43 +37,54 @@ namespace WeatherGuardian.Behaviours
 
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            if (stateInfo.tagHash != loopTagHash) return;
+            if (stateInfo.tagHash == enterTagHash)
+            {
+                if (heightSpringBehaviour == null)
+                    heightSpringBehaviour = animator.GetBehaviour<HeightSpringBehaviour>();
 
-            if (heightSpringBehaviour == null)
-                heightSpringBehaviour = animator.GetBehaviour<HeightSpringBehaviour>();
+                if (uprightSpringBehaviour == null)
+                    uprightSpringBehaviour = animator.GetBehaviour<UprightSpringBehaviour>();
 
-            if(uprightSpringBehaviour == null)
-                uprightSpringBehaviour = animator.GetBehaviour<UprightSpringBehaviour>();
+                if (capsuleCollider == null)
+                    capsuleCollider = animator.GetComponent<CapsuleCollider>();
 
-            lastTimeUse = Time.time;
+                defaultCapsuleCenter = capsuleCollider.center;
+                defaultCapsuleHeigth = capsuleCollider.height;
 
-            dragDefault = heightSpringBehaviour.Body.drag;
-            dragModifier = dashConfig.Distance * dashConfig.Duration;
+                lastTimeUse = Time.time;
 
-            forward = Vector3.ProjectOnPlane(animator.transform.forward, Vector3.up).normalized;
-            heightSpringBehaviour.Body.drag = 0;
-            heightSpringBehaviour.Body.constraints = RigidbodyConstraints.FreezeRotation;
+                dragDefault = heightSpringBehaviour.Body.drag;
+                dragModifier = dashConfig.Distance * dashConfig.Duration;
 
-            lerpDuration = dashConfig.Duration;
+                forward = Vector3.ProjectOnPlane(animator.transform.forward, Vector3.up).normalized;
+                heightSpringBehaviour.Body.drag = 0;
+                heightSpringBehaviour.Body.constraints = RigidbodyConstraints.FreezeRotation;
 
-            Vector3 force = forward * heightSpringBehaviour.Body.mass * dashConfig.Distance / dashConfig.Duration;
-            heightSpringBehaviour.Body.AddForce(force, ForceMode.Impulse);
+                lerpDuration = dashConfig.Duration;
+            }
+
+            if (stateInfo.tagHash == loopTagHash)
+            {
+                capsuleCollider.center = dashConfig.CapsuleCenter;
+                capsuleCollider.height = dashConfig.CapsuleHeight;
+                Vector3 force = forward * heightSpringBehaviour.Body.mass * dashConfig.Distance / dashConfig.Duration;
+                heightSpringBehaviour.Body.AddForce(force, ForceMode.Impulse);
+                heightSpringBehaviour.Body.angularVelocity -= heightSpringBehaviour.Body.angularVelocity;
+            }
         }
 
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             if (stateInfo.tagHash != loopTagHash) return;
 
+            heightSpringBehaviour.Body.angularVelocity -= heightSpringBehaviour.Body.angularVelocity;
             heightSpringBehaviour.Body.useGravity = false;
             heightSpringBehaviour.ShouldMaintainHeight = false;
 
             lastTimeUse = Time.time;
 
             // Aca se modifica el uso del paraguas...
-            animator.SetBool(
-                groundedHash,
-                dashConfig.UseUmbrella ? heightSpringBehaviour.GroundedInfo.grounded : true
-                );
+            animator.SetBool(groundedHash, dashConfig.UseUmbrella ? heightSpringBehaviour.GroundedInfo.grounded : true);
 
             if (lerpDuration > 0)
             {
@@ -85,6 +101,10 @@ namespace WeatherGuardian.Behaviours
         public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             if (stateInfo.tagHash != exitTagHash) return;
+
+            heightSpringBehaviour.Body.angularVelocity -= heightSpringBehaviour.Body.angularVelocity;
+            capsuleCollider.center = defaultCapsuleCenter;
+            capsuleCollider.height = defaultCapsuleHeigth;
 
             animator.SetBool(umbrellaHash, !animator.GetBool(groundedHash));
 
