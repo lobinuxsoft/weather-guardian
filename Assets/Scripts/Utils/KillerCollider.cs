@@ -1,4 +1,5 @@
 using CryingOnion.Tools.Runtime;
+using System;
 using UnityEngine;
 
 namespace WeatherGuardian.Utils
@@ -14,6 +15,8 @@ namespace WeatherGuardian.Utils
 
         private Collider killerCol;
 
+        public event Action OnEnter;
+
         private void Awake() => killerCol = GetComponent<Collider>();
 
         private void OnCollisionEnter(Collision collision)
@@ -23,6 +26,8 @@ namespace WeatherGuardian.Utils
             if (!collision.collider.CompareTag(tagToCollide)) return;
 
             CheckPoint.JumpToLastCheckPoint(collision.gameObject);
+
+            OnEnter?.Invoke();
         }
 
         private void OnCollisionStay(Collision collision)
@@ -50,6 +55,8 @@ namespace WeatherGuardian.Utils
             if (!other.CompareTag(tagToCollide)) return;
 
             CheckPoint.JumpToLastCheckPoint(other.gameObject);
+
+            OnEnter?.Invoke();
         }
 
         private void OnTriggerStay(Collider other)
