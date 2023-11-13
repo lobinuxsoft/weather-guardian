@@ -56,7 +56,14 @@
 			<destination>{752caf63-6b19-4381-8a4e-e1b4df20f568}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{224bbcd2-c4b0-41fd-9717-e960dcb5f1f1}" />
+	<object class="EventAutomatableProperties" id="{224bbcd2-c4b0-41fd-9717-e960dcb5f1f1}">
+		<property name="minimumDistance">
+			<value>8</value>
+		</property>
+		<property name="maximumDistance">
+			<value>100</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{a5124a5b-dbe8-40e3-9adf-34637cb5f791}" />
 	<object class="GroupTrack" id="{fed40d68-37ae-4ee0-979f-1b1fd77afbaa}">
 		<relationship name="modules">
@@ -104,7 +111,7 @@
 			<value>Audio 1</value>
 		</property>
 		<relationship name="modulators">
-			<destination>{e0550e33-a9a8-4f36-be57-b40ec543e617}</destination>
+			<destination>{36f21f41-58ef-4d82-aee1-f516cca45be4}</destination>
 		</relationship>
 		<relationship name="effectChain">
 			<destination>{ba2b6f9b-4115-4a03-8b9f-6619000ccd9a}</destination>
@@ -138,7 +145,7 @@
 	</object>
 	<object class="MixerBusPanner" id="{b5172175-2004-4645-baf3-70a3ee7c7fb0}" />
 	<object class="MixerBusFader" id="{902656ba-bb92-436d-ac4b-7cbff8e0c9ef}" />
-	<object class="ADSRModulator" id="{e0550e33-a9a8-4f36-be57-b40ec543e617}">
+	<object class="ADSRModulator" id="{36f21f41-58ef-4d82-aee1-f516cca45be4}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>volume</value>
 		</property>
@@ -146,10 +153,7 @@
 			<value>-80</value>
 		</property>
 		<property name="attackTime">
-			<value>0</value>
-		</property>
-		<property name="releaseTime">
-			<value>260</value>
+			<value>1400</value>
 		</property>
 		<property name="finalValue">
 			<value>-80</value>
@@ -162,6 +166,10 @@
 	</object>
 	<object class="MixerBusPanner" id="{d35535bb-f208-4b02-bc15-919d8b261138}" />
 	<object class="MixerBusFader" id="{1a654c24-53f1-448e-b82d-da147403e84e}" />
-	<object class="SpatialiserEffect" id="{33d92846-c10d-4c16-8258-bebd8d0bf62c}" />
+	<object class="SpatialiserEffect" id="{33d92846-c10d-4c16-8258-bebd8d0bf62c}">
+		<property name="soundSize">
+			<value>10</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{49083a45-65ec-4685-a9d3-3caed6c44cfa}" />
 </objects>
