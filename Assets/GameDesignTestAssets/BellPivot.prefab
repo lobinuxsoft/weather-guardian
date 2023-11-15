@@ -117,7 +117,6 @@ GameObject:
   - component: {fileID: 2601039290897224143}
   - component: {fileID: 6044741819926036249}
   - component: {fileID: 5053416492477066148}
-  - component: {fileID: 151118161257547613}
   m_Layer: 0
   m_Name: Pendulo_de_cascabel2
   m_TagString: Untagged
@@ -211,22 +210,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 2.0301652
   m_Center: {x: 0, y: -3.2782445, z: 0}
---- !u!114 &151118161257547613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2451639789736430073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tagToCollide: Player
-  detectionType: 1
-  triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &3196096515797477247
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,6 +222,7 @@ GameObject:
   - component: {fileID: 5364284542015211148}
   - component: {fileID: 4639936039209196336}
   - component: {fileID: 767710793899833255}
+  - component: {fileID: 299088000578124640}
   m_Layer: 0
   m_Name: BellPivot
   m_TagString: Untagged
@@ -274,10 +258,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
-  detectionType: 1
-  triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!54 &4639936039209196336
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -345,6 +325,22 @@ MonoBehaviour:
   angleB: -45
   axisToRotate: 0
   speed: 1
+--- !u!114 &299088000578124640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3196096515797477247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
+  detectionType: 1
+  triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &3972461733065112613
 GameObject:
   m_ObjectHideFlags: 0

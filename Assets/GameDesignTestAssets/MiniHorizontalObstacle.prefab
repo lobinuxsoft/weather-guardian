@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3688184624572140649}
   - component: {fileID: 1224909808792187965}
   - component: {fileID: 8724754590456875036}
+  - component: {fileID: 3090032099504330502}
   m_Layer: 0
   m_Name: DeathCollider (3)
   m_TagString: Untagged
@@ -66,7 +67,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &3090032099504330502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3766470706748637329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -514,7 +527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f9da017541ee44aa825ceb29e73f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <EquilibriumPosition>k__BackingField: {x: -155.14001, y: 46.190002, z: -205.97003}
+  <EquilibriumPosition>k__BackingField: {x: 353.85724, y: 10.899998, z: -162.39998}
   <ForceScale>k__BackingField: {x: 1, y: 1, z: 1}
   <Stiffness>k__BackingField: 200
   <Damper>k__BackingField: 20

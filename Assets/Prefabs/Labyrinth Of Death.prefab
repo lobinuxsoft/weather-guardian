@@ -706,6 +706,7 @@ GameObject:
   - component: {fileID: 5524261602558437057}
   - component: {fileID: 2704086928129657488}
   - component: {fileID: 7255602984014152513}
+  - component: {fileID: 1782860221640787595}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -761,7 +762,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &1782860221640787595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148821477667790820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -776,6 +789,7 @@ GameObject:
   - component: {fileID: 4068648619173499761}
   - component: {fileID: 7745852981559052432}
   - component: {fileID: 6175448380804656009}
+  - component: {fileID: 6231519908019691266}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -831,7 +845,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &6231519908019691266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149919096081882798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -2494,6 +2520,7 @@ GameObject:
   - component: {fileID: 635947524851740834}
   - component: {fileID: 8333444613587510493}
   - component: {fileID: 3364375687119047176}
+  - component: {fileID: 5463825998392761745}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -2549,7 +2576,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &5463825998392761745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351177913543770690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -8280,6 +8319,7 @@ GameObject:
   - component: {fileID: 3759580228315968015}
   - component: {fileID: 793961319310713802}
   - component: {fileID: 6027271012915442172}
+  - component: {fileID: 6890031077367092830}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -8335,7 +8375,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &6890031077367092830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404763307502668437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -8350,6 +8402,7 @@ GameObject:
   - component: {fileID: 7547831394496920130}
   - component: {fileID: 2613143608394201291}
   - component: {fileID: 6846539949117681607}
+  - component: {fileID: 6543470354454702217}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -8405,7 +8458,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &6543470354454702217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431669081155075370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -8538,6 +8603,7 @@ GameObject:
   - component: {fileID: 3337291304106552048}
   - component: {fileID: 1960661134593113619}
   - component: {fileID: 6461986223042950420}
+  - component: {fileID: 3869643811020139580}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -8593,7 +8659,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &3869643811020139580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503457302434292615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -10716,6 +10794,7 @@ GameObject:
   - component: {fileID: 6531452905162442131}
   - component: {fileID: 4171524076551581649}
   - component: {fileID: 4254499067919484083}
+  - component: {fileID: 6163178358765209805}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -10771,7 +10850,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &6163178358765209805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957005949812262066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -11139,6 +11230,7 @@ GameObject:
   - component: {fileID: 7711205809578599419}
   - component: {fileID: 6766125741807998422}
   - component: {fileID: 8413863661463497395}
+  - component: {fileID: 2530773632197542189}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -11194,7 +11286,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &2530773632197542189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051264006147058642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -11562,6 +11666,7 @@ GameObject:
   - component: {fileID: 7801845771281863050}
   - component: {fileID: 4680693472921953673}
   - component: {fileID: 5570869125923816470}
+  - component: {fileID: 7833404569621702732}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -11617,7 +11722,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &7833404569621702732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091922527098449360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -17395,6 +17512,7 @@ GameObject:
   - component: {fileID: 4413226735697873507}
   - component: {fileID: 9003127927901533154}
   - component: {fileID: 1404615997887260304}
+  - component: {fileID: 7083673573975733931}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -17450,7 +17568,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &7083673573975733931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2807309527364567491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -18642,6 +18772,7 @@ GameObject:
   - component: {fileID: 2482511216952256156}
   - component: {fileID: 2101358715185006660}
   - component: {fileID: 809677916361499259}
+  - component: {fileID: 2421377787338588148}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -18697,7 +18828,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &2421377787338588148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3100303334722726836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -20275,6 +20418,7 @@ GameObject:
   - component: {fileID: 1209374959841638099}
   - component: {fileID: 737045555301675396}
   - component: {fileID: 6887508629638416340}
+  - component: {fileID: 1072690479657605102}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -20330,7 +20474,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &1072690479657605102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3363813326059137285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -20411,6 +20567,7 @@ GameObject:
   - component: {fileID: 4348709788548173791}
   - component: {fileID: 9091212384231017348}
   - component: {fileID: 8238480992651336754}
+  - component: {fileID: 7920158252267243128}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -20466,7 +20623,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &7920158252267243128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3552727401471160940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -20834,6 +21003,7 @@ GameObject:
   - component: {fileID: 758845119558637407}
   - component: {fileID: 1744641644283065547}
   - component: {fileID: 5676326845223536024}
+  - component: {fileID: 7369212652849990392}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -20889,7 +21059,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &7369212652849990392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3681321368544863445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -24031,6 +24213,7 @@ GameObject:
   - component: {fileID: 4655989010197639971}
   - component: {fileID: 1657034770309487071}
   - component: {fileID: 817684002083930087}
+  - component: {fileID: 5134301896728457059}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -24086,7 +24269,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &5134301896728457059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4640973304196618039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -26573,6 +26768,7 @@ GameObject:
   - component: {fileID: 1792156260887918339}
   - component: {fileID: 1647684976979782916}
   - component: {fileID: 6538027311358236168}
+  - component: {fileID: 732952904316429012}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -26628,7 +26824,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &732952904316429012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4891661085874105904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -27265,6 +27473,7 @@ GameObject:
   - component: {fileID: 6264031818092615937}
   - component: {fileID: 5787588249769529113}
   - component: {fileID: 4722055141355190912}
+  - component: {fileID: 1615834795150435110}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -27320,7 +27529,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &1615834795150435110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5107287271184474483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -27806,6 +28027,7 @@ GameObject:
   - component: {fileID: 3442541747033734393}
   - component: {fileID: 686466584192297893}
   - component: {fileID: 4162909130483056185}
+  - component: {fileID: 4168361879961265852}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -27861,7 +28083,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &4168361879961265852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5219860904253220104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -27876,6 +28110,7 @@ GameObject:
   - component: {fileID: 669689832238228237}
   - component: {fileID: 7527111032011591715}
   - component: {fileID: 4564551473462091724}
+  - component: {fileID: 6753303449710665678}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -27931,7 +28166,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &6753303449710665678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5220256822826626314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -28064,6 +28311,7 @@ GameObject:
   - component: {fileID: 4241213637199025385}
   - component: {fileID: 6629845042098627720}
   - component: {fileID: 2204868129604182471}
+  - component: {fileID: 3170378717345572461}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -28119,7 +28367,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &3170378717345572461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5269781208785282300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -28370,6 +28630,7 @@ GameObject:
   - component: {fileID: 6596737982079852667}
   - component: {fileID: 4754668958171177892}
   - component: {fileID: 6735696962235568863}
+  - component: {fileID: 1050157392089243052}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -28425,7 +28686,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &1050157392089243052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5372016968440994147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -28440,6 +28713,7 @@ GameObject:
   - component: {fileID: 6578315097686937688}
   - component: {fileID: 5321537551108484905}
   - component: {fileID: 5587725283603768755}
+  - component: {fileID: 743411293293999688}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -28495,7 +28769,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &743411293293999688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5389444419611384206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -30459,6 +30745,7 @@ GameObject:
   - component: {fileID: 4845529990641508782}
   - component: {fileID: 4368392066719445041}
   - component: {fileID: 1533321683625692645}
+  - component: {fileID: 2834085179017601622}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -30514,7 +30801,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &2834085179017601622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5868117324936653681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -30882,6 +31181,7 @@ GameObject:
   - component: {fileID: 7174076044674086367}
   - component: {fileID: 7167443504982160713}
   - component: {fileID: 482484267766985510}
+  - component: {fileID: 6897923891683155268}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -30937,7 +31237,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &6897923891683155268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5892123805495345243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -31527,6 +31839,7 @@ GameObject:
   - component: {fileID: 994301966885572738}
   - component: {fileID: 2818234267743492795}
   - component: {fileID: 7552409824063224547}
+  - component: {fileID: 3122764414807428824}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -31582,7 +31895,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &3122764414807428824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5963688409103779207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -32487,6 +32812,7 @@ GameObject:
   - component: {fileID: 7345588177420661563}
   - component: {fileID: 5957742776762399819}
   - component: {fileID: 1381852141112771590}
+  - component: {fileID: 2584559466489347592}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -32542,7 +32868,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &2584559466489347592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6186610673940934572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -33381,6 +33719,7 @@ GameObject:
   - component: {fileID: 1755211380061877389}
   - component: {fileID: 8931464683537881362}
   - component: {fileID: 5494043538955369899}
+  - component: {fileID: 4664872057289447594}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -33436,7 +33775,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &4664872057289447594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6313572528315865777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -33451,6 +33802,7 @@ GameObject:
   - component: {fileID: 3980860519841930442}
   - component: {fileID: 2953224617746616817}
   - component: {fileID: 6564721690207825021}
+  - component: {fileID: 1425600989113311632}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -33506,7 +33858,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &1425600989113311632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6497140433630790280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -33874,6 +34238,7 @@ GameObject:
   - component: {fileID: 5692783062693314934}
   - component: {fileID: 5268879142678867403}
   - component: {fileID: 6214856080447314093}
+  - component: {fileID: 5289184171514982223}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -33929,7 +34294,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &5289184171514982223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6509675299327161145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -34768,6 +35145,7 @@ GameObject:
   - component: {fileID: 2795817867603283831}
   - component: {fileID: 8934611379047041036}
   - component: {fileID: 7899552032035120844}
+  - component: {fileID: 3552349839815145222}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -34823,7 +35201,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &3552349839815145222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6562012591093013159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -36605,6 +36995,7 @@ GameObject:
   - component: {fileID: 86802157708077647}
   - component: {fileID: 3284159074863462506}
   - component: {fileID: 7032976244068161487}
+  - component: {fileID: 7176252777767765583}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -36660,7 +37051,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &7176252777767765583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7011652004265754990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -38239,6 +38642,7 @@ GameObject:
   - component: {fileID: 3070348734395381273}
   - component: {fileID: 3632160528889230230}
   - component: {fileID: 106512284272808531}
+  - component: {fileID: 7640034057323151545}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -38294,7 +38698,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &7640034057323151545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7244196752167717259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -39723,6 +40139,7 @@ GameObject:
   - component: {fileID: 2032758285176758258}
   - component: {fileID: 2289987886613786823}
   - component: {fileID: 3134355546414871441}
+  - component: {fileID: 5331856834058099321}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -39778,7 +40195,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &5331856834058099321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7652590500309436128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -41121,6 +41550,7 @@ GameObject:
   - component: {fileID: 8446953029703024584}
   - component: {fileID: 3647159942125769359}
   - component: {fileID: 7793622694582375742}
+  - component: {fileID: 4347793653059970990}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -41176,7 +41606,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &4347793653059970990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7809778898290945638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -41427,6 +41869,7 @@ GameObject:
   - component: {fileID: 4152300984241103093}
   - component: {fileID: 8216665897088894470}
   - component: {fileID: 4947252460122181134}
+  - component: {fileID: 2969780947417670418}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -41482,7 +41925,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &2969780947417670418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7870645547509974410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -41615,6 +42070,7 @@ GameObject:
   - component: {fileID: 353562700989472500}
   - component: {fileID: 5459896054805155739}
   - component: {fileID: 9061463422901141515}
+  - component: {fileID: 6490314725859739148}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -41670,7 +42126,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &6490314725859739148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7913692748776102991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -44663,6 +45131,7 @@ GameObject:
   - component: {fileID: 7691872761224395530}
   - component: {fileID: 699064303022239445}
   - component: {fileID: 3659812846029502748}
+  - component: {fileID: 5841030776214122610}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -44718,7 +45187,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &5841030776214122610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8472186675349288345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
@@ -44733,6 +45214,7 @@ GameObject:
   - component: {fileID: 1840895961080686568}
   - component: {fileID: 6623831361078250184}
   - component: {fileID: 4158356446296655582}
+  - component: {fileID: 3045165056393186993}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -44788,7 +45270,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
+--- !u!114 &3045165056393186993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8481761922255353151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}

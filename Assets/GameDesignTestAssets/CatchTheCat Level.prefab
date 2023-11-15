@@ -818,6 +818,7 @@ GameObject:
   - component: {fileID: 2069883591932499899}
   - component: {fileID: 8415510753315553551}
   - component: {fileID: 1086324120452615774}
+  - component: {fileID: 8792150811904273825}
   m_Layer: 0
   m_Name: DeathCollider (6)
   m_TagString: Untagged
@@ -873,8 +874,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
-  detectionType: 1
+--- !u!114 &8792150811904273825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689843116237453351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
+  detectionType: 0
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &2077334159845696866
@@ -890,6 +903,7 @@ GameObject:
   - component: {fileID: 5395881898606158308}
   - component: {fileID: 2398905534734145195}
   - component: {fileID: 7861930730882204254}
+  - component: {fileID: 7901727444748483518}
   m_Layer: 0
   m_Name: River
   m_TagString: Untagged
@@ -995,8 +1009,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
-  detectionType: -1
+--- !u!114 &7901727444748483518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077334159845696866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
+  detectionType: 0
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &2200153658856593216
@@ -1246,6 +1272,7 @@ GameObject:
   - component: {fileID: 6036138087839341238}
   - component: {fileID: 7500833434962754311}
   - component: {fileID: 7835484460185159569}
+  - component: {fileID: 5335014605699442629}
   m_Layer: 0
   m_Name: KillerCollider
   m_TagString: Untagged
@@ -1301,8 +1328,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
-  detectionType: 1
+--- !u!114 &5335014605699442629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2300052040073865055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
+  detectionType: 0
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &2575820973559123384
@@ -1316,6 +1355,7 @@ GameObject:
   - component: {fileID: 8872831223384292014}
   - component: {fileID: 2236387462498710296}
   - component: {fileID: 3752657303792374793}
+  - component: {fileID: 1976069434322889332}
   m_Layer: 0
   m_Name: DeathCollider (5)
   m_TagString: Untagged
@@ -1371,8 +1411,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
-  detectionType: 1
+--- !u!114 &1976069434322889332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2575820973559123384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
+  detectionType: 0
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &2582124361483017448
@@ -2320,6 +2372,7 @@ GameObject:
   - component: {fileID: 2655007207362951301}
   - component: {fileID: 9017696623577335945}
   - component: {fileID: 4862086039142460871}
+  - component: {fileID: 8855291000731737773}
   m_Layer: 0
   m_Name: KillerCollider
   m_TagString: Untagged
@@ -2375,8 +2428,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
-  detectionType: 1
+--- !u!114 &8855291000731737773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5551208696629410129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
+  detectionType: 0
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &5831225553331488888
@@ -2890,6 +2955,7 @@ GameObject:
   - component: {fileID: 5995716114095957246}
   - component: {fileID: 3723254716139073272}
   - component: {fileID: 8073435475493970337}
+  - component: {fileID: 6730428703709198525}
   m_Layer: 0
   m_Name: DeathCollider (4)
   m_TagString: Untagged
@@ -2945,8 +3011,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
-  detectionType: 1
+--- !u!114 &6730428703709198525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6978926611607902202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
+  detectionType: 0
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &7101010623054198652
@@ -5323,6 +5401,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5240589525822802765, guid: d6910666ac1eb47478f882bde9e282c2,
         type: 3}
+      propertyPath: <EquilibriumPosition>k__BackingField.y
+      value: 46.190002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5240589525822802765, guid: d6910666ac1eb47478f882bde9e282c2,
+        type: 3}
       propertyPath: <EquilibriumPosition>k__BackingField.z
       value: -173.97005
       objectReference: {fileID: 0}
@@ -6645,6 +6728,26 @@ PrefabInstance:
       propertyPath: <EquilibriumPosition>k__BackingField.z
       value: -192.28003
       objectReference: {fileID: 0}
+    - target: {fileID: 4532700657463669411, guid: f664b6cc01d40c344bb9fb70d6ae3489,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532700657463669411, guid: f664b6cc01d40c344bb9fb70d6ae3489,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532700657463669411, guid: f664b6cc01d40c344bb9fb70d6ae3489,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532700657463669411, guid: f664b6cc01d40c344bb9fb70d6ae3489,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 8267036803974931606, guid: f664b6cc01d40c344bb9fb70d6ae3489,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7315,6 +7418,11 @@ PrefabInstance:
         type: 3}
       propertyPath: <EquilibriumPosition>k__BackingField.x
       value: -155.14003
+      objectReference: {fileID: 0}
+    - target: {fileID: 5240589525822802765, guid: d6910666ac1eb47478f882bde9e282c2,
+        type: 3}
+      propertyPath: <EquilibriumPosition>k__BackingField.y
+      value: 46.190002
       objectReference: {fileID: 0}
     - target: {fileID: 5240589525822802765, guid: d6910666ac1eb47478f882bde9e282c2,
         type: 3}
@@ -9077,6 +9185,26 @@ PrefabInstance:
         type: 3}
       propertyPath: <EquilibriumPosition>k__BackingField.z
       value: -192.28004
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532700657463669411, guid: f664b6cc01d40c344bb9fb70d6ae3489,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532700657463669411, guid: f664b6cc01d40c344bb9fb70d6ae3489,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532700657463669411, guid: f664b6cc01d40c344bb9fb70d6ae3489,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532700657463669411, guid: f664b6cc01d40c344bb9fb70d6ae3489,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 8267036803974931606, guid: f664b6cc01d40c344bb9fb70d6ae3489,
         type: 3}
