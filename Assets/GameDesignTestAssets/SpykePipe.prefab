@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 720535502694684560}
+  - component: {fileID: 2370536346144769244}
   m_Layer: 0
   m_Name: SpykePipe
   m_TagString: Untagged
@@ -32,6 +33,37 @@ Transform:
   - {fileID: 4552207228407169275}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &2370536346144769244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8224460362884406090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 978871863
+      Data2: 1271540730
+      Data3: 944378503
+      Data4: 243650721
+    Path: event:/Obstacles/Stone Wheel Loop
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 15
+  OverrideMaxDistance: 40
 --- !u!1001 &4081960173077374736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -151,6 +183,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 4354488362008114227}
+    - targetCorrespondingSourceObject: {fileID: 548049320824285344, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6195594473089142930}
     - targetCorrespondingSourceObject: {fileID: -3879794295211515740, guid: 55f8688a76f4ea245a6194a9a6532a5d,
         type: 3}
       insertIndex: -1
@@ -159,6 +195,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3790823879772072530}
+    - targetCorrespondingSourceObject: {fileID: -3879794295211515740, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3303477113857323083}
     - targetCorrespondingSourceObject: {fileID: -5614305829758465569, guid: 55f8688a76f4ea245a6194a9a6532a5d,
         type: 3}
       insertIndex: -1
@@ -167,6 +207,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2972683852241944641}
+    - targetCorrespondingSourceObject: {fileID: -5614305829758465569, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4368568361921176504}
     - targetCorrespondingSourceObject: {fileID: 4657462307216879902, guid: 55f8688a76f4ea245a6194a9a6532a5d,
         type: 3}
       insertIndex: -1
@@ -175,6 +219,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6604689767507644420}
+    - targetCorrespondingSourceObject: {fileID: 4657462307216879902, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4134891544830816016}
     - targetCorrespondingSourceObject: {fileID: -7259698460183108682, guid: 55f8688a76f4ea245a6194a9a6532a5d,
         type: 3}
       insertIndex: -1
@@ -183,6 +231,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1320239568432651559}
+    - targetCorrespondingSourceObject: {fileID: -7259698460183108682, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4322913695568165367}
     - targetCorrespondingSourceObject: {fileID: -4941909127444451136, guid: 55f8688a76f4ea245a6194a9a6532a5d,
         type: 3}
       insertIndex: -1
@@ -191,6 +243,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 7057900371253444020}
+    - targetCorrespondingSourceObject: {fileID: -4941909127444451136, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5196806705657020242}
   m_SourcePrefab: {fileID: 100100000, guid: 55f8688a76f4ea245a6194a9a6532a5d, type: 3}
 --- !u!1 &273812422428989392 stripped
 GameObject:
@@ -232,8 +288,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
-  detectionType: 1
+--- !u!114 &5196806705657020242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273812422428989392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
+  detectionType: 0
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &771227905081880271 stripped
@@ -276,8 +344,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
-  detectionType: 1
+--- !u!114 &4368568361921176504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771227905081880271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
+  detectionType: 0
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &2586851315175146662 stripped
@@ -320,8 +400,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
-  detectionType: 1
+--- !u!114 &4322913695568165367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2586851315175146662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
+  detectionType: 0
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!4 &4552207228407169275 stripped
@@ -370,8 +462,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
-  detectionType: 1
+--- !u!114 &6195594473089142930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4556805898738175920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
+  detectionType: 0
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &8254599503341225908 stripped
@@ -414,8 +518,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
-  detectionType: 1
+--- !u!114 &3303477113857323083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8254599503341225908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
+  detectionType: 0
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &8620400380714679384 stripped
@@ -486,7 +602,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
-  detectionType: 1
+--- !u!114 &4134891544830816016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8648222369489311246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
+  detectionType: 0
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
