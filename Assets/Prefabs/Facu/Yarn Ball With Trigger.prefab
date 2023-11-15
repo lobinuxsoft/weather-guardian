@@ -204,6 +204,37 @@ MonoBehaviour:
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!1 &473968698192064268
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2756492209422000421}
+  m_Layer: 0
+  m_Name: ---Triggers---
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2756492209422000421
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473968698192064268}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 20.996258, y: 11.525303, z: 46.293747}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2684710815028275974}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5304376714405420138
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,7 +247,7 @@ GameObject:
   - component: {fileID: 1316752179061087055}
   - component: {fileID: 2020608682970196891}
   m_Layer: 0
-  m_Name: Trigger Box Activator
+  m_Name: Activator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -285,7 +316,7 @@ GameObject:
   - component: {fileID: 1012630938190092046}
   - component: {fileID: 1404295093951246590}
   m_Layer: 0
-  m_Name: Trigger Box Deactivator
+  m_Name: Deactivator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -374,6 +405,7 @@ Transform:
   m_Children:
   - {fileID: 4770428114843386186}
   - {fileID: 367224172195880992}
+  - {fileID: 2756492209422000421}
   - {fileID: 978023977697946363}
   - {fileID: 4961916565326854774}
   m_Father: {fileID: 0}
@@ -475,7 +507,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 743aeb7160c9d4d49a255d9f37ec1028,
         type: 3}
       propertyPath: m_Name
-      value: Stone Ramp
+      value: Ramp
       objectReference: {fileID: 0}
     - target: {fileID: 1366278540751589237, guid: 743aeb7160c9d4d49a255d9f37ec1028,
         type: 3}
