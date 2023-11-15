@@ -8251,8 +8251,83 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 6d37f777c3fbda34fa9ca2c072674768, type: 2}
     - target: {fileID: 4234107474459683404, guid: 742dc49528da61640836f4d977ef57bb,
         type: 3}
+      propertyPath: endMovementSfx.Path
+      value: event:/Obstacles/Ascensor Piedra_End
+      objectReference: {fileID: 0}
+    - target: {fileID: 4234107474459683404, guid: 742dc49528da61640836f4d977ef57bb,
+        type: 3}
+      propertyPath: loopMovementSfx.Path
+      value: event:/Obstacles/Ascensor Piedra_Loop
+      objectReference: {fileID: 0}
+    - target: {fileID: 4234107474459683404, guid: 742dc49528da61640836f4d977ef57bb,
+        type: 3}
       propertyPath: maxSeparationDistance
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4234107474459683404, guid: 742dc49528da61640836f4d977ef57bb,
+        type: 3}
+      propertyPath: startMovementSfx.Path
+      value: event:/Obstacles/Ascensor Piedra_Start
+      objectReference: {fileID: 0}
+    - target: {fileID: 4234107474459683404, guid: 742dc49528da61640836f4d977ef57bb,
+        type: 3}
+      propertyPath: endMovementSfx.Guid.Data1
+      value: -977229823
+      objectReference: {fileID: 0}
+    - target: {fileID: 4234107474459683404, guid: 742dc49528da61640836f4d977ef57bb,
+        type: 3}
+      propertyPath: endMovementSfx.Guid.Data2
+      value: 1153188885
+      objectReference: {fileID: 0}
+    - target: {fileID: 4234107474459683404, guid: 742dc49528da61640836f4d977ef57bb,
+        type: 3}
+      propertyPath: endMovementSfx.Guid.Data3
+      value: -397051507
+      objectReference: {fileID: 0}
+    - target: {fileID: 4234107474459683404, guid: 742dc49528da61640836f4d977ef57bb,
+        type: 3}
+      propertyPath: endMovementSfx.Guid.Data4
+      value: 61465433
+      objectReference: {fileID: 0}
+    - target: {fileID: 4234107474459683404, guid: 742dc49528da61640836f4d977ef57bb,
+        type: 3}
+      propertyPath: loopMovementSfx.Guid.Data1
+      value: 384231546
+      objectReference: {fileID: 0}
+    - target: {fileID: 4234107474459683404, guid: 742dc49528da61640836f4d977ef57bb,
+        type: 3}
+      propertyPath: loopMovementSfx.Guid.Data2
+      value: 1112560765
+      objectReference: {fileID: 0}
+    - target: {fileID: 4234107474459683404, guid: 742dc49528da61640836f4d977ef57bb,
+        type: 3}
+      propertyPath: loopMovementSfx.Guid.Data3
+      value: 1523320229
+      objectReference: {fileID: 0}
+    - target: {fileID: 4234107474459683404, guid: 742dc49528da61640836f4d977ef57bb,
+        type: 3}
+      propertyPath: loopMovementSfx.Guid.Data4
+      value: -139969492
+      objectReference: {fileID: 0}
+    - target: {fileID: 4234107474459683404, guid: 742dc49528da61640836f4d977ef57bb,
+        type: 3}
+      propertyPath: startMovementSfx.Guid.Data1
+      value: -1319506060
+      objectReference: {fileID: 0}
+    - target: {fileID: 4234107474459683404, guid: 742dc49528da61640836f4d977ef57bb,
+        type: 3}
+      propertyPath: startMovementSfx.Guid.Data2
+      value: 1261371534
+      objectReference: {fileID: 0}
+    - target: {fileID: 4234107474459683404, guid: 742dc49528da61640836f4d977ef57bb,
+        type: 3}
+      propertyPath: startMovementSfx.Guid.Data3
+      value: -1926004579
+      objectReference: {fileID: 0}
+    - target: {fileID: 4234107474459683404, guid: 742dc49528da61640836f4d977ef57bb,
+        type: 3}
+      propertyPath: startMovementSfx.Guid.Data4
+      value: -1982789279
       objectReference: {fileID: 0}
     - target: {fileID: 5215432279995763899, guid: 742dc49528da61640836f4d977ef57bb,
         type: 3}
@@ -8648,6 +8723,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Splines.Array.data[0].m_MetaData.Array.data[1].m_DistanceToInterpolation.Array.data[29].Distance
       value: 24.350933
+      objectReference: {fileID: 0}
+    - target: {fileID: 9212071208589982889, guid: 742dc49528da61640836f4d977ef57bb,
+        type: 3}
+      propertyPath: speed
+      value: 0.02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
