@@ -30,6 +30,10 @@ public class SplineFollowPath : MonoBehaviour
         {
             moving = value;
         }
+        get 
+        {
+            return moving;
+        }
     }
 
     public bool Rotate
