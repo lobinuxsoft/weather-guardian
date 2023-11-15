@@ -7275,7 +7275,7 @@ GameObject:
   - component: {fileID: 8841142674433623848}
   m_Layer: 0
   m_Name: BallPath
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8061,6 +8061,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: MESH_Stone_2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1d0f1697bed3f7d479852e341bd1f909,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943053341529603506, guid: 1d0f1697bed3f7d479852e341bd1f909,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 7848105449495988282, guid: 1d0f1697bed3f7d479852e341bd1f909,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -8820,6 +8830,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: MESH_Stone_2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1d0f1697bed3f7d479852e341bd1f909,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943053341529603506, guid: 1d0f1697bed3f7d479852e341bd1f909,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: 7848105449495988282, guid: 1d0f1697bed3f7d479852e341bd1f909,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9480,10 +9500,15 @@ PrefabInstance:
       propertyPath: ballAceleration
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 7422777309934132701, guid: 9515c5733432d204f9a7a008d0a09d1a,
+        type: 3}
+      propertyPath: rollingBallSfx.Path
+      value: event:/Obstacles/Yarn Ball Rolling
+      objectReference: {fileID: 0}
     - target: {fileID: 7461987961391397698, guid: 9515c5733432d204f9a7a008d0a09d1a,
         type: 3}
       propertyPath: timeObjectWillBeActive
-      value: 25
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8255222327726386613, guid: 9515c5733432d204f9a7a008d0a09d1a,
         type: 3}
