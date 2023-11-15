@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{63febcd1-5d74-4754-a89a-14caa832e072}">
 		<property name="name">
-			<value>Plataforma Arena_Idle</value>
+			<value>Sand Plataform Idle</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -56,7 +56,14 @@
 			<destination>{752caf63-6b19-4381-8a4e-e1b4df20f568}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{01c52b7e-d41c-44a6-82df-989b8ff21873}" />
+	<object class="EventAutomatableProperties" id="{01c52b7e-d41c-44a6-82df-989b8ff21873}">
+		<property name="minimumDistance">
+			<value>15</value>
+		</property>
+		<property name="maximumDistance">
+			<value>30</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{4ebee79f-c590-4089-8754-36e8c0be2be4}" />
 	<object class="GroupTrack" id="{1b960219-ad5e-4645-9d5c-60d0302aafaf}">
 		<relationship name="modules">
