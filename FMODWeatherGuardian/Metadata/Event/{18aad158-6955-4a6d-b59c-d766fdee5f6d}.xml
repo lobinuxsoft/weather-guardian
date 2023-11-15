@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{18aad158-6955-4a6d-b59c-d766fdee5f6d}">
 		<property name="name">
-			<value>Bola de lana_Rolling</value>
+			<value>Yarn Ball Rolling</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -56,7 +56,14 @@
 			<destination>{752caf63-6b19-4381-8a4e-e1b4df20f568}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{c9d99334-fadb-49dc-9461-6890fd4de2c2}" />
+	<object class="EventAutomatableProperties" id="{c9d99334-fadb-49dc-9461-6890fd4de2c2}">
+		<property name="minimumDistance">
+			<value>150</value>
+		</property>
+		<property name="maximumDistance">
+			<value>200</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{f48b2bb4-fdf9-478e-9a26-90d0279314a4}" />
 	<object class="GroupTrack" id="{d68c4708-086e-4238-843e-11e6c967238f}">
 		<relationship name="modules">
@@ -100,6 +107,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{9b4ab727-6b9a-48f3-88ba-caf83e4a6b96}">
+		<property name="volume">
+			<value>1.5</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
