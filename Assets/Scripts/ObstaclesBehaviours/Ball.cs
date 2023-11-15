@@ -1,6 +1,5 @@
-using FMODUnity;
 using System;
-using System.Drawing.Text;
+using System.IO;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -13,11 +12,15 @@ public class Ball : ObstacleBehaviour
 
     [SerializeField] [Range(0.01f, 30.0f)] private float ballAceleration;
 
+    [SerializeField] private FMODUnity.EventReference stopYarnBallRollingEvent;
+
+    [SerializeField] private FMODUnity.EventReference rollingYarnBallSfx;
+
+    [SerializeField] private FMODUnity.EventReference yarnBallImpactSfx;
+
     private Rigidbody myRigidBody;
 
-    private Vector3 ballInitialPosition;
-
-    private Vector3 platformForward;
+    private Vector3 ballInitialPosition;    
 
     private Quaternion ballInitialRotation;    
 
@@ -66,6 +69,9 @@ public class Ball : ObstacleBehaviour
             MyMeshRenderer.enabled = true;
         }
 
+        if (!rollingYarnBallSfx.IsNull)
+            FMODUnity.RuntimeManager.PlayOneShotAttached(rollingYarnBallSfx, gameObject);
+
         ResetTransform();               
     }
 
@@ -79,10 +85,16 @@ public class Ball : ObstacleBehaviour
 
             ResetVisibility();
         }
+
+        if (!stopYarnBallRollingEvent.IsNull)
+            FMODUnity.RuntimeManager.PlayOneShotAttached(stopYarnBallRollingEvent, gameObject);
     }
 
     public override void CollisionBehaviour()
     {
+        if (!yarnBallImpactSfx.IsNull)
+            FMODUnity.RuntimeManager.PlayOneShot(yarnBallImpactSfx);
+
         FinishBehaviour();
     }
 

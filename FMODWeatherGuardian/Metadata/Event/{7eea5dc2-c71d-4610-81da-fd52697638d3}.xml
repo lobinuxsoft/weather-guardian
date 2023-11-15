@@ -2,10 +2,10 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{7eea5dc2-c71d-4610-81da-fd52697638d3}">
 		<property name="name">
-			<value>Bola de lana_Impact</value>
+			<value>Yarn Ball Impact</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{cce1d544-3ce3-4ee2-99b9-0be84d0eae36}</destination>
@@ -56,7 +56,14 @@
 			<destination>{752caf63-6b19-4381-8a4e-e1b4df20f568}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{f89a6241-53ab-4aae-b4f1-484b32928a15}" />
+	<object class="EventAutomatableProperties" id="{f89a6241-53ab-4aae-b4f1-484b32928a15}">
+		<property name="minimumDistance">
+			<value>50</value>
+		</property>
+		<property name="maximumDistance">
+			<value>150</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{739bc486-8f1f-4207-866c-db6d5e6f10de}" />
 	<object class="GroupTrack" id="{d2d0381e-efdd-49e1-ae5c-bc4b1523d55e}">
 		<relationship name="modules">
@@ -105,7 +112,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{29425d14-0792-49c9-814d-d4026c4571a1}">
 		<property name="volume">
-			<value>1</value>
+			<value>1.5</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
@@ -123,7 +130,6 @@
 	<object class="MixerBusEffectChain" id="{0fb86af2-d622-48da-8d4d-2adec0acd501}">
 		<relationship name="effects">
 			<destination>{8ce76ff7-f9c5-4364-ade4-bf156e0b8f21}</destination>
-			<destination>{3651f717-1d81-4870-96c2-bf0ffae01996}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{96d34622-9c7f-4584-9fcb-42d765f5e21d}" />
@@ -151,6 +157,5 @@
 	</object>
 	<object class="MixerBusPanner" id="{f0c8a332-96db-4016-95f5-6156c58cbf4a}" />
 	<object class="MixerBusFader" id="{8ce76ff7-f9c5-4364-ade4-bf156e0b8f21}" />
-	<object class="SpatialiserEffect" id="{3651f717-1d81-4870-96c2-bf0ffae01996}" />
 	<object class="MixerBusFader" id="{1f0be901-c430-4fcf-9ba3-a59c8ff87d3b}" />
 </objects>

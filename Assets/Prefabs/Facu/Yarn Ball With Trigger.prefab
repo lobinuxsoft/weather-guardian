@@ -163,9 +163,31 @@ MonoBehaviour:
   startsVisible: 1
   tagsForCollisionDetection:
   - Player
+  - Stone
   ramp: {fileID: 1032297232035773082}
   respawnObject: 1
   ballAceleration: 10
+  stopYarnBallRollingEvent:
+    Guid:
+      Data1: -1356542156
+      Data2: 1236758810
+      Data3: 8453821
+      Data4: 1913767712
+    Path: event:/Obstacles/Yarn Ball Stop Rolling
+  rollingYarnBallSfx:
+    Guid:
+      Data1: 413847896
+      Data2: 1248684373
+      Data3: 1725406389
+      Data4: 1835003645
+    Path: event:/Obstacles/Yarn Ball Rolling
+  yarnBallImpactSfx:
+    Guid:
+      Data1: 2129288642
+      Data2: 1175504669
+      Data3: 1392368257
+      Data4: -751274391
+    Path: event:/Obstacles/Yarn Ball Impact
 --- !u!114 &5552511037740519269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,6 +466,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -319801141057732720, guid: 743aeb7160c9d4d49a255d9f37ec1028,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ramp
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 743aeb7160c9d4d49a255d9f37ec1028,
         type: 3}

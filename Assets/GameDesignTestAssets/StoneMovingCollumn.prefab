@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f9da017541ee44aa825ceb29e73f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <LocalEquilibriumPosition>k__BackingField: {x: 0, y: 0, z: 0}
+  <EquilibriumPosition>k__BackingField: {x: -140.54007, y: 2.71, z: -190.14009}
   <ForceScale>k__BackingField: {x: 1, y: 1, z: 1}
   <Stiffness>k__BackingField: 200
   <Damper>k__BackingField: 20
@@ -238,6 +238,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 568fde61313467b4fa8110a3afbcf985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startMovementSfx:
+    Guid:
+      Data1: -1319506060
+      Data2: 1261371534
+      Data3: -1926004579
+      Data4: -1982789279
+    Path: event:/Obstacles/Ascensor Piedra_Start
+  loopMovementSfx:
+    Guid:
+      Data1: 384231546
+      Data2: 1112560765
+      Data3: 1523320229
+      Data4: -139969492
+    Path: event:/Obstacles/Ascensor Piedra_Loop
+  endMovementSfx:
+    Guid:
+      Data1: -977229823
+      Data2: 1153188885
+      Data3: -397051507
+      Data4: 61465433
+    Path: event:/Obstacles/Ascensor Piedra_End
   maxSeparationDistance: 50
 --- !u!1 &5409318295315078139
 GameObject:

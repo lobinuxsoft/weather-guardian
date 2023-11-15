@@ -7,7 +7,13 @@ namespace WeatherGuardian.PlatformObjects
     [RequireComponent(typeof(SplineFollowPath))]
     public class MovingPlatform : MonoBehaviour, IMoveStrategy
     {
-        [SerializeField][Range(10.0f, 200.0f)] private float maxSeparationDistance = 20.0f;
+        [SerializeField] private FMODUnity.EventReference startMovementSfx;
+
+        [SerializeField] private FMODUnity.EventReference loopMovementSfx;
+
+        [SerializeField] private FMODUnity.EventReference endMovementSfx;
+
+        [SerializeField][Range(10.0f, 200.0f)] private float maxSeparationDistance = 20.0f;        
 
         private SplineFollowPath path;
 
@@ -60,13 +66,41 @@ namespace WeatherGuardian.PlatformObjects
                     playerTransform = collision.transform;
                 }
 
+                //Try to prevent cat bouncing with platform
+                Rigidbody platformRigidBody = collision.gameObject.GetComponent<Rigidbody>();
+
+                Rigidbody catRigidBody = gameObject.GetComponent<Rigidbody>();
+
+                platformRigidBody.velocity = Vector3.zero;
+
+                catRigidBody.velocity = Vector3.zero;
+
+                CallStartMovingPlatformSfx();
+
                 path.Moving = true;
             }
         }
 
         private void StopMoving()
         {
+            CallStopMovingPlatformSfx();
+
             path.Moving = false;
+        }
+
+        private void CallStartMovingPlatformSfx() 
+        {           
+            if (!startMovementSfx.IsNull && !path.Moving)
+                FMODUnity.RuntimeManager.PlayOneShotAttached(startMovementSfx, gameObject);
+
+            if (!startMovementSfx.IsNull && !path.Moving)
+                FMODUnity.RuntimeManager.PlayOneShotAttached(loopMovementSfx, gameObject);
+        }
+
+        private void CallStopMovingPlatformSfx() 
+        {
+            if (!endMovementSfx.IsNull)
+                FMODUnity.RuntimeManager.PlayOneShotAttached(endMovementSfx, gameObject);
         }
     }
 }

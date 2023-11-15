@@ -1,8 +1,17 @@
+using System.IO;
 using UnityEngine;
 using WeatherGuardian.Utils;
 
 public class SpikesBehaviours : MonoBehaviour
 {
+    [SerializeField] private ColliderDetector[] spikesColliders;
+
+    [SerializeField] private FMODUnity.EventReference showSpikesSfx;    
+
+    [SerializeField] private FMODUnity.EventReference hideSpikesSfx;
+
+    [SerializeField] private FMODUnity.EventReference deathSpikesSfx;
+
     [SerializeField][Range(0.01f, 10.0f)] private  float inRevealedPositionDuration = 1.0f;
 
     [SerializeField] private Vector3 revealedPosition;
@@ -15,6 +24,11 @@ public class SpikesBehaviours : MonoBehaviour
         timer = new Timer(inRevealedPositionDuration, false);
 
         timer.OnTimerEnds += HideSpikes;
+
+        for (short i = 0; i < spikesColliders.Length; i++) 
+        {
+            spikesColliders[i].onEnter += TriggerDeathSfx;
+        }
     }
 
     private void Start()
@@ -25,6 +39,11 @@ public class SpikesBehaviours : MonoBehaviour
     private void OnDestroy()
     {
         timer.OnTimerEnds -= HideSpikes;
+
+        for (short i = 0; i < spikesColliders.Length; i++)
+        {
+            spikesColliders[i].onEnter -= TriggerDeathSfx;
+        }
     }
 
     private void Update()
@@ -37,6 +56,9 @@ public class SpikesBehaviours : MonoBehaviour
         transform.localPosition = revealedPosition;
 
         timer.IsRunning = true;
+
+        if (!showSpikesSfx.IsNull)
+            FMODUnity.RuntimeManager.PlayOneShotAttached(showSpikesSfx, gameObject);
     }
 
     public void HideSpikes()
@@ -44,5 +66,14 @@ public class SpikesBehaviours : MonoBehaviour
         transform.localPosition = hidePosition;
 
         timer.IsRunning = false;
+
+        if (!hideSpikesSfx.IsNull)
+            FMODUnity.RuntimeManager.PlayOneShotAttached(hideSpikesSfx, gameObject);
+    }
+    
+    private void TriggerDeathSfx(GameObject go) 
+    {
+        if (!hideSpikesSfx.IsNull)
+            FMODUnity.RuntimeManager.PlayOneShot(deathSpikesSfx);
     }
 }
