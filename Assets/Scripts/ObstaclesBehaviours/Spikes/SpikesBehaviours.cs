@@ -4,7 +4,7 @@ using WeatherGuardian.Utils;
 
 public class SpikesBehaviours : MonoBehaviour
 {
-    [SerializeField] private KillerCollider[] spikesColliders;
+    [SerializeField] private ColliderDetector[] spikesColliders;
 
     [SerializeField] private FMODUnity.EventReference showSpikesSfx;    
 
@@ -27,7 +27,7 @@ public class SpikesBehaviours : MonoBehaviour
 
         for (short i = 0; i < spikesColliders.Length; i++) 
         {
-            spikesColliders[i].OnEnter += TriggerDeathSfx;
+            spikesColliders[i].onEnter += TriggerDeathSfx;
         }
     }
 
@@ -42,7 +42,7 @@ public class SpikesBehaviours : MonoBehaviour
 
         for (short i = 0; i < spikesColliders.Length; i++)
         {
-            spikesColliders[i].OnEnter -= TriggerDeathSfx;
+            spikesColliders[i].onEnter -= TriggerDeathSfx;
         }
     }
 
@@ -71,7 +71,7 @@ public class SpikesBehaviours : MonoBehaviour
             FMODUnity.RuntimeManager.PlayOneShotAttached(hideSpikesSfx, gameObject);
     }
     
-    private void TriggerDeathSfx() 
+    private void TriggerDeathSfx(GameObject go) 
     {
         if (!hideSpikesSfx.IsNull)
             FMODUnity.RuntimeManager.PlayOneShot(deathSpikesSfx);

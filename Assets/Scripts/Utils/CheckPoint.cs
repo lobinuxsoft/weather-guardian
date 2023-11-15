@@ -1,22 +1,22 @@
-using CryingOnion.Tools.Runtime;
 using UnityEngine;
 
 namespace WeatherGuardian.Utils
 {
-    [RequireComponent(typeof(BoxCollider))]
+    [RequireComponent(typeof(ColliderDetector))]
     public class CheckPoint : MonoBehaviour
     {
         public static Vector3? LastPos { get; private set; }
         public static Quaternion? LastRot { get; private set; }
 
-        [SerializeField] private DetectionType detectionType;
-
-        private BoxCollider trigerCollider;
+        private ColliderDetector colliderDetector;
 
         private void Awake()
         {
-            trigerCollider = GetComponent<BoxCollider>();
-            trigerCollider.isTrigger = true;
+            colliderDetector = GetComponent<ColliderDetector>();
+
+            colliderDetector.onEnter += UpdateCheckPoint;
+            colliderDetector.onStay += UpdateCheckPoint;
+            colliderDetector.onExit += UpdateCheckPoint;
 
             if (LastPos == null && LastRot == null)
             {
@@ -26,26 +26,18 @@ namespace WeatherGuardian.Utils
             }
         }
 
-        private void OnTriggerEnter(Collider other)
+        private void OnDestroy()
         {
-            if ((detectionType & DetectionType.ENTER) == 0) return;
-
-            LastPos = transform.position;
-            LastRot = transform.rotation;
+            if (colliderDetector != null)
+            {
+                colliderDetector.onEnter -= UpdateCheckPoint;
+                colliderDetector.onStay -= UpdateCheckPoint;
+                colliderDetector.onExit -= UpdateCheckPoint;
+            }
         }
 
-        private void OnTriggerStay(Collider other)
+        private void UpdateCheckPoint(GameObject go)
         {
-            if ((detectionType & DetectionType.STAY) == 0) return;
-
-            LastPos = transform.position;
-            LastRot = transform.rotation;
-        }
-
-        private void OnTriggerExit(Collider other)
-        {
-            if ((detectionType & DetectionType.EXIT) == 0) return;
-
             LastPos = transform.position;
             LastRot = transform.rotation;
         }
@@ -55,7 +47,5 @@ namespace WeatherGuardian.Utils
             go.transform.position = LastPos ?? Vector3.zero;
             go.transform.rotation = LastRot ?? Quaternion.identity;
         }
-
-        private void LateUpdate() => OhMyGizmos.Cube(transform.localToWorldMatrix, Color.green);
     }
 }

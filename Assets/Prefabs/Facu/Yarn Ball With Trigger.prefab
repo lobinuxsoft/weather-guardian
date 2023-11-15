@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 41339046168038603}
   - component: {fileID: 8601380016035105990}
   - component: {fileID: 7422777309934132701}
+  - component: {fileID: 5552511037740519269}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -147,10 +148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagToCollide: Player
-  detectionType: 1
-  triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &7422777309934132701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +188,22 @@ MonoBehaviour:
       Data3: 1392368257
       Data4: -751274391
     Path: event:/Obstacles/Yarn Ball Impact
+--- !u!114 &5552511037740519269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362326716991182323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
+  detectionType: 1
+  triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &5304376714405420138
 GameObject:
   m_ObjectHideFlags: 0

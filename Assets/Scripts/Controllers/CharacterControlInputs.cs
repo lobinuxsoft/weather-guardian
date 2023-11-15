@@ -16,7 +16,7 @@ namespace Game.InputsController
         [SerializeField] InputActionReference moveAction;
         [SerializeField] InputActionReference jumpAction;
         [SerializeField] InputActionReference umbrellaAction;
-        [SerializeField] InputActionReference stompAction;
+        //[SerializeField] InputActionReference stompAction;
         [SerializeField] InputActionReference dashAction;
 
         [SerializeField] Animator animator;
@@ -29,7 +29,7 @@ namespace Game.InputsController
         private AirJumpBehaviour doubleJumpBehaviour;
         private AirBehaviour airBehaviour;
         private AirUmbrellaBehaviour airUmbrellaBehaviour;
-        private StompBehaviour stompBehaviour;
+        //private StompBehaviour stompBehaviour;
         private DashBehaviour dashBehaviour;
 
         private void Awake()
@@ -44,13 +44,13 @@ namespace Game.InputsController
 
             jumpAction.action.started += JumpAction;
             umbrellaAction.action.started += UmbrellaAction;
-            stompAction.action.started += StompAction;
+            //stompAction.action.started += StompAction;
             dashAction.action.started += DashAction;
 
             moveAction.action.Enable();
             jumpAction.action.Enable();
             umbrellaAction.action.Enable();
-            stompAction.action.Enable();
+            //stompAction.action.Enable();
             dashAction.action.Enable();
         }
 
@@ -66,7 +66,7 @@ namespace Game.InputsController
             doubleJumpBehaviour = animator.GetBehaviour<AirJumpBehaviour>();
             airBehaviour = animator.GetBehaviour<AirBehaviour>();
             airUmbrellaBehaviour = animator.GetBehaviour<AirUmbrellaBehaviour>();
-            stompBehaviour = animator.GetBehaviour<StompBehaviour>();
+            //stompBehaviour = animator.GetBehaviour<StompBehaviour>();
             dashBehaviour = animator.GetBehaviour<DashBehaviour>();
         }
 
@@ -88,14 +88,14 @@ namespace Game.InputsController
 
             jumpAction.action.started -= JumpAction;
             umbrellaAction.action.started -= UmbrellaAction;
-            stompAction.action.started -= StompAction;
+            //stompAction.action.started -= StompAction;
             dashAction.action.started -= DashAction;
 
 
             moveAction.action.Disable();
             jumpAction.action.Disable();
             umbrellaAction.action.Disable();
-            stompAction.action.Disable();
+            //stompAction.action.Disable();
             dashAction.action.Enable();
         }
 
@@ -138,7 +138,7 @@ namespace Game.InputsController
 
         private void UmbrellaAction(InputAction.CallbackContext context) => airUmbrellaBehaviour.UseUmbrella(animator);
 
-        private void StompAction(InputAction.CallbackContext context) => stompBehaviour.Stomp(animator);
+        //private void StompAction(InputAction.CallbackContext context) => stompBehaviour.Stomp(animator);
 
         private void DashAction(InputAction.CallbackContext context) => dashBehaviour.Dash(animator);
     }
