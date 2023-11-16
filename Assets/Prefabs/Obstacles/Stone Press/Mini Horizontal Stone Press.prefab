@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9011216896613529576}
   m_Layer: 0
   m_Name: Mesh
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 1224909808792187965}
   - component: {fileID: 8724754590456875036}
   - component: {fileID: 3090032099504330502}
+  - component: {fileID: 1305632696216869342}
   m_Layer: 0
   m_Name: DeathCollider
   m_TagString: Untagged
@@ -189,6 +190,42 @@ MonoBehaviour:
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &1305632696216869342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3766470706748637329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8987c4dc60c40fa4bb00cbe9c468d574, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontalObstacle: {fileID: 1685982600553211644}
+  stoneHitSfx:
+    Guid:
+      Data1: 961258033
+      Data2: 1318372584
+      Data3: 713880750
+      Data4: -1458720679
+    Path: event:/Obstacles/Stone Pillar Impact
+  nimbusHitSfx:
+    Guid:
+      Data1: 2003990804
+      Data2: 1189803169
+      Data3: -623820892
+      Data4: 1658981214
+    Path: event:/Obstacles/Stone Pillar Player Hit
+  stoneLoopSfx:
+    Guid:
+      Data1: -674880305
+      Data2: 1250311082
+      Data3: 1772830890
+      Data4: -109977640
+    Path: event:/Obstacles/Stone Pillar Move
+  nimbusTag: Player
+  stoneTag: Stone
 --- !u!1 &7350819528376485246
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,7 +596,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 124
   m_CollisionDetection: 2
 --- !u!114 &5240589525822802765
 MonoBehaviour:
@@ -573,7 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f9da017541ee44aa825ceb29e73f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <EquilibriumPosition>k__BackingField: {x: -155.14008, y: 50.78, z: -205.97011}
+  <EquilibriumPosition>k__BackingField: {x: 0, y: 0, z: 0}
   <ForceScale>k__BackingField: {x: 1, y: 1, z: 1}
   <Stiffness>k__BackingField: 200
   <Damper>k__BackingField: 20

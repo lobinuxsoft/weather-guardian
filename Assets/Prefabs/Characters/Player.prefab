@@ -4970,7 +4970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f9da017541ee44aa825ceb29e73f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <LocalEquilibriumPosition>k__BackingField: {x: 0, y: 1.2, z: 0}
+  <EquilibriumPosition>k__BackingField: {x: 18.35, y: 5.46, z: -191.1}
   <ForceScale>k__BackingField: {x: 1, y: 1, z: 1}
   <Stiffness>k__BackingField: 40
   <Damper>k__BackingField: 20
@@ -6944,6 +6944,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6352846814699981516}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8281b5fe1aa83b44db4b77fcb401a6eb,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7514807622073107468}
   m_SourcePrefab: {fileID: 100100000, guid: 8281b5fe1aa83b44db4b77fcb401a6eb, type: 3}
 --- !u!1 &7055216021935876817 stripped
 GameObject:
@@ -7041,8 +7045,6 @@ MonoBehaviour:
   jumpAction: {fileID: -3984190742013778545, guid: 836cd1345aea4a04abf06c2a0ad9ff55,
     type: 3}
   umbrellaAction: {fileID: 1120369429361536294, guid: 836cd1345aea4a04abf06c2a0ad9ff55,
-    type: 3}
-  stompAction: {fileID: 1249785114542909976, guid: 836cd1345aea4a04abf06c2a0ad9ff55,
     type: 3}
   dashAction: {fileID: 1202799533633769381, guid: 836cd1345aea4a04abf06c2a0ad9ff55,
     type: 3}
@@ -7332,6 +7334,19 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
+--- !u!114 &7514807622073107468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7055216021935876817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!4 &7683977946508406891 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8281b5fe1aa83b44db4b77fcb401a6eb,

@@ -46,7 +46,7 @@ namespace WeatherGuardian.Utils
 
         private void LoopSfxBehaviour() 
         {
-            if (horizontalObstacle.Path.Moving) 
+            if (horizontalObstacle.Path.Moving && horizontalObstacle.Path.DelayFinished) 
             {
                 if (!stoneLoopSfx.IsNull)
                     FMODUnity.RuntimeManager.PlayOneShotAttached(stoneLoopSfx, gameObject);

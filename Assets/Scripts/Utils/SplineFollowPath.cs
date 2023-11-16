@@ -47,22 +47,39 @@ public class SplineFollowPath : MonoBehaviour
         }
     }
 
+    public bool DelayFinished
+    {        
+        get
+        {
+            return startDelay <= 0.0f;
+        }
+    }
+
     private void Awake()
     {
         oscillator = GetComponent<Oscillator>();
         rb = GetComponent<Rigidbody>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (startDelay > 0.0f)
         {
             startDelay -= Time.deltaTime;
+
+            if (startDelay < 0.0f) 
+            {
+                startDelay = 0.0f;
+            }
         }
-        else
+    }
+
+    private void FixedUpdate()
+    {
+        if (startDelay <= 0.0f)
         {
             OnValidate();
-        }
+        }        
     }
 
     private void OnValidate()
