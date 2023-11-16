@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 2601039290897224143}
   - component: {fileID: 6044741819926036249}
   - component: {fileID: 5053416492477066148}
+  - component: {fileID: 3372667644468050021}
   m_Layer: 0
   m_Name: Pendulo_de_cascabel2
   m_TagString: Untagged
@@ -210,6 +211,37 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 2.0301652
   m_Center: {x: 0, y: -3.2782445, z: 0}
+--- !u!114 &3372667644468050021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2451639789736430073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 672505978
+      Data2: 1171334199
+      Data3: 1139475359
+      Data4: 823323578
+    Path: event:/Obstacles/Cascabel_Loop
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 7
+  OverrideMaxDistance: 9
 --- !u!1 &3196096515797477247
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,7 +353,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  angleA: 45
+  angleA: 49.4
   angleB: -45
   axisToRotate: 0
   speed: 1
