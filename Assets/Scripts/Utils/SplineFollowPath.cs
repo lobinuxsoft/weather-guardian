@@ -12,6 +12,8 @@ public class SplineFollowPath : MonoBehaviour
     [SerializeField] private AnimationCurve moveBehaviour;
     [SerializeField, Range(0.0f, 20.0f)] private float startDelay = 1.0f;
 
+    [SerializeField] private bool automaticStart = true;
+
     public event Action OnHalfPath;
     public event Action OnEnd;
 
@@ -70,7 +72,14 @@ public class SplineFollowPath : MonoBehaviour
     {
         if (timerToStartMoving == null) 
         {
-            moving = true;
+            if (automaticStart) 
+            {
+                moving = true;
+            }
+            else
+            {
+                moving = false;
+            }
         }
         else 
         {

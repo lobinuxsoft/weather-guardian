@@ -13,7 +13,7 @@ namespace WeatherGuardian.PlatformObjects
 
         [SerializeField] private FMODUnity.EventReference endMovementSfx;
 
-        [SerializeField][Range(10.0f, 200.0f)] private float maxSeparationDistance = 20.0f;        
+        [SerializeField][Range(10.0f, 200.0f)] private float maxSeparationDistance = 20.0f;       
 
         private SplineFollowPath path;
 
@@ -61,11 +61,6 @@ namespace WeatherGuardian.PlatformObjects
         {
             if (collision.transform.tag == "Player")
             {
-                if (playerTransform != collision.transform)
-                {
-                    playerTransform = collision.transform;
-                }
-
                 //Try to prevent cat bouncing with platform
                 Rigidbody platformRigidBody = collision.gameObject.GetComponent<Rigidbody>();
 
