@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f9da017541ee44aa825ceb29e73f80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <EquilibriumPosition>k__BackingField: {x: -73.54001, y: 1.5599995, z: -166.53006}
+  <EquilibriumPosition>k__BackingField: {x: 6.53, y: -4.34, z: 0}
   <ForceScale>k__BackingField: {x: 1, y: 1, z: 1}
   <Stiffness>k__BackingField: 200
   <Damper>k__BackingField: 20
@@ -541,9 +541,9 @@ GameObject:
   - component: {fileID: 4532700657463669411}
   - component: {fileID: 1911045875457316987}
   - component: {fileID: 4134474299207614429}
-  - component: {fileID: 8125738660873026081}
+  - component: {fileID: 1718349887580556320}
   m_Layer: 0
-  m_Name: Push Trigger
+  m_Name: Pushing Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -601,7 +601,7 @@ MonoBehaviour:
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
---- !u!114 &8125738660873026081
+--- !u!114 &1718349887580556320
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
