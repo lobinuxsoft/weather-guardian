@@ -11,6 +11,14 @@ namespace WeatherGuardian.Obstacles
         
         float timer = 0.0f;
 
+        public SplineFollowPath Path 
+        {
+            get 
+            {
+                return path;
+            }
+        }
+
         private void Start()
         {
             path = GetComponent<SplineFollowPath>();

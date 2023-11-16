@@ -12,6 +12,7 @@ public class SplineFollowPath : MonoBehaviour
     [SerializeField, Range(0.0f, 20.0f)] private float startDelay = 1.0f;
 
     public Action OnHalfPath;
+    public Action OnMovingStateChanged;
 
     private Oscillator oscillator;
     private Rigidbody rb;
@@ -22,13 +23,15 @@ public class SplineFollowPath : MonoBehaviour
 
     private bool moving;
     private bool rotate;
-    private bool halfPathAchived = false;
+    private bool halfPathAchived = false;    
 
     public bool Moving
     {
         set
         {
             moving = value;
+
+            OnMovingStateChanged?.Invoke();
         }
         get 
         {
