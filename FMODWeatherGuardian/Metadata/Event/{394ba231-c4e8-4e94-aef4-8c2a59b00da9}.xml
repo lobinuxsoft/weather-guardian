@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{394ba231-c4e8-4e94-aef4-8c2a59b00da9}">
 		<property name="name">
-			<value>Pilar Piedra_Impact</value>
+			<value>Stone Pillar Impact</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -56,7 +56,14 @@
 			<destination>{752caf63-6b19-4381-8a4e-e1b4df20f568}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{2adc8d0f-f92f-4696-814b-f124105b2996}" />
+	<object class="EventAutomatableProperties" id="{2adc8d0f-f92f-4696-814b-f124105b2996}">
+		<property name="minimumDistance">
+			<value>20</value>
+		</property>
+		<property name="maximumDistance">
+			<value>50</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{0d91c744-0270-4661-8ca4-d6c3cd5d711b}" />
 	<object class="GroupTrack" id="{bf8275ba-ed0d-4d13-833e-fd2e36abc59d}">
 		<relationship name="modules">
@@ -101,6 +108,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{63005f82-1905-42a1-ab29-2f322b9bd302}">
+		<property name="volume">
+			<value>2</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>

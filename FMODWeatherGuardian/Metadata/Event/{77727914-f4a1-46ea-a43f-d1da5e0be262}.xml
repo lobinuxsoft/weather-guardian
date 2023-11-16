@@ -2,10 +2,10 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{77727914-f4a1-46ea-a43f-d1da5e0be262}">
 		<property name="name">
-			<value>Pilar Piedra_PlayerHit</value>
+			<value>Stone Pillar Player Hit</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{cce1d544-3ce3-4ee2-99b9-0be84d0eae36}</destination>
@@ -56,7 +56,14 @@
 			<destination>{752caf63-6b19-4381-8a4e-e1b4df20f568}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{ad4ded06-695f-47c5-ac61-526257521912}" />
+	<object class="EventAutomatableProperties" id="{ad4ded06-695f-47c5-ac61-526257521912}">
+		<property name="minimumDistance">
+			<value>20</value>
+		</property>
+		<property name="maximumDistance">
+			<value>50</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{72814a39-ccc0-4935-94a2-3dc9298229e8}" />
 	<object class="GroupTrack" id="{0c93cca7-788e-4035-a21a-16befcfe6c42}">
 		<relationship name="modules">
@@ -117,7 +124,6 @@
 	<object class="MixerBusEffectChain" id="{300bf0a2-97be-43c5-8b79-2aabbb65a1c1}">
 		<relationship name="effects">
 			<destination>{34ebf6fd-f76c-4129-b837-7f8266240035}</destination>
-			<destination>{839466b6-5392-48a4-9b79-efd59cb8e47b}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{666dac39-c7fa-42b6-9bad-91a0261d98d4}" />
@@ -145,6 +151,5 @@
 	</object>
 	<object class="MixerBusPanner" id="{9d55a40a-7a13-4047-af67-0d9680c7af71}" />
 	<object class="MixerBusFader" id="{34ebf6fd-f76c-4129-b837-7f8266240035}" />
-	<object class="SpatialiserEffect" id="{839466b6-5392-48a4-9b79-efd59cb8e47b}" />
 	<object class="MixerBusFader" id="{1a1d6a84-4951-4416-ba0e-e58e761294d7}" />
 </objects>
