@@ -20,7 +20,7 @@ namespace WeatherGuardian.Utils
         private void Start()
         {
             if (horizontalObstacle != null)
-                horizontalObstacle.Path.OnMovingStateChanged += LoopSfxBehaviour;
+                horizontalObstacle.OnStartMoving += LoopSfxBehaviour;
         }
 
         private void OnTriggerEnter(Collider other)
@@ -41,16 +41,13 @@ namespace WeatherGuardian.Utils
         private void OnDestroy()
         {
             if (horizontalObstacle != null)
-                horizontalObstacle.Path.OnMovingStateChanged -= LoopSfxBehaviour;
+                horizontalObstacle.OnStartMoving -= LoopSfxBehaviour;
         }
 
         private void LoopSfxBehaviour() 
         {
-            if (horizontalObstacle.Path.Moving && horizontalObstacle.Path.DelayFinished) 
-            {
-                if (!stoneLoopSfx.IsNull)
-                    FMODUnity.RuntimeManager.PlayOneShotAttached(stoneLoopSfx, gameObject);
-            }            
+            if (!stoneLoopSfx.IsNull)
+                FMODUnity.RuntimeManager.PlayOneShotAttached(stoneLoopSfx, gameObject);
         } 
     }
 }

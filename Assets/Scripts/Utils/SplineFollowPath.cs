@@ -3,6 +3,7 @@ using System;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Splines;
+using WeatherGuardian.Utils;
 
 public class SplineFollowPath : MonoBehaviour
 {
@@ -11,27 +12,28 @@ public class SplineFollowPath : MonoBehaviour
     [SerializeField] private AnimationCurve moveBehaviour;
     [SerializeField, Range(0.0f, 20.0f)] private float startDelay = 1.0f;
 
-    public Action OnHalfPath;
-    public Action OnMovingStateChanged;
+    public event Action OnHalfPath;
+    public event Action OnEnd;
 
     private Oscillator oscillator;
     private Rigidbody rb;
-    private float time = 0;
+
+    private Timer timerToStartMoving = null;
+    //private float time = 0;
 
     //New vars
-    private float localTime = 0.0f;
+    private float localTime;
+    private float time;
 
     private bool moving;
     private bool rotate;
-    private bool halfPathAchived = false;    
+    private bool halfPathAchived;    
 
     public bool Moving
     {
         set
         {
-            moving = value;
-
-            OnMovingStateChanged?.Invoke();
+            moving = value;            
         }
         get 
         {
@@ -59,36 +61,46 @@ public class SplineFollowPath : MonoBehaviour
     {
         oscillator = GetComponent<Oscillator>();
         rb = GetComponent<Rigidbody>();
+
+        if (startDelay > 0.0f)
+            timerToStartMoving = new Timer(startDelay);
+    }
+
+    private void Start()
+    {
+        if (timerToStartMoving == null) 
+        {
+            moving = true;
+        }
+        else 
+        {
+            moving = false;
+
+            timerToStartMoving.OnTimerEnds += SetMovingToTrue;
+        }
+
+        halfPathAchived = false;
+
+        time = 0.0f;
+
+        localTime = 0.0f;
     }
 
     private void Update()
     {
-        if (startDelay > 0.0f)
-        {
-            startDelay -= Time.deltaTime;
-
-            if (startDelay < 0.0f) 
-            {
-                startDelay = 0.0f;
-            }
-        }
+        if (timerToStartMoving != null)
+            timerToStartMoving.UpdateTimer();        
     }
 
     private void FixedUpdate()
     {
-        if (startDelay <= 0.0f)
-        {
-            OnValidate();
-        }        
+        OnValidate();                
     }
 
     private void OnValidate()
     {
         if (oscillator != null && moving)
         {
-            //Old time code
-            //time = moveBehaviour.Evaluate(Mathf.PingPong(Time.time * speed, 1));
-
             //New time Code
             if (localTime < 1.0f)
             {
@@ -109,12 +121,20 @@ public class SplineFollowPath : MonoBehaviour
                 localTime = 0.0f;
 
                 halfPathAchived = false;
+
+                OnEnd?.Invoke();
             }
 
             time = moveBehaviour.Evaluate(Mathf.PingPong(localTime, 1));
 
             CalculatePosition();
         }
+    }
+
+    private void OnDestroy()
+    {
+        if(timerToStartMoving != null)
+            timerToStartMoving.OnTimerEnds -= SetMovingToTrue;
     }
 
     public void ResetPath()
@@ -138,5 +158,10 @@ public class SplineFollowPath : MonoBehaviour
             rb.MoveRotation(Quaternion.LookRotation(localPos + forward, upVector));
 
         oscillator.EquilibriumPosition = pos;
+    }
+
+    private void SetMovingToTrue() 
+    {
+        moving = true;
     }
 }
