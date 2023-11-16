@@ -57,11 +57,14 @@
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{01c52b7e-d41c-44a6-82df-989b8ff21873}">
+		<property name="maxVoices">
+			<value>2</value>
+		</property>
 		<property name="minimumDistance">
-			<value>15</value>
+			<value>7</value>
 		</property>
 		<property name="maximumDistance">
-			<value>30</value>
+			<value>10</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{4ebee79f-c590-4089-8754-36e8c0be2be4}" />
@@ -107,9 +110,15 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{d1c8ecca-15f9-49e2-96af-bf6f2aeb673c}">
+		<property name="volume">
+			<value>-7</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{4a797350-ea81-4790-bed6-7e11026e72d0}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{d987aec9-7aa3-46bf-93d6-67915ac8d4fb}</destination>
 		</relationship>
@@ -142,6 +151,17 @@
 	</object>
 	<object class="MixerBusPanner" id="{82907229-1e02-4ce6-898d-6cfe932f2117}" />
 	<object class="MixerBusFader" id="{e4bf0294-d1f0-41ed-b37e-4d9549d773e1}" />
+	<object class="ADSRModulator" id="{4a797350-ea81-4790-bed6-7e11026e72d0}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
+	</object>
 	<object class="MixerBusEffectChain" id="{d987aec9-7aa3-46bf-93d6-67915ac8d4fb}">
 		<relationship name="effects">
 			<destination>{1db87803-3243-42b2-b755-1786b4a2431a}</destination>
@@ -149,6 +169,22 @@
 	</object>
 	<object class="MixerBusPanner" id="{9172b876-4435-4519-bd9f-18e646d2af61}" />
 	<object class="MixerBusFader" id="{6098dacf-2b9d-4524-ba3d-8b97666ddc7c}" />
-	<object class="SpatialiserEffect" id="{96c36847-371c-4694-b055-d0f74f814bec}" />
+	<object class="SpatialiserEffect" id="{96c36847-371c-4694-b055-d0f74f814bec}">
+		<property name="distanceRolloffType">
+			<value>3</value>
+		</property>
+		<property name="minimumDistance">
+			<value>3800</value>
+		</property>
+		<property name="maximumDistance">
+			<value>6600</value>
+		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="soundSize">
+			<value>5</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{1db87803-3243-42b2-b755-1786b4a2431a}" />
 </objects>
