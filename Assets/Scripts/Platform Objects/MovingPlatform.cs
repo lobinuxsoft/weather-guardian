@@ -24,6 +24,10 @@ namespace WeatherGuardian.PlatformObjects
             path = GetComponent<SplineFollowPath>();
 
             path.OnHalfPath += StopMoving;
+
+            path.OnEnd += path.ResetPath;
+
+            path.OnEnd += CallStopMovingPlatformSfx;
         }
 
         private void Start()
@@ -38,6 +42,10 @@ namespace WeatherGuardian.PlatformObjects
         private void OnDestroy()
         {
             path.OnHalfPath -= StopMoving;
+
+            path.OnEnd -= path.ResetPath;
+
+            path.OnEnd -= CallStopMovingPlatformSfx;
         }
 
         private void Update()
@@ -59,8 +67,10 @@ namespace WeatherGuardian.PlatformObjects
 
         private void OnCollisionEnter(Collision collision)
         {
-            if (collision.transform.tag == "Player")
+            if (collision.transform.tag == "Player" && !path.Moving)
             {
+                playerTransform = collision.transform;
+
                 //Try to prevent cat bouncing with platform
                 Rigidbody platformRigidBody = collision.gameObject.GetComponent<Rigidbody>();
 
