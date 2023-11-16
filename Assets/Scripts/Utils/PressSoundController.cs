@@ -17,7 +17,7 @@ namespace WeatherGuardian.Utils
 
         [SerializeField] private string stoneTag;
 
-        private void Awake()
+        private void Start()
         {
             if (horizontalObstacle != null)
                 horizontalObstacle.Path.OnMovingStateChanged += LoopSfxBehaviour;

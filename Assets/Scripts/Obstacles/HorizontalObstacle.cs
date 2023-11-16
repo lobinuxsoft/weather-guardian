@@ -19,10 +19,13 @@ namespace WeatherGuardian.Obstacles
             }
         }
 
+        private void Awake()
+        {
+            path = GetComponent<SplineFollowPath>();            
+        }
+
         private void Start()
         {
-            path = GetComponent<SplineFollowPath>();
-
             path.Rotate = false;
 
             path.Moving = true;
