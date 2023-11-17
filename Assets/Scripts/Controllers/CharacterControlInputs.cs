@@ -32,7 +32,7 @@ namespace Game.InputsController
         //private StompBehaviour stompBehaviour;
         private DashBehaviour dashBehaviour;
 
-        private void Awake()
+        private void OnEnable()
         {
             debugAction.action.started += SwitchDebug;
             debugAction.action.Enable();
@@ -52,10 +52,7 @@ namespace Game.InputsController
             umbrellaAction.action.Enable();
             //stompAction.action.Enable();
             dashAction.action.Enable();
-        }
 
-        private void Start()
-        {
             heightSpringBehaviour = animator.GetBehaviour<HeightSpringBehaviour>();
             heightSpringBehaviour.Oscillator = oscillator;
 
@@ -70,13 +67,7 @@ namespace Game.InputsController
             dashBehaviour = animator.GetBehaviour<DashBehaviour>();
         }
 
-        private void LateUpdate()
-        {
-            if (!heightSpringBehaviour.GroundedInfo.grounded && uprightSpringBehaviour.LockDirection)
-                UmbrellaLookDirection();
-        }
-
-        private void OnDestroy()
+        private void OnDisable()
         {
             debugAction.action.started -= SwitchDebug;
             debugAction.action.Disable();
@@ -97,6 +88,12 @@ namespace Game.InputsController
             umbrellaAction.action.Disable();
             //stompAction.action.Disable();
             dashAction.action.Enable();
+        }
+
+        private void LateUpdate()
+        {
+            if (!heightSpringBehaviour.GroundedInfo.grounded && uprightSpringBehaviour.LockDirection)
+                UmbrellaLookDirection();
         }
 
         private void UmbrellaLookDirection()
