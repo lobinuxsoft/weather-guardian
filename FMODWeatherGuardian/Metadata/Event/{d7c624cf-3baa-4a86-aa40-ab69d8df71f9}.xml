@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{d7c624cf-3baa-4a86-aa40-ab69d8df71f9}">
 		<property name="name">
-			<value>Pilar Piedra_Move</value>
+			<value>Stone Pillar Move</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -56,7 +56,14 @@
 			<destination>{752caf63-6b19-4381-8a4e-e1b4df20f568}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{9dce274a-b8f9-42bb-9e1f-9fe44de8660d}" />
+	<object class="EventAutomatableProperties" id="{9dce274a-b8f9-42bb-9e1f-9fe44de8660d}">
+		<property name="minimumDistance">
+			<value>10</value>
+		</property>
+		<property name="maximumDistance">
+			<value>35</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{52f14b46-d2dd-40f0-9f42-e8475f9909af}" />
 	<object class="GroupTrack" id="{50388f9a-21e0-4c31-b797-dc7ec6882ab5}">
 		<relationship name="modules">

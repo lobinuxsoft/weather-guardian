@@ -1,0 +1,830 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8224460362884406090
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 720535502694684560}
+  - component: {fileID: 2370536346144769244}
+  m_Layer: 0
+  m_Name: Spikes Pipe
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &720535502694684560
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8224460362884406090}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 23.189995, y: -0.5400009, z: 42.89}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4552207228407169275}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &2370536346144769244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8224460362884406090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 978871863
+      Data2: 1271540730
+      Data3: 944378503
+      Data4: 243650721
+    Path: event:/Obstacles/Stone Wheel Loop
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 10
+  OverrideMaxDistance: 25
+--- !u!1001 &4081960173077374736
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 720535502694684560}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3042048256250739927, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3042048256250739927, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3042048256250739927, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3042048256250739927, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3042048256250739927, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3042048256250739927, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3042048256250739927, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3042048256250739927, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      propertyPath: m_Name
+      value: MESH_Tubo
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -3528612779807057080, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8445848595649385141}
+    - targetCorrespondingSourceObject: {fileID: 548049320824285344, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 602044724591339014}
+    - targetCorrespondingSourceObject: {fileID: 548049320824285344, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4354488362008114227}
+    - targetCorrespondingSourceObject: {fileID: 548049320824285344, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6195594473089142930}
+    - targetCorrespondingSourceObject: {fileID: 548049320824285344, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2557418663643014262}
+    - targetCorrespondingSourceObject: {fileID: -3879794295211515740, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4600966430596786833}
+    - targetCorrespondingSourceObject: {fileID: -3879794295211515740, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3790823879772072530}
+    - targetCorrespondingSourceObject: {fileID: -3879794295211515740, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3303477113857323083}
+    - targetCorrespondingSourceObject: {fileID: -3879794295211515740, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1537756929094371771}
+    - targetCorrespondingSourceObject: {fileID: -5614305829758465569, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2887257129144979485}
+    - targetCorrespondingSourceObject: {fileID: -5614305829758465569, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2972683852241944641}
+    - targetCorrespondingSourceObject: {fileID: -5614305829758465569, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4368568361921176504}
+    - targetCorrespondingSourceObject: {fileID: -5614305829758465569, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6347152693512111134}
+    - targetCorrespondingSourceObject: {fileID: 4657462307216879902, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3862777196656480292}
+    - targetCorrespondingSourceObject: {fileID: 4657462307216879902, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6604689767507644420}
+    - targetCorrespondingSourceObject: {fileID: 4657462307216879902, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4134891544830816016}
+    - targetCorrespondingSourceObject: {fileID: 4657462307216879902, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6026360741147126260}
+    - targetCorrespondingSourceObject: {fileID: -7259698460183108682, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6434930751155364384}
+    - targetCorrespondingSourceObject: {fileID: -7259698460183108682, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1320239568432651559}
+    - targetCorrespondingSourceObject: {fileID: -7259698460183108682, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4322913695568165367}
+    - targetCorrespondingSourceObject: {fileID: -7259698460183108682, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3775059009106117196}
+    - targetCorrespondingSourceObject: {fileID: -4941909127444451136, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5122035508328524190}
+    - targetCorrespondingSourceObject: {fileID: -4941909127444451136, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7057900371253444020}
+    - targetCorrespondingSourceObject: {fileID: -4941909127444451136, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5196806705657020242}
+    - targetCorrespondingSourceObject: {fileID: -4941909127444451136, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3993840355219162932}
+  m_SourcePrefab: {fileID: 100100000, guid: 55f8688a76f4ea245a6194a9a6532a5d, type: 3}
+--- !u!1 &273812422428989392 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4941909127444451136, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4081960173077374736}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &5122035508328524190
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273812422428989392}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1809253970082814843, guid: 55f8688a76f4ea245a6194a9a6532a5d, type: 3}
+--- !u!114 &7057900371253444020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273812422428989392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5196806705657020242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273812422428989392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
+  detectionType: 1
+  triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &3993840355219162932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273812422428989392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1723217206
+      Data2: 1234252307
+      Data3: 1635090571
+      Data4: 932104855
+    Path: event:/Obstacles/Spikes_Hurt
+  Event: 
+  PlayEvent: 7
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 7
+  OverrideMaxDistance: 35
+--- !u!1 &771227905081880271 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5614305829758465569, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4081960173077374736}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &2887257129144979485
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771227905081880271}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 190323749115204295, guid: 55f8688a76f4ea245a6194a9a6532a5d, type: 3}
+--- !u!114 &2972683852241944641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771227905081880271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4368568361921176504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771227905081880271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
+  detectionType: 1
+  triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &6347152693512111134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771227905081880271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1723217206
+      Data2: 1234252307
+      Data3: 1635090571
+      Data4: 932104855
+    Path: event:/Obstacles/Spikes_Hurt
+  Event: 
+  PlayEvent: 7
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 7
+  OverrideMaxDistance: 35
+--- !u!1 &2586851315175146662 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7259698460183108682, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4081960173077374736}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &6434930751155364384
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2586851315175146662}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7119635342741708140, guid: 55f8688a76f4ea245a6194a9a6532a5d, type: 3}
+--- !u!114 &1320239568432651559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2586851315175146662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4322913695568165367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2586851315175146662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
+  detectionType: 1
+  triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &3775059009106117196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2586851315175146662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1723217206
+      Data2: 1234252307
+      Data3: 1635090571
+      Data4: 932104855
+    Path: event:/Obstacles/Spikes_Hurt
+  Event: 
+  PlayEvent: 7
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 7
+  OverrideMaxDistance: 35
+--- !u!4 &4552207228407169275 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4081960173077374736}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4556805898738175920 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 548049320824285344, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4081960173077374736}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &602044724591339014
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4556805898738175920}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 9188603553798411242, guid: 55f8688a76f4ea245a6194a9a6532a5d, type: 3}
+--- !u!114 &4354488362008114227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4556805898738175920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6195594473089142930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4556805898738175920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
+  detectionType: 1
+  triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &2557418663643014262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4556805898738175920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1723217206
+      Data2: 1234252307
+      Data3: 1635090571
+      Data4: 932104855
+    Path: event:/Obstacles/Spikes_Hurt
+  Event: 
+  PlayEvent: 7
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 7
+  OverrideMaxDistance: 35
+--- !u!1 &8254599503341225908 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -3879794295211515740, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4081960173077374736}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &4600966430596786833
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8254599503341225908}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6998189350680135131, guid: 55f8688a76f4ea245a6194a9a6532a5d, type: 3}
+--- !u!114 &3790823879772072530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8254599503341225908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3303477113857323083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8254599503341225908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
+  detectionType: 1
+  triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &1537756929094371771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8254599503341225908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1723217206
+      Data2: 1234252307
+      Data3: 1635090571
+      Data4: 932104855
+    Path: event:/Obstacles/Spikes_Hurt
+  Event: 
+  PlayEvent: 7
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 7
+  OverrideMaxDistance: 35
+--- !u!1 &8620400380714679384 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -3528612779807057080, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4081960173077374736}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &8445848595649385141
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8620400380714679384}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4827339311490749077, guid: 55f8688a76f4ea245a6194a9a6532a5d, type: 3}
+--- !u!1 &8648222369489311246 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4657462307216879902, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4081960173077374736}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &3862777196656480292
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8648222369489311246}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1957162576695927281, guid: 55f8688a76f4ea245a6194a9a6532a5d, type: 3}
+--- !u!114 &6604689767507644420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8648222369489311246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c68958378f6cf5f4da604a33992757cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4134891544830816016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8648222369489311246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Player
+  detectionType: 1
+  triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &6026360741147126260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8648222369489311246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1723217206
+      Data2: 1234252307
+      Data3: 1635090571
+      Data4: 932104855
+    Path: event:/Obstacles/Spikes_Hurt
+  Event: 
+  PlayEvent: 7
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 7
+  OverrideMaxDistance: 35

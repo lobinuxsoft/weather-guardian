@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{3a586637-2bfa-4bca-8712-4a38a1d0850e}">
 		<property name="name">
-			<value>Rueda Piedra_Loop</value>
+			<value>Stone Wheel Loop</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -56,7 +56,14 @@
 			<destination>{752caf63-6b19-4381-8a4e-e1b4df20f568}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{f760f129-4ba2-4236-8c21-be8ea0016ce5}" />
+	<object class="EventAutomatableProperties" id="{f760f129-4ba2-4236-8c21-be8ea0016ce5}">
+		<property name="minimumDistance">
+			<value>10</value>
+		</property>
+		<property name="maximumDistance">
+			<value>25</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{7b575778-b294-421b-b7d4-935f467c68ab}" />
 	<object class="GroupTrack" id="{93010347-e586-4f9f-9b1c-eb015b0965b7}">
 		<relationship name="modules">
@@ -104,7 +111,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{4359ebfc-3777-42be-a86e-2fd9077c582c}">
 		<property name="volume">
-			<value>-1</value>
+			<value>-6</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>

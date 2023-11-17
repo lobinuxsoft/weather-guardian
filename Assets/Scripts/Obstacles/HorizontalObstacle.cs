@@ -1,4 +1,7 @@
+using System;
 using UnityEngine;
+using UnityEngine.UIElements;
+using WeatherGuardian.Utils;
 
 namespace WeatherGuardian.Obstacles 
 {
@@ -7,19 +10,34 @@ namespace WeatherGuardian.Obstacles
     {
         [SerializeField] [Range(0.05f, 10.0f)] private float timeStoped = 1.0f;
 
-        private SplineFollowPath path;
-        
-        float timer = 0.0f;
+        public event Action OnStartMoving; 
 
-        private void Start()
+        private SplineFollowPath path;
+
+        private Timer timerForTimeStoped;
+
+        public SplineFollowPath Path 
+        {
+            get 
+            {
+                return path;
+            }
+        }
+
+        private void Awake()
         {
             path = GetComponent<SplineFollowPath>();
 
-            path.Rotate = false;
+            timerForTimeStoped = new Timer(timeStoped, false);
+        }
 
-            path.Moving = true;
+        private void Start()
+        {
+            path.Rotate = false;            
 
             path.OnHalfPath += StopMoving;
+
+            timerForTimeStoped.OnTimerEnds += StartMoving;           
         }
 
         private void OnDestroy()
@@ -34,29 +52,21 @@ namespace WeatherGuardian.Obstacles
 
         public override void MoveBehaviour()
         {
-            if (timer > 0.0f) 
-            {
-                timer -= Time.deltaTime;
-
-                if (timer <= 0.0f) 
-                {
-                    timer = 0.0f;
-
-                    StartMoving();
-                }
-            }
+            timerForTimeStoped.UpdateTimerWithResetAndStop();            
         }
 
         private void StartMoving() 
         {
             path.Moving = true;
+
+            OnStartMoving?.Invoke();
         }
 
         private void StopMoving() 
         {
             path.Moving = false;
 
-            timer = timeStoped;
+            timerForTimeStoped.IsRunning = true;
         }
     }
 }
