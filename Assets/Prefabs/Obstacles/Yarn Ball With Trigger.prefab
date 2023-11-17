@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8601380016035105990}
   - component: {fileID: 7422777309934132701}
   - component: {fileID: 5552511037740519269}
+  - component: {fileID: 3479321933903900898}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -174,13 +175,6 @@ MonoBehaviour:
       Data3: 8453821
       Data4: 1913767712
     Path: event:/Obstacles/Yarn Ball Stop Rolling
-  rollingYarnBallSfx:
-    Guid:
-      Data1: 413847896
-      Data2: 1248684373
-      Data3: 1725406389
-      Data4: 1835003645
-    Path: event:/Obstacles/Yarn Ball Rolling
   yarnBallImpactSfx:
     Guid:
       Data1: 2129288642
@@ -204,6 +198,37 @@ MonoBehaviour:
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &3479321933903900898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362326716991182323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 413847896
+      Data2: 1248684373
+      Data3: 1725406389
+      Data4: 1835003645
+    Path: event:/Obstacles/Yarn Ball Rolling
+  Event: 
+  PlayEvent: 7
+  StopEvent: 8
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 70
+  OverrideMaxDistance: 200
 --- !u!1 &473968698192064268
 GameObject:
   m_ObjectHideFlags: 0

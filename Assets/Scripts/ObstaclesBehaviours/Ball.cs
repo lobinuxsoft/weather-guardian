@@ -14,7 +14,7 @@ public class Ball : ObstacleBehaviour
 
     [SerializeField] private FMODUnity.EventReference stopYarnBallRollingEvent;
 
-    [SerializeField] private FMODUnity.EventReference rollingYarnBallSfx;
+    //[SerializeField] private FMODUnity.EventReference rollingYarnBallSfx;
 
     [SerializeField] private FMODUnity.EventReference yarnBallImpactSfx;
 
@@ -69,8 +69,8 @@ public class Ball : ObstacleBehaviour
             MyMeshRenderer.enabled = true;
         }
 
-        if (!rollingYarnBallSfx.IsNull)
-            FMODUnity.RuntimeManager.PlayOneShotAttached(rollingYarnBallSfx, gameObject);
+        /*if (!rollingYarnBallSfx.IsNull)
+            FMODUnity.RuntimeManager.PlayOneShotAttached(rollingYarnBallSfx, gameObject);*/
 
         ResetTransform();               
     }
@@ -93,9 +93,7 @@ public class Ball : ObstacleBehaviour
     public override void CollisionBehaviour()
     {
         if (!yarnBallImpactSfx.IsNull)
-            FMODUnity.RuntimeManager.PlayOneShot(yarnBallImpactSfx);
-
-        FinishBehaviour();
+            FMODUnity.RuntimeManager.PlayOneShot(yarnBallImpactSfx);        
     }
 
     public void ResetTransform() 

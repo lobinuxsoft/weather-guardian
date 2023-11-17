@@ -6886,8 +6886,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7461987961391397698, guid: 9515c5733432d204f9a7a008d0a09d1a,
         type: 3}
+      propertyPath: deactivationTrigger
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461987961391397698, guid: 9515c5733432d204f9a7a008d0a09d1a,
+        type: 3}
       propertyPath: timeObjectWillBeActive
-      value: 18
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8255222327726386613, guid: 9515c5733432d204f9a7a008d0a09d1a,
         type: 3}
@@ -6895,7 +6900,8 @@ PrefabInstance:
       value: Yarn Ball
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7343195744938657870, guid: 9515c5733432d204f9a7a008d0a09d1a, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9515c5733432d204f9a7a008d0a09d1a, type: 3}
