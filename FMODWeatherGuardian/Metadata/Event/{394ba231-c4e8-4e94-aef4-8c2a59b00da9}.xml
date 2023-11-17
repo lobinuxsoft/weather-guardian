@@ -61,6 +61,9 @@
 		<property name="minimumDistance">
 			<value>10</value>
 		</property>
+		<property name="maximumDistance">
+			<value>35</value>
+		</property>
 	</object>
 	<object class="MarkerTrack" id="{0d91c744-0270-4661-8ca4-d6c3cd5d711b}" />
 	<object class="GroupTrack" id="{bf8275ba-ed0d-4d13-833e-fd2e36abc59d}">
@@ -115,6 +118,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{63005f82-1905-42a1-ab29-2f322b9bd302}">
+		<property name="volume">
+			<value>-2</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
