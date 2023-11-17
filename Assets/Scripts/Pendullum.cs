@@ -14,9 +14,19 @@ namespace WeatherGuardian.Utils
 
         private Rigidbody body;
 
+        private float pendullumTime;
+
         Vector3 axis;
         Quaternion rotA;
         Quaternion rotB;
+
+        public float PendullumTime 
+        {
+            get 
+            {
+                return pendullumTime;
+            }
+        }
 
         private void Awake()
         {
@@ -43,7 +53,9 @@ namespace WeatherGuardian.Utils
             rotA = Quaternion.AngleAxis(angleA, axis);
             rotB = Quaternion.AngleAxis(angleB, axis);
 
-            body.MoveRotation(Quaternion.LerpUnclamped(rotA, rotB, pendullumBehaviour.Evaluate(Mathf.PingPong(Time.time * speed, 1))));
+            pendullumTime = pendullumBehaviour.Evaluate(Mathf.PingPong(Time.time * speed, 1));
+
+            body.MoveRotation(Quaternion.LerpUnclamped(rotA, rotB, pendullumTime));            
         }
     }
 }
