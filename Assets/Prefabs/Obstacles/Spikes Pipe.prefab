@@ -187,6 +187,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6195594473089142930}
+    - targetCorrespondingSourceObject: {fileID: 548049320824285344, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2557418663643014262}
     - targetCorrespondingSourceObject: {fileID: -3879794295211515740, guid: 55f8688a76f4ea245a6194a9a6532a5d,
         type: 3}
       insertIndex: -1
@@ -199,6 +203,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3303477113857323083}
+    - targetCorrespondingSourceObject: {fileID: -3879794295211515740, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1537756929094371771}
     - targetCorrespondingSourceObject: {fileID: -5614305829758465569, guid: 55f8688a76f4ea245a6194a9a6532a5d,
         type: 3}
       insertIndex: -1
@@ -211,6 +219,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 4368568361921176504}
+    - targetCorrespondingSourceObject: {fileID: -5614305829758465569, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6347152693512111134}
     - targetCorrespondingSourceObject: {fileID: 4657462307216879902, guid: 55f8688a76f4ea245a6194a9a6532a5d,
         type: 3}
       insertIndex: -1
@@ -223,6 +235,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 4134891544830816016}
+    - targetCorrespondingSourceObject: {fileID: 4657462307216879902, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6026360741147126260}
     - targetCorrespondingSourceObject: {fileID: -7259698460183108682, guid: 55f8688a76f4ea245a6194a9a6532a5d,
         type: 3}
       insertIndex: -1
@@ -235,6 +251,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 4322913695568165367}
+    - targetCorrespondingSourceObject: {fileID: -7259698460183108682, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3775059009106117196}
     - targetCorrespondingSourceObject: {fileID: -4941909127444451136, guid: 55f8688a76f4ea245a6194a9a6532a5d,
         type: 3}
       insertIndex: -1
@@ -247,6 +267,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5196806705657020242}
+    - targetCorrespondingSourceObject: {fileID: -4941909127444451136, guid: 55f8688a76f4ea245a6194a9a6532a5d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3993840355219162932}
   m_SourcePrefab: {fileID: 100100000, guid: 55f8688a76f4ea245a6194a9a6532a5d, type: 3}
 --- !u!1 &273812422428989392 stripped
 GameObject:
@@ -304,6 +328,37 @@ MonoBehaviour:
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &3993840355219162932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273812422428989392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1723217206
+      Data2: 1234252307
+      Data3: 1635090571
+      Data4: 932104855
+    Path: event:/Obstacles/Spikes_Hurt
+  Event: 
+  PlayEvent: 7
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 7
+  OverrideMaxDistance: 35
 --- !u!1 &771227905081880271 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5614305829758465569, guid: 55f8688a76f4ea245a6194a9a6532a5d,
@@ -360,6 +415,37 @@ MonoBehaviour:
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &6347152693512111134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771227905081880271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1723217206
+      Data2: 1234252307
+      Data3: 1635090571
+      Data4: 932104855
+    Path: event:/Obstacles/Spikes_Hurt
+  Event: 
+  PlayEvent: 7
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 7
+  OverrideMaxDistance: 35
 --- !u!1 &2586851315175146662 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7259698460183108682, guid: 55f8688a76f4ea245a6194a9a6532a5d,
@@ -416,6 +502,37 @@ MonoBehaviour:
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &3775059009106117196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2586851315175146662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1723217206
+      Data2: 1234252307
+      Data3: 1635090571
+      Data4: 932104855
+    Path: event:/Obstacles/Spikes_Hurt
+  Event: 
+  PlayEvent: 7
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 7
+  OverrideMaxDistance: 35
 --- !u!4 &4552207228407169275 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 55f8688a76f4ea245a6194a9a6532a5d,
@@ -478,6 +595,37 @@ MonoBehaviour:
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &2557418663643014262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4556805898738175920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1723217206
+      Data2: 1234252307
+      Data3: 1635090571
+      Data4: 932104855
+    Path: event:/Obstacles/Spikes_Hurt
+  Event: 
+  PlayEvent: 7
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 7
+  OverrideMaxDistance: 35
 --- !u!1 &8254599503341225908 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3879794295211515740, guid: 55f8688a76f4ea245a6194a9a6532a5d,
@@ -534,6 +682,37 @@ MonoBehaviour:
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &1537756929094371771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8254599503341225908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1723217206
+      Data2: 1234252307
+      Data3: 1635090571
+      Data4: 932104855
+    Path: event:/Obstacles/Spikes_Hurt
+  Event: 
+  PlayEvent: 7
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 7
+  OverrideMaxDistance: 35
 --- !u!1 &8620400380714679384 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3528612779807057080, guid: 55f8688a76f4ea245a6194a9a6532a5d,
@@ -618,3 +797,34 @@ MonoBehaviour:
   detectionType: 1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &6026360741147126260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8648222369489311246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1723217206
+      Data2: 1234252307
+      Data3: 1635090571
+      Data4: 932104855
+    Path: event:/Obstacles/Spikes_Hurt
+  Event: 
+  PlayEvent: 7
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 7
+  OverrideMaxDistance: 35

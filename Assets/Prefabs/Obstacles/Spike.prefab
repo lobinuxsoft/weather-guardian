@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7836194750085543484}
   - component: {fileID: 1977865020788122408}
   - component: {fileID: 7701868925049943589}
+  - component: {fileID: 9185622054196493660}
   m_Layer: 0
   m_Name: Spike
   m_TagString: Untagged
@@ -522,14 +523,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tagToDetect: Player
   detectionType: 1
-  onEnter:
-    m_PersistentCalls:
-      m_Calls: []
-  onStay:
-    m_PersistentCalls:
-      m_Calls: []
-  onExit:
-    m_PersistentCalls:
-      m_Calls: []
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &9185622054196493660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7767907408457711059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1723217206
+      Data2: 1234252307
+      Data3: 1635090571
+      Data4: 932104855
+    Path: event:/Obstacles/Spikes_Hurt
+  Event: 
+  PlayEvent: 7
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 7
+  OverrideMaxDistance: 35
