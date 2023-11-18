@@ -53,13 +53,18 @@ namespace WeatherGuardian.Utils
             // TODO hacer el cross fade.
             await Task.Delay(delayToRevive * 1000);
 
-            player.SetActive(false);
+            await ScreenFader.Instance.FadeIn(() =>
+            {
+                player.SetActive(false);
 
-            CheckPoint.JumpToLastCheckPoint(player);
+                CheckPoint.JumpToLastCheckPoint(player);
 
-            player.SetActive(true);
+                player.SetActive(true);
 
-            deathBehaviour.Revive(animator);
+                deathBehaviour.Revive(animator);
+            });
+
+            await ScreenFader.Instance.FadeOut();
         }
     }
 }

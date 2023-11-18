@@ -32,7 +32,6 @@ namespace WeatherGuardian.Behaviours
             capsuleCollider.height = deathConfig.CapsuleHeight;
 
             hsb.Body.constraints = RigidbodyConstraints.FreezeRotation;
-            //hsb.Body.velocity = Vector3.zero;
             animator.SetBool(deathHash, true);
         }
 
