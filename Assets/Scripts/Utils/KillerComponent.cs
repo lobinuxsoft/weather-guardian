@@ -1,4 +1,7 @@
+using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine;
+using WeatherGuardian.Behaviours;
 
 namespace WeatherGuardian.Utils
 {
@@ -6,6 +9,8 @@ namespace WeatherGuardian.Utils
     public class KillerComponent : MonoBehaviour
     {
         private ColliderDetector colliderDetector;
+
+        bool killProcess = false;
 
         private void Awake()
         {
@@ -26,6 +31,40 @@ namespace WeatherGuardian.Utils
             }
         }
 
-        private void Kill(GameObject go) => CheckPoint.JumpToLastCheckPoint(go);
+        private async void Kill(GameObject player)
+        {
+            if (!killProcess)
+            {
+                killProcess = true;
+
+                await KillTask(player);
+
+                killProcess = false;
+            }
+        }
+
+        private async Task KillTask(GameObject player, int delayToRevive = 1)
+        {
+            Animator animator = player.GetComponent<Animator>();
+            DeathBehaviour deathBehaviour = animator.GetBehaviour<DeathBehaviour>();
+
+            deathBehaviour.Death(animator);
+
+            // TODO hacer el cross fade.
+            await Task.Delay(delayToRevive * 1000);
+
+            await ScreenFader.Instance.FadeIn(() =>
+            {
+                player.SetActive(false);
+
+                CheckPoint.JumpToLastCheckPoint(player);
+
+                player.SetActive(true);
+
+                deathBehaviour.Revive(animator);
+            });
+
+            await ScreenFader.Instance.FadeOut();
+        }
     }
 }
