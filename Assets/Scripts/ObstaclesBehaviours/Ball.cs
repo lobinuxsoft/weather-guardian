@@ -1,5 +1,4 @@
 using System;
-using System.IO;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -20,7 +19,11 @@ public class Ball : ObstacleBehaviour
 
     private Rigidbody myRigidBody;
 
-    private Vector3 ballInitialPosition;    
+    private Vector3 ballInitialPosition;
+
+    private Vector3 acceleration;
+
+    private Vector3 accelerationDirection;
 
     private Quaternion ballInitialRotation;    
 
@@ -36,7 +39,13 @@ public class Ball : ObstacleBehaviour
     {
         ballInitialPosition = transform.localPosition;
 
-        ballInitialRotation = transform.localRotation;
+        ballInitialRotation = ramp.transform.localRotation;
+
+        transform.localRotation = ballInitialRotation;
+
+        accelerationDirection = ramp.transform.forward;
+
+        acceleration = accelerationDirection * ballAceleration;        
 
         myRigidBody.isKinematic = true;        
     }
@@ -62,15 +71,14 @@ public class Ball : ObstacleBehaviour
 
     public override void StartBehaviour()
     {
-        myRigidBody.isKinematic = false;
+        myRigidBody.isKinematic = false;        
+
+        myRigidBody.velocity = Vector3.zero;
 
         if (!MyMeshRenderer.isVisible) 
         {
             MyMeshRenderer.enabled = true;
-        }
-
-        /*if (!rollingYarnBallSfx.IsNull)
-            FMODUnity.RuntimeManager.PlayOneShotAttached(rollingYarnBallSfx, gameObject);*/
+        }        
 
         ResetTransform();               
     }
@@ -93,7 +101,9 @@ public class Ball : ObstacleBehaviour
     public override void CollisionBehaviour()
     {
         if (!yarnBallImpactSfx.IsNull)
-            FMODUnity.RuntimeManager.PlayOneShot(yarnBallImpactSfx);        
+            FMODUnity.RuntimeManager.PlayOneShot(yarnBallImpactSfx);
+
+        myRigidBody.velocity = Vector3.zero;
     }
 
     public void ResetTransform() 
@@ -112,9 +122,7 @@ public class Ball : ObstacleBehaviour
     {
         if (!myRigidBody.isKinematic && ramp != null)
         {
-            Vector3 frontAcceleration = ramp.transform.forward * ballAceleration * Time.deltaTime;
-
-            myRigidBody.velocity += new Vector3(0.0f, 0.0f, frontAcceleration.y);            
+            myRigidBody.velocity += acceleration * Time.deltaTime;            
         }
     }
 }
