@@ -49,9 +49,11 @@ namespace WeatherGuardian.Utils
             DeathBehaviour deathBehaviour = animator.GetBehaviour<DeathBehaviour>();
 
             deathBehaviour.Death(animator);
+            
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Death");
 
             // TODO hacer el cross fade.
-            await Task.Delay(delayToRevive * 1000);
+            await Task.Delay(delayToRevive * 1000);            
 
             await ScreenFader.Instance.FadeIn(() =>
             {
