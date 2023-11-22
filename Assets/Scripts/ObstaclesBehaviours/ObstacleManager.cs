@@ -89,7 +89,7 @@ public class ObstacleManager : MonoBehaviour
     {
         if (behaviourLifeTime != null) 
         {            
-            behaviourLifeTime.UpdateTimerWithResetAndStop();            
+            behaviourLifeTime.UpdateTimerWithResetAndStop();
         }            
     }
 
@@ -123,11 +123,7 @@ public class ObstacleManager : MonoBehaviour
         {            
             if (behaviour.Tags[i] == behaviour.LastObjectToCollideWith.transform.tag) 
             {
-                behaviour.CollisionBehaviour();
-
-                behaviourLifeTime.ResetTimer();
-
-                ActivateTrigger();
+                behaviour.CollisionBehaviour();                
             }
         }
     }
