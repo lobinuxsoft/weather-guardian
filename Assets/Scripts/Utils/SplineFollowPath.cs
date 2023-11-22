@@ -29,7 +29,15 @@ public class SplineFollowPath : MonoBehaviour
 
     private bool moving;
     private bool rotate;
-    private bool halfPathAchived;    
+    private bool halfPathAchived;
+
+    public Timer TimerToStartMoving 
+    {
+        get 
+        {
+            return timerToStartMoving;
+        }
+    }
 
     public bool Moving
     {

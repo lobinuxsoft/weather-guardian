@@ -33,6 +33,7 @@ Transform:
   - {fileID: 1951747605160522811}
   - {fileID: 1623678857627124516}
   - {fileID: 1984265372985418466}
+  - {fileID: 5303574209596683272}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &544331252626801868
@@ -297,7 +298,6 @@ GameObject:
   - component: {fileID: 47749640220579933}
   - component: {fileID: 7976139731649404391}
   - component: {fileID: 2099115431267913571}
-  - component: {fileID: 592827191694090863}
   m_Layer: 0
   m_Name: Spline Controller
   m_TagString: Untagged
@@ -487,37 +487,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidParent: {fileID: 6572681323152388997}
---- !u!114 &592827191694090863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5859507905255362870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: Trigger
-  EventReference:
-    Guid:
-      Data1: -674880305
-      Data2: 1250311082
-      Data3: 1772830890
-      Data4: -109977640
-    Path: event:/Obstacles/Stone Pillar Move
-  Event: 
-  PlayEvent: 3
-  StopEvent: 4
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  AllowNonRigidbodyDoppler: 0
-  Params: []
-  OverrideAttenuation: 1
-  OverrideMinDistance: 25
-  OverrideMaxDistance: 35
 --- !u!1 &6535584582023379946
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,6 +593,66 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5.31759, y: 4.1193533, z: 25.000011}
   m_Center: {x: 0.0063232197, y: 0.059676886, z: 12.500021}
+--- !u!1 &7751670101376302480
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5303574209596683272}
+  - component: {fileID: 1349570090934578530}
+  m_Layer: 0
+  m_Name: Sound Emitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5303574209596683272
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7751670101376302480}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 13, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8267036803974931606}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1349570090934578530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7751670101376302480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cd58c91d41de7a4794cc0dc096d87d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundTriggerer: {fileID: 8439926067321074612}
+  splineFollowPath: {fileID: 47749640220579933}
+  moveSfx:
+    Guid:
+      Data1: 2079717226
+      Data2: 1186593977
+      Data3: 1718075807
+      Data4: -378225246
+    Path: event:/Obstacles/Horizontal Stone Move
+  hitAirSfx:
+    Guid:
+      Data1: -1054737185
+      Data2: 1229762477
+      Data3: -2104888677
+      Data4: -1513078053
+    Path: event:/Obstacles/Horizontal Stone Air Impact
 --- !u!1 &8439926067321074612
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,6 +663,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1984265372985418466}
   - component: {fileID: 619114111012171125}
+  - component: {fileID: 8359731246440927098}
   m_Layer: 0
   m_Name: SFX Trigger
   m_TagString: Trigger
@@ -649,8 +679,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8439926067321074612}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 3.5299997, y: -4.34, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -675,8 +705,24 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.31759, y: 4.119353, z: 3}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8359731246440927098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8439926067321074612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133e0c0456f4f374bad5e19e272f228c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToDetect: Stone
+  detectionType: 5
+  triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &8570268274633325879
 GameObject:
   m_ObjectHideFlags: 0
