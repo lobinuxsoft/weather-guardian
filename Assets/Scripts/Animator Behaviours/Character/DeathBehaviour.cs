@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using WeatherGuardian.Behaviours.Configs;
 
@@ -16,6 +17,8 @@ namespace WeatherGuardian.Behaviours
         private Vector3 defaultCapsuleCenter = Vector3.zero;
         private float defaultCapsuleHeigth = 0;
 
+        public static event Action onDeath;
+
         public void Death(Animator animator)
         {
             if(!hsb)
@@ -33,6 +36,8 @@ namespace WeatherGuardian.Behaviours
 
             hsb.Body.constraints = RigidbodyConstraints.FreezeRotation;
             animator.SetBool(deathHash, true);
+
+            onDeath?.Invoke();
         }
 
         public void Revive(Animator animator)
