@@ -78,7 +78,7 @@ namespace WeatherGuardian.Utils
 
         private void LateUpdate()
         {
-            if (!OhMyGizmos.Enabled) return;
+            if (!OhMyGizmos.Enabled || detectCol == null) return;
 
             Color color = detectCol.isTrigger ? triggerDebugColor : colliderDebugColor;
 
