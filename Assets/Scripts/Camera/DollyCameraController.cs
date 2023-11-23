@@ -5,6 +5,8 @@ using WeatherGuardian.Behaviours;
 [RequireComponent(typeof(Collider))]
 public class DollyCameraController : MonoBehaviour
 {
+    const string playerTag = "Player";
+
     [SerializeField] private CinemachineVirtualCamera dollyCamera;
 
     private Collider myCollider;
@@ -24,13 +26,17 @@ public class DollyCameraController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.tag == "Player")
+        if (other.transform.tag == playerTag)
+        {
+            dollyCamera.Follow = other.transform;
+            dollyCamera.LookAt = other.transform;
             EnableCamera();
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.transform.tag == "Player")
+        if (other.transform.tag == playerTag)
             DisableCamera();
     }
 
