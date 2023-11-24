@@ -1091,7 +1091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6d726f6b8d5a549b06cbcd9aeb11ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  machineActiveOnStart: 1
+  machineActiveOnStart: 0
   machineAnimator: {fileID: 7442289900594784481}
   virtualCamera: {fileID: 4988140976578124347}
   playerInteractionTransform: {fileID: 6217636970783095593}
@@ -1136,6 +1136,7 @@ MonoBehaviour:
   inputAction: {fileID: 1120369429361536294, guid: 836cd1345aea4a04abf06c2a0ad9ff55,
     type: 3}
   weatherProfile: {fileID: 11400000, guid: 7f19438c0a21b1946b8108f0ba68cba8, type: 2}
+  trasitionDuration: 2.5
   onMachineOn:
     m_PersistentCalls:
       m_Calls: []
