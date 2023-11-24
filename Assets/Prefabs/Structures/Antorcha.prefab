@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4237896491742927272
 Transform:
   m_ObjectHideFlags: 0
@@ -45,8 +45,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
-  m_Range: 10
+  m_Intensity: 40
+  m_Range: 100
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -3937,9 +3937,9 @@ ParticleSystem:
       properties: 0
       emitProbability: 1
   LightsModule:
-    enabled: 1
-    ratio: 0.2
-    light: {fileID: 2236913962254639467}
+    enabled: 0
+    ratio: 0.5
+    light: {fileID: 0}
     randomDistribution: 1
     color: 1
     range: 1
@@ -3947,7 +3947,7 @@ ParticleSystem:
     rangeCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 40
+      scalar: 50
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4000,7 +4000,7 @@ ParticleSystem:
     intensityCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 100
+      scalar: 35
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4050,7 +4050,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    maxLights: 3
+    maxLights: 12
   TrailModule:
     enabled: 0
     mode: 0
@@ -5051,3 +5051,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particle: {fileID: 5814613550697408625}
+  torchLight: {fileID: 2236913962254639467}
