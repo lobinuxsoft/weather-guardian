@@ -19,7 +19,7 @@ public class ScreenFader : SingletonPersistent<ScreenFader>
         {
             lerp += Time.unscaledDeltaTime;
 
-            material.SetFloat("_FadeIntensity", fadeInBehaviour.Evaluate(lerp/fadeInDuration));
+            material.SetFloat("_FadeIntensity", fadeInBehaviour.Evaluate(lerp / fadeInDuration));
 
             await Task.Yield();
         }
