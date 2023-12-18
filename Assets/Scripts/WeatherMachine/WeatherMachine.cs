@@ -68,6 +68,10 @@ namespace WeatherGuardian.Gameplay
         [Header("Only for debug mode")]
         [SerializeField] private Color debugColor = Color.red;
 
+        [Space]
+        [Header("Collectable Settings")]
+        [SerializeField] private ItemCollector collections;
+
         private int machineStateHash = Animator.StringToHash("STATE");
         private int playerInteractHash = Animator.StringToHash("INTERACT");
 
@@ -146,10 +150,19 @@ namespace WeatherGuardian.Gameplay
         {
             if (uiButton.gameObject.activeSelf)
             {
-                uiButton.gameObject.SetActive(false);
-
-                UpdateMachineState(!machineAnimator.GetBool(machineStateHash));
+                Debug.Log("Machine Press");
+                if (collections==null || collections.HasAllMachineParts())
+                {
+                    activeMachine();
+                }
             }
+        }
+
+        private void activeMachine()
+        {
+            Debug.Log("Machine active");
+            uiButton.gameObject.SetActive(false);
+            UpdateMachineState(!machineAnimator.GetBool(machineStateHash));
         }
 
         public void UpdateMachineState(bool value)

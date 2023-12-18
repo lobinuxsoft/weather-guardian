@@ -13,7 +13,7 @@ namespace WeatherGuardian.PlatformObjects
 
         [SerializeField] private FMODUnity.EventReference endMovementSfx;
 
-        [SerializeField][Range(10.0f, 200.0f)] private float maxSeparationDistance = 20.0f;       
+        [SerializeField][Range(0f, 200.0f)] private float maxSeparationDistance = 20.0f;       
 
         private SplineFollowPath path;
 
