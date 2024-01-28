@@ -25,7 +25,13 @@ public class Ball : ObstacleBehaviour
 
     private Vector3 accelerationDirection;
 
-    private Quaternion ballInitialRotation;    
+    private Quaternion ballInitialRotation;
+
+    private float actualTime = 0;
+
+    [SerializeField] private float timeToStart = 0;
+
+    private bool started = false;
 
     public bool IsActive 
     {
@@ -37,6 +43,37 @@ public class Ball : ObstacleBehaviour
 
     void Start()
     {
+        SetStartConfigurations();
+        //timeToStart is grater than 0 if the game designer wants to delay the ball behaviour to start
+        if (timeToStart > 0)
+        {
+            myRigidBody.useGravity = false;
+        }
+        
+    }
+
+    void Update()
+    {
+        if (actualTime < timeToStart)
+        {
+            actualTime += Time.deltaTime;
+            
+        }
+        else
+        {
+            if (!started)
+            {
+                started = true;
+                myRigidBody.useGravity = true;
+            }
+            BallAcceleration();
+        }
+
+        
+    }
+
+    private void SetStartConfigurations()
+    {
         ballInitialPosition = transform.localPosition;
 
         ballInitialRotation = ramp.transform.localRotation;
@@ -45,14 +82,9 @@ public class Ball : ObstacleBehaviour
 
         accelerationDirection = ramp.transform.forward;
 
-        acceleration = accelerationDirection * ballAceleration;        
+        acceleration = accelerationDirection * ballAceleration;
 
-        myRigidBody.isKinematic = true;        
-    }
-
-    void Update()
-    {
-        BallAcceleration();
+        myRigidBody.isKinematic = true;
     }
 
     public override void AwakeConfigs()
