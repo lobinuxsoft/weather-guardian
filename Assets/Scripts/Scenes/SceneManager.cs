@@ -12,7 +12,6 @@ namespace WeatherGuardian
 
         [SerializeField] private string mainMenuSceneName;
 
-
         public void ChangeSceneToGameplay() 
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(gameplaySceneName);
