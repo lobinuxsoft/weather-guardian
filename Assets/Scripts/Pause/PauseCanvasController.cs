@@ -1,33 +1,44 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace WeatherGuardian.Pause
-{
-    [RequireComponent(typeof(PauseInputDetection), typeof(Canvas))]
+{    
     public class PauseCanvasController : MonoBehaviour
     {
-        private Canvas pauseCanvas;
-
-        private PauseInputDetection pauseInputDetection;
+        [SerializeField] private Canvas pauseCanvas;        
 
         void Awake()
-        {
-            pauseCanvas = GetComponent<Canvas>();
-
-            pauseInputDetection = GetComponent<PauseInputDetection>();
-            
+        {   
             pauseCanvas.gameObject.SetActive(false);
-
-            pauseInputDetection.onPauseTriggered += SwitchCanvasVisibility;
         }
 
-        private void OnDestroy()
+        public void SwitchCanvasVisibility()
         {
-            pauseInputDetection.onPauseTriggered -= SwitchCanvasVisibility;
+            pauseCanvas.gameObject.SetActive(!pauseCanvas.gameObject.activeSelf);
+
+            ResumeStopTime();            
         }
 
-        public void SwitchCanvasVisibility() 
+        public void SwitchCanvasVisibility(InputAction.CallbackContext callbackContext) 
         {
-            pauseCanvas.gameObject.SetActive(pauseCanvas.gameObject.activeSelf);
+            if (callbackContext.performed) 
+            {
+                pauseCanvas.gameObject.SetActive(!pauseCanvas.gameObject.activeSelf);
+
+                ResumeStopTime();
+            }
+        }
+
+        private void ResumeStopTime() 
+        {
+            if (Time.timeScale <= 0.0f) 
+            {
+                Time.timeScale = 1.0f;
+            }
+            else 
+            {
+                Time.timeScale = 0.0f;
+            }
         }
     }
 }
