@@ -19,13 +19,18 @@ namespace WeatherGuardian.Behaviours
         private HeightSpringBehaviour hsb;
         private CapsuleCollider capsuleCollider;
 
+        
         private Vector3 defaultCapsuleCenter = Vector3.zero;
         private float defaultCapsuleHeigth = 0;
+
+        public bool IsDeath { get; private set; } = false;
 
         public static event Action onDeath;
 
         public void Death(Animator animator)
         {
+            IsDeath = true;
+
             if(!hsb)
                 hsb = animator.GetBehaviour<HeightSpringBehaviour>();
 
@@ -39,6 +44,7 @@ namespace WeatherGuardian.Behaviours
             capsuleCollider.center = deathConfig.CapsuleCenter;
             capsuleCollider.height = deathConfig.CapsuleHeight;
 
+            hsb.Body.drag = 0.0f;
             hsb.Body.constraints = RigidbodyConstraints.FreezeRotation;
 
             animator.SetBool(jumpHash, false);
@@ -46,15 +52,22 @@ namespace WeatherGuardian.Behaviours
             animator.SetBool(stompHash, false);
             animator.SetBool(dashHash, false);
             animator.SetBool(interactHash, false);
-            animator.SetBool(deathHash, true);
+            animator.SetBool(deathHash, IsDeath);
 
             onDeath?.Invoke();
         }
 
         public void Revive(Animator animator)
         {
+            IsDeath = false;
+            hsb.Body.drag = 0.0f;
             hsb.Body.constraints = RigidbodyConstraints.None;
-            animator.SetBool(deathHash, false);
+            animator.SetBool(deathHash, IsDeath);
+            animator.SetBool(jumpHash, false);
+            animator.SetBool(umbrellaHash, false);
+            animator.SetBool(stompHash, false);
+            animator.SetBool(dashHash, false);
+            animator.SetBool(interactHash, false);
             capsuleCollider.center = defaultCapsuleCenter;
             capsuleCollider.height = defaultCapsuleHeigth;
         }
