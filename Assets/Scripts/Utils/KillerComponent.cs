@@ -47,6 +47,8 @@ namespace WeatherGuardian.Utils
             Animator animator = player.GetComponent<Animator>();
             DeathBehaviour deathBehaviour = animator.GetBehaviour<DeathBehaviour>();
 
+            if (deathBehaviour.IsDeath) return;
+
             deathBehaviour.Death(animator);
 
             FMODUnity.RuntimeManager.PlayOneShot("event:/Player/Death");
