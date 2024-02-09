@@ -641,8 +641,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2211842177442361364}
-        m_TargetAssemblyTypeName: WeatherGuardian.Pause.PauseCanvasController, Assembly-CSharp
-        m_MethodName: SwitchCanvasVisibility
+        m_TargetAssemblyTypeName: WeatherGuardian.CanvasManager.PauseCanvasController,
+          Assembly-CSharp
+        m_MethodName: PauseUnpauseGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
