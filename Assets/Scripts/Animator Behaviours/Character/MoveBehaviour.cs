@@ -11,6 +11,9 @@ namespace WeatherGuardian.Behaviours
         [Header("Movement:")]
         [SerializeField] private MoveConfig moveConfig;
 
+        [Header("Jump:")]
+        [SerializeField] JumpConfig jumpConfig;
+
         private HeightSpringBehaviour heightSpringBehaviour;
         private Vector3 moveDir = Vector3.zero;
         private float speedFactor = 1f;
@@ -19,6 +22,7 @@ namespace WeatherGuardian.Behaviours
         private bool isMoving = false;
         private bool canSprint = false;
         private float timerToSprint = 0f;
+        private bool coyoteTimeExpired;
 
         public bool CanMove { get; set; } = true;
 
@@ -43,7 +47,9 @@ namespace WeatherGuardian.Behaviours
 
             animator.SetFloat(groundVelocityHash, isMoving ? currentSpeed : 0);
 
-            animator.SetBool(groundedHash, heightSpringBehaviour.GroundedInfo.grounded);
+            coyoteTimeExpired = heightSpringBehaviour.LastGroundedTime > jumpConfig.CoyoteTime;            
+
+            animator.SetBool(groundedHash, !coyoteTimeExpired);
 
             if (heightSpringBehaviour.GroundedInfo.grounded)
                 GroundMovement(moveDir);
