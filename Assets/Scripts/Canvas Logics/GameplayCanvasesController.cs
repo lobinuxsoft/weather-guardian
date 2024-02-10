@@ -2,11 +2,14 @@ using UnityEngine;
 
 namespace WeatherGuardian.CanvasManager
 {
+    [RequireComponent(typeof(PauseMenuNavigationSelector))]
     public class GameplayCanvasesController : MonoBehaviour
     {
         [SerializeField] CanvasVisibilityController pauseCanvasController;
         
         [SerializeField] CanvasVisibilityController settingsCanvasController;
+
+        PauseMenuNavigationSelector navigationSelector;
 
         public CanvasVisibilityController SettingsCanvasController 
         {
@@ -14,6 +17,11 @@ namespace WeatherGuardian.CanvasManager
             {
                 return settingsCanvasController;
             }
+        }
+
+        private void Awake()
+        {
+            navigationSelector = GetComponent<PauseMenuNavigationSelector>();
         }
 
         private void Start()
@@ -37,6 +45,8 @@ namespace WeatherGuardian.CanvasManager
                 pauseCanvasController.ShowCanvas();
 
                 settingsCanvasController.HideCanvas();
+
+                navigationSelector.NavigateBetweenPauseButtons();
             }
         }
 
@@ -47,6 +57,8 @@ namespace WeatherGuardian.CanvasManager
                 pauseCanvasController.HideCanvas();
 
                 settingsCanvasController.ShowCanvas();
+
+                navigationSelector.NavigateBetweenSettingsButtons();
             }
         }
     }

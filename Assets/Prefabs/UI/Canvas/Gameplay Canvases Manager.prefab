@@ -1425,6 +1425,7 @@ GameObject:
   - component: {fileID: 2211842177442361364}
   - component: {fileID: 3596809036557445403}
   - component: {fileID: 2402881104230956544}
+  - component: {fileID: 538169153429497960}
   - component: {fileID: 1599327323612914198}
   m_Layer: 0
   m_Name: Gameplay Canvases Manager
@@ -1507,6 +1508,21 @@ MonoBehaviour:
   settingsSceneName: Settings Scene
   creditsSceneName: Credits Scene
   mainMenuSceneName: Main Menu Scene
+--- !u!114 &538169153429497960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7620878443348819218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 098317a0c34b28549b62f78bf7446f1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSystem: {fileID: 411650344549288787}
+  pauseMenuFirstButton: {fileID: 2984455104581166151}
+  configMenuFirstButton: {fileID: 2442855247602362219}
 --- !u!114 &1599327323612914198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1970,6 +1986,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2614388808733113074}
   m_SourcePrefab: {fileID: 100100000, guid: 9c27ccf6840731a43b200a59d9fadb7b, type: 3}
+--- !u!1 &2442855247602362219 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6395607593383644872, guid: 9c27ccf6840731a43b200a59d9fadb7b,
+    type: 3}
+  m_PrefabInstance: {fileID: 8729947361019029923}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &7189948664285274748 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1936781934703234015, guid: 9c27ccf6840731a43b200a59d9fadb7b,
