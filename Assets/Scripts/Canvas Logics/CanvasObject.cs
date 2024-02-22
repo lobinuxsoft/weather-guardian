@@ -29,6 +29,11 @@ namespace WeatherGuardian.CanvasManager
 
         public void SwitchCanvasVisibility()
         {
+            if (canvas == null) //This is to fix a bug if the canvas is disable when starting the game and the awake is not called
+            {
+                canvas = GetComponent<Canvas>();
+            }
+
             canvas.gameObject.SetActive(!canvas.gameObject.activeSelf);           
         }
 
