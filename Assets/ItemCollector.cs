@@ -1,28 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class ItemCollector : MonoBehaviour
+namespace WeatherGuardian.PickUps 
 {
-    int MachineParts = 0;
-    [SerializeField] private int totalMachineParts;
-    [SerializeField] TMP_Text machineAmmountText;
-    [SerializeField] TMP_Text machineAmmountOnMachineText;
-
-    private void OnTriggerEnter(Collider other)
+    public class ItemCollector : MonoBehaviour
     {
-        if (other.gameObject.CompareTag("MachinePart"))
+        int MachineParts = 0;
+        [SerializeField] private int totalMachineParts;
+        [SerializeField] TMP_Text machineAmmountText;
+        [SerializeField] TMP_Text machineAmmountOnMachineText;
+
+        private void OnTriggerEnter(Collider other)
         {
-            Destroy(other.gameObject);
-            MachineParts++;
-            machineAmmountText.text = MachineParts.ToString();
-            machineAmmountOnMachineText.text = machineAmmountText.text;
+            if (other.gameObject.CompareTag("MachinePart"))
+            {
+                other.gameObject.GetComponent<ICollectable>().PickedUp();
+            
+                MachineParts++;
+                //machineAmmountText.text = MachineParts.ToString();
+                //machineAmmountOnMachineText.text = machineAmmountText.text;
+            }
+        }
+
+        public bool HasAllMachineParts() 
+        { 
+            return MachineParts >= totalMachineParts;
         }
     }
 
-    public bool HasAllMachineParts() 
-    { 
-        return MachineParts >= totalMachineParts;
-    }
 }
