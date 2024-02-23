@@ -8,6 +8,7 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.VFX;
 using WeatherGuardian.Behaviours;
+using WeatherGuardian.PickUps;
 
 namespace WeatherGuardian.Gameplay
 {
