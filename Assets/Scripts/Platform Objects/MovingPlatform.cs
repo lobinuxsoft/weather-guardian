@@ -13,7 +13,9 @@ namespace WeatherGuardian.PlatformObjects
 
         [SerializeField] private FMODUnity.EventReference endMovementSfx;
 
-        [SerializeField][Range(0f, 200.0f)] private float maxSeparationDistance = 20.0f;       
+        [SerializeField][Range(0f, 200.0f)] private float maxSeparationDistance = 20.0f;
+
+        [SerializeField] private Transform activationCollider;
 
         private SplineFollowPath path;
 
@@ -28,6 +30,7 @@ namespace WeatherGuardian.PlatformObjects
             path.OnEnd += path.ResetPath;
 
             path.OnEnd += CallStopMovingPlatformSfx;
+
         }
 
         private void Start()
@@ -52,6 +55,7 @@ namespace WeatherGuardian.PlatformObjects
         {
             MoveBehaviour();
         }
+
         public void MoveBehaviour()
         {
             if (playerTransform != null)
@@ -67,23 +71,40 @@ namespace WeatherGuardian.PlatformObjects
 
         private void OnCollisionEnter(Collision collision)
         {
+            if (activationCollider) { return; }
+            
             if (collision.transform.tag == "Player" && !path.Moving)
             {
-                playerTransform = collision.transform;
-
-                //Try to prevent cat bouncing with platform
-                Rigidbody platformRigidBody = collision.gameObject.GetComponent<Rigidbody>();
-
-                Rigidbody catRigidBody = gameObject.GetComponent<Rigidbody>();
-
-                platformRigidBody.velocity = Vector3.zero;
-
-                catRigidBody.velocity = Vector3.zero;
-
-                CallStartMovingPlatformSfx();
-
-                path.Moving = true;
+                MovePlatform(collision.transform);
             }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if(activationCollider)
+            {
+                if (other.transform.tag == "Player" && !path.Moving)
+                {
+                    MovePlatform(other.transform);
+                }
+            }
+        }
+
+        private void MovePlatform(Transform playerTransform)
+        {
+            this.playerTransform = playerTransform;
+
+            Rigidbody platformRigidBody = playerTransform.gameObject.GetComponent<Rigidbody>();
+
+            Rigidbody catRigidBody = gameObject.GetComponent<Rigidbody>();
+
+            platformRigidBody.velocity = Vector3.zero;
+
+            catRigidBody.velocity = Vector3.zero;
+
+            CallStartMovingPlatformSfx();
+
+            path.Moving = true;
         }
 
         private void StopMoving()
