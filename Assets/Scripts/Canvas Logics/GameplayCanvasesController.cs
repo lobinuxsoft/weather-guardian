@@ -61,5 +61,10 @@ namespace WeatherGuardian.CanvasManager
                 navigationSelector.NavigateBetweenSettingsButtons();
             }
         }
+
+        public void ResumeTime()
+        {
+            Time.timeScale = 1.0f;
+        }
     }
 }
