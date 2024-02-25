@@ -150,8 +150,7 @@ namespace WeatherGuardian.Gameplay
         private void OnActionStarted(InputAction.CallbackContext context)
         {
             if (uiButton.gameObject.activeSelf)
-            {
-                Debug.Log("Machine Press");
+            {   
                 if (collections==null || collections.HasAllMachineParts())
                 {
                     activeMachine();
