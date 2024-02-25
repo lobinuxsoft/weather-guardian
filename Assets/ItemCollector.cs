@@ -17,8 +17,10 @@ namespace WeatherGuardian.PickUps
                 other.gameObject.GetComponent<ICollectable>().PickedUp();
             
                 MachineParts++;
-                //machineAmmountText.text = MachineParts.ToString();
-                //machineAmmountOnMachineText.text = machineAmmountText.text;
+                
+                machineAmmountText.text = MachineParts.ToString();
+                
+                machineAmmountOnMachineText.text = machineAmmountOnMachineText.text;
             }
         }
 
@@ -27,5 +29,4 @@ namespace WeatherGuardian.PickUps
             return MachineParts >= totalMachineParts;
         }
     }
-
 }
