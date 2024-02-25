@@ -118,10 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d295092c190862c42893c75c3ef2c595, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameplaySceneName: CliffLevel
-  settingsSceneName: Settings Scene
-  creditsSceneName: Credits Scene
-  mainMenuSceneName: Main Menu Scene
 --- !u!1 &3093565015247547003
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 8154895178666306050}
+  m_FirstSelected: {fileID: 4613906445637724867}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!114 &118085641112399704
@@ -664,15 +660,15 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 457a7e3b9b23a554ba841a7b4b685acc, type: 3}
---- !u!224 &7674410077034000200 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5910222419060572110, guid: 457a7e3b9b23a554ba841a7b4b685acc,
+--- !u!1 &4613906445637724867 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8683586334275844677, guid: 457a7e3b9b23a554ba841a7b4b685acc,
     type: 3}
   m_PrefabInstance: {fileID: 4072846929374843014}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8154895178666306050 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5307959734368664196, guid: 457a7e3b9b23a554ba841a7b4b685acc,
+--- !u!224 &7674410077034000200 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5910222419060572110, guid: 457a7e3b9b23a554ba841a7b4b685acc,
     type: 3}
   m_PrefabInstance: {fileID: 4072846929374843014}
   m_PrefabAsset: {fileID: 0}
