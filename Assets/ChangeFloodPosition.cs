@@ -1,23 +1,16 @@
 using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
-using static UnityEngine.UI.Image;
+
 
 public class ChangeFloodPosition : MonoBehaviour
 {
     public float delayTime;
+
     public Vector3 posA;
     public Vector3 posB;
-    private bool move; 
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-    }
+    private bool move;
 
     public void StartMoving()
     {
@@ -27,11 +20,15 @@ public class ChangeFloodPosition : MonoBehaviour
     IEnumerator WaitAndMove(float delayTime)
     {
         float totalMovementTime = 5f; //the amount of time you want the movement to take
+        
         float currentMovementTime = 0f;//The amount of time that has passed
+        
         while (Vector3.Distance(transform.localPosition, posB) > 0)
         {
             currentMovementTime += Time.deltaTime;
+            
             transform.localPosition = Vector3.Lerp(posA, posB, currentMovementTime / totalMovementTime);
+            
             yield return null;
         }
     }
