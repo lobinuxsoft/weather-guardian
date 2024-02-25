@@ -4,8 +4,6 @@ namespace WeatherGuardian
 {
     public class SceneManager : MonoBehaviour
     {
-        [SerializeField] private string gameplaySceneName;
-
         [SerializeField] private string settingsSceneName;
 
         [SerializeField] private string creditsSceneName;
@@ -14,7 +12,7 @@ namespace WeatherGuardian
 
         public void ChangeSceneToGameplay() 
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(gameplaySceneName);
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Desert Flooded  Level");
         }
 
         public void ChangeSceneToSettings()
