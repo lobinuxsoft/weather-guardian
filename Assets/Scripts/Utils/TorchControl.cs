@@ -12,7 +12,7 @@ namespace WeatherGuardian.Utils
         private void Awake()
         {
             emissionModule = particle.emission;
-            TorchOff();
+            TorchOn();
         }
 
         public void TorchOn()
