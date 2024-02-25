@@ -4,15 +4,17 @@ namespace WeatherGuardian
 {
     public class SceneManager : MonoBehaviour
     {
-        [SerializeField] private string settingsSceneName;
+        private const string gameplaySceneName = "Desert Flooded  Level";
 
-        [SerializeField] private string creditsSceneName;
+        private const string settingsSceneName = "Settings Scene";
 
-        [SerializeField] private string mainMenuSceneName;
+        private const string creditsSceneName = "Credits Scene";
+        
+        private const string mainMenuSceneName = "Main Menu Scene";
 
         public void ChangeSceneToGameplay() 
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Desert Flooded  Level");
+            UnityEngine.SceneManagement.SceneManager.LoadScene(gameplaySceneName);
         }
 
         public void ChangeSceneToSettings()
