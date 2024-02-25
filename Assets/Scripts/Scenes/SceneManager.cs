@@ -4,7 +4,7 @@ namespace WeatherGuardian
 {
     public class SceneManager : MonoBehaviour
     {
-        private const string gameplaySceneName = "Desert Flooded  Level";
+        private const string gameplaySceneName = "Desert Flooded Level";
 
         private const string settingsSceneName = "Settings Scene";
 
