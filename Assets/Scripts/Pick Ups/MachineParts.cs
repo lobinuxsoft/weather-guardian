@@ -1,9 +1,13 @@
 using UnityEngine;
 
+using FMODUnity;
+
 namespace WeatherGuardian.PickUps 
 {
     public class MachineParts : MonoBehaviour, ICollectable
     {
+        [SerializeField] private EventReference pickUpSFX;
+
         [SerializeField] ParticleSystem particleSystem;
 
         private void Start()
@@ -17,6 +21,9 @@ namespace WeatherGuardian.PickUps
         void ICollectable.PickedUp()
         {
             particleSystem.Play();
+
+            if (!pickUpSFX.IsNull)
+                RuntimeManager.PlayOneShot(pickUpSFX);
 
             Destroy(gameObject, 0.5f);       
         }        
