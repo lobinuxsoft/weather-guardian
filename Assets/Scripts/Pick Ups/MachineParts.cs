@@ -8,6 +8,8 @@ namespace WeatherGuardian.PickUps
     {
         [SerializeField] private EventReference pickUpSFX;
 
+        [SerializeField] private EventReference MachinePartSFX;
+
         [SerializeField] ParticleSystem particleSystem;
 
         private void Start()
@@ -24,6 +26,9 @@ namespace WeatherGuardian.PickUps
 
             if (!pickUpSFX.IsNull)
                 RuntimeManager.PlayOneShot(pickUpSFX);
+
+            if (!MachinePartSFX.IsNull)
+                RuntimeManager.PlayOneShot(MachinePartSFX);
 
             Destroy(gameObject, 0.5f);       
         }        
