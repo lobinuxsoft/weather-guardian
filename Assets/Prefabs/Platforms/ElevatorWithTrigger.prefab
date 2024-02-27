@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 8499125655418328458}
   - component: {fileID: 7148183295616212208}
   - component: {fileID: 7272317372684946221}
+  - component: {fileID: 530236371074883891}
   - component: {fileID: 7985926615758405797}
+  - component: {fileID: 5872708865835579795}
   m_Layer: 0
   m_Name: Rock
   m_TagString: Untagged
@@ -84,6 +86,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &530236371074883891
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2229828633901765232}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.91, y: 0.7, z: 0.9}
+  m_Center: {x: 0, y: -0.4, z: 0}
 --- !u!65 &7985926615758405797
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -105,6 +128,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5872708865835579795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2229828633901765232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c64860d0e9414b4aae75361113bdf30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  geiserSFX:
+    Guid:
+      Data1: -1955583948
+      Data2: 1336692992
+      Data3: 2110781861
+      Data4: -2034239712
+    Path: event:/Last minute sounds/Geiser
 --- !u!1 &4935468294474674395
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ namespace WeatherGuardian.PlatformObjects
 
         //[SerializeField] private FMODUnity.EventReference endMovementSfx;
 
-        [SerializeField] private FMODUnity.EventReference collisionWithPlayerSFX;
+        //[SerializeField] private FMODUnity.EventReference collisionWithPlayerSFX;
 
         [SerializeField][Range(0f, 200.0f)] private float maxSeparationDistance = 20.0f;
 
@@ -79,8 +79,8 @@ namespace WeatherGuardian.PlatformObjects
             
             if (collision.transform.tag == "Player" && !path.Moving)
             {
-                if (!collisionWithPlayerSFX.IsNull)
-                    RuntimeManager.PlayOneShot(collisionWithPlayerSFX);
+                /*if (!collisionWithPlayerSFX.IsNull)
+                    RuntimeManager.PlayOneShot(collisionWithPlayerSFX);*/
 
                 MovePlatform(collision.transform);
             }
