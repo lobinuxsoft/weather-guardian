@@ -1,17 +1,21 @@
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
 using WeatherGuardian.Interfaces;
+using WeatherGuardian.PickUps;
 
 namespace WeatherGuardian.PlatformObjects
 {
     [RequireComponent(typeof(SplineFollowPath))]
     public class MovingPlatform : MonoBehaviour, IMoveStrategy
     {
-        [SerializeField] private FMODUnity.EventReference startMovementSfx;
+        //[SerializeField] private FMODUnity.EventReference startMovementSfx;
 
-        [SerializeField] private FMODUnity.EventReference loopMovementSfx;
+        //[SerializeField] private FMODUnity.EventReference loopMovementSfx;
 
-        [SerializeField] private FMODUnity.EventReference endMovementSfx;
+        //[SerializeField] private FMODUnity.EventReference endMovementSfx;
+
+        [SerializeField] private FMODUnity.EventReference collisionWithPlayerSFX;
 
         [SerializeField][Range(0f, 200.0f)] private float maxSeparationDistance = 20.0f;
 
@@ -75,6 +79,9 @@ namespace WeatherGuardian.PlatformObjects
             
             if (collision.transform.tag == "Player" && !path.Moving)
             {
+                if (!collisionWithPlayerSFX.IsNull)
+                    RuntimeManager.PlayOneShot(collisionWithPlayerSFX);
+
                 MovePlatform(collision.transform);
             }
         }
@@ -116,17 +123,17 @@ namespace WeatherGuardian.PlatformObjects
 
         private void CallStartMovingPlatformSfx() 
         {           
-            if (!startMovementSfx.IsNull && !path.Moving)
-                FMODUnity.RuntimeManager.PlayOneShotAttached(startMovementSfx, gameObject);
+            //if (!startMovementSfx.IsNull && !path.Moving)
+            //    FMODUnity.RuntimeManager.PlayOneShotAttached(startMovementSfx, gameObject);
 
-            if (!startMovementSfx.IsNull && !path.Moving)
-                FMODUnity.RuntimeManager.PlayOneShotAttached(loopMovementSfx, gameObject);
+            //if (!startMovementSfx.IsNull && !path.Moving)
+            //    FMODUnity.RuntimeManager.PlayOneShotAttached(loopMovementSfx, gameObject);
         }
 
         private void CallStopMovingPlatformSfx() 
         {
-            if (!endMovementSfx.IsNull)
-                FMODUnity.RuntimeManager.PlayOneShotAttached(endMovementSfx, gameObject);
+            //if (!endMovementSfx.IsNull)
+            //    FMODUnity.RuntimeManager.PlayOneShotAttached(endMovementSfx, gameObject);
         }
     }
 }
