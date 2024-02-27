@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine;
 
 public class ChangeFloodPosition : MonoBehaviour
 {
+    public event Action onTargetPositionAchieved;
+
     public float delayTime;
 
     public Vector3 posA;
@@ -28,7 +31,12 @@ public class ChangeFloodPosition : MonoBehaviour
             currentMovementTime += Time.deltaTime;
             
             transform.localPosition = Vector3.Lerp(posA, posB, currentMovementTime / totalMovementTime);
-            
+
+            if (Vector3.Distance(transform.localPosition, posB) <= 0)
+            {
+                onTargetPositionAchieved?.Invoke();
+            }
+
             yield return null;
         }
     }
