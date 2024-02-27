@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 530236371074883891}
   - component: {fileID: 7985926615758405797}
   - component: {fileID: 5872708865835579795}
+  - component: {fileID: 796747531073849652}
   m_Layer: 0
   m_Name: Rock
   m_TagString: Untagged
@@ -147,6 +148,37 @@ MonoBehaviour:
       Data3: 2110781861
       Data4: -2034239712
     Path: event:/Last minute sounds/Geiser
+--- !u!114 &796747531073849652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2229828633901765232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1970477639
+      Data2: 1325880014
+      Data3: 1323911593
+      Data4: 1744207643
+    Path: event:/Last minute sounds/Bubbles
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 10
+  OverrideMaxDistance: 18
 --- !u!1 &4935468294474674395
 GameObject:
   m_ObjectHideFlags: 0
