@@ -13,17 +13,17 @@ namespace WeatherGuardian.CanvasManager
 
         private void Start()
         {
-            eventSystem.firstSelectedGameObject = pauseMenuFirstButton;
+            eventSystem.SetSelectedGameObject(pauseMenuFirstButton);
         }
 
         public void NavigateBetweenPauseButtons()
         {
-            eventSystem.firstSelectedGameObject = pauseMenuFirstButton;
+            eventSystem.SetSelectedGameObject(pauseMenuFirstButton);
         }
 
         public void NavigateBetweenSettingsButtons()
         {
-            eventSystem.firstSelectedGameObject = configMenuFirstButton;
+            eventSystem.SetSelectedGameObject(configMenuFirstButton);
         }
     }
 }

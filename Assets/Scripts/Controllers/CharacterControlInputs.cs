@@ -129,8 +129,11 @@ namespace Game.InputsController
 
         private void JumpAction(InputAction.CallbackContext context)
         {
-            jumpBehaviour.Jump(animator);
-            doubleJumpBehaviour.Jump(animator);
+            if(Time.timeScale == 1.0f)
+            {
+                jumpBehaviour.Jump(animator);
+                doubleJumpBehaviour.Jump(animator);
+            }
         }
 
         private void UmbrellaAction(InputAction.CallbackContext context) => airUmbrellaBehaviour.UseUmbrella(animator);
