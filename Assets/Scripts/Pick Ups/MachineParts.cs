@@ -12,6 +12,8 @@ namespace WeatherGuardian.PickUps
 
         [SerializeField] ParticleSystem particleSystem;
 
+        [SerializeField] [Range(0.01f, 1.0f)] private float vanishSpeed;
+
         private void Start()
         {
             if (particleSystem != null) 
@@ -30,7 +32,7 @@ namespace WeatherGuardian.PickUps
             if (!MachinePartSFX.IsNull)
                 RuntimeManager.PlayOneShot(MachinePartSFX);
 
-            Destroy(gameObject, 0.5f);       
+            Destroy(gameObject, vanishSpeed);      
         }        
     }
 }
