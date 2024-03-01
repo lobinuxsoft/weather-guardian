@@ -153,8 +153,9 @@ namespace WeatherGuardian.Gameplay
             {   
                 if (collections==null || collections.HasAllMachineParts())
                 {
-                    activeMachine();
+                  
                 }
+                activeMachine();
             }
         }
 
