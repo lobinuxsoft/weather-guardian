@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,99 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &946151808
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1764664625409143998, guid: 63ba9b1dc9a20624aa95110012d1756c,
+        type: 3}
+      propertyPath: EventReference.Path
+      value: event:/Ambient/Musica Desierto 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1764664625409143998, guid: 63ba9b1dc9a20624aa95110012d1756c,
+        type: 3}
+      propertyPath: EventReference.Guid.Data1
+      value: 1077956752
+      objectReference: {fileID: 0}
+    - target: {fileID: 1764664625409143998, guid: 63ba9b1dc9a20624aa95110012d1756c,
+        type: 3}
+      propertyPath: EventReference.Guid.Data2
+      value: 1110239407
+      objectReference: {fileID: 0}
+    - target: {fileID: 1764664625409143998, guid: 63ba9b1dc9a20624aa95110012d1756c,
+        type: 3}
+      propertyPath: EventReference.Guid.Data3
+      value: 1259273143
+      objectReference: {fileID: 0}
+    - target: {fileID: 1764664625409143998, guid: 63ba9b1dc9a20624aa95110012d1756c,
+        type: 3}
+      propertyPath: EventReference.Guid.Data4
+      value: 343278318
+      objectReference: {fileID: 0}
+    - target: {fileID: 2144022140680129032, guid: 63ba9b1dc9a20624aa95110012d1756c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -13.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2144022140680129032, guid: 63ba9b1dc9a20624aa95110012d1756c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -120.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2144022140680129032, guid: 63ba9b1dc9a20624aa95110012d1756c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2144022140680129032, guid: 63ba9b1dc9a20624aa95110012d1756c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2144022140680129032, guid: 63ba9b1dc9a20624aa95110012d1756c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2144022140680129032, guid: 63ba9b1dc9a20624aa95110012d1756c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2144022140680129032, guid: 63ba9b1dc9a20624aa95110012d1756c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2144022140680129032, guid: 63ba9b1dc9a20624aa95110012d1756c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2144022140680129032, guid: 63ba9b1dc9a20624aa95110012d1756c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2144022140680129032, guid: 63ba9b1dc9a20624aa95110012d1756c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750365301966425902, guid: 63ba9b1dc9a20624aa95110012d1756c,
+        type: 3}
+      propertyPath: m_Name
+      value: Musica Desierto
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 63ba9b1dc9a20624aa95110012d1756c, type: 3}
 --- !u!1001 &1152647717
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -141,9 +234,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: Settings Menu Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1407896543195993526, guid: 9c27ccf6840731a43b200a59d9fadb7b,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1471259743935096709, guid: 9c27ccf6840731a43b200a59d9fadb7b,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1471259743935096709, guid: 9c27ccf6840731a43b200a59d9fadb7b,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1471259743935096709, guid: 9c27ccf6840731a43b200a59d9fadb7b,
+        type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1936781934703234015, guid: 9c27ccf6840731a43b200a59d9fadb7b,
@@ -248,6 +356,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2776250012046260012, guid: 9c27ccf6840731a43b200a59d9fadb7b,
         type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2776250012046260012, guid: 9c27ccf6840731a43b200a59d9fadb7b,
+        type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
@@ -313,6 +426,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5723994394716278518, guid: 9c27ccf6840731a43b200a59d9fadb7b,
         type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723994394716278518, guid: 9c27ccf6840731a43b200a59d9fadb7b,
+        type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
@@ -351,9 +469,24 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8818422232228719724, guid: 9c27ccf6840731a43b200a59d9fadb7b,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043923832825552479, guid: 9c27ccf6840731a43b200a59d9fadb7b,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9043923832825552479, guid: 9c27ccf6840731a43b200a59d9fadb7b,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043923832825552479, guid: 9c27ccf6840731a43b200a59d9fadb7b,
+        type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -629,3 +762,4 @@ SceneRoots:
   - {fileID: 2013456217}
   - {fileID: 1821631863}
   - {fileID: 1152647717}
+  - {fileID: 946151808}
