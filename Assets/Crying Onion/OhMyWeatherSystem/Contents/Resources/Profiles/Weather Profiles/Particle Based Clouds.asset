@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4be639834ac044540a0d4157581bfbd2, type: 3}
+  m_Name: Particle Based Clouds
+  m_EditorClassIdentifier: 
+  weatherTime: {x: 30, y: 90}
+  likelihood: 1
+  forecastNext:
+  - {fileID: 11400000, guid: d2c5755adb479154bbc5cb46bd574333, type: 2}
+  - {fileID: 11400000, guid: 0de5e4f4116fb304e95695ce9b67a9dc, type: 2}
+  - {fileID: 11400000, guid: 6088e601d7f07974a90c26c796efac59, type: 2}
+  forecastModifierMethod: 0
+  chances: []
+  cloudSettings:
+    cumulusCoverage: 0
+    altocumulusCoverage: 0
+    chemtrailCoverage: 0
+    cirrostratusCoverage: 0
+    cirrusCoverage: 0
+    nimbusCoverage: 0
+    nimbusVariation: 0.9
+    nimbusHeightEffect: 1
+    borderHeight: 0.5
+    borderVariation: 0.9
+    borderEffect: 1
+  fogDensity: 1
+  FX: []

@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2266780b2466af24c8aec2894b42055c, type: 3}
+  m_Name: CharacterDashConfig
+  m_EditorClassIdentifier: 
+  <UseUmbrella>k__BackingField: 0
+  <Cooldown>k__BackingField: 0.5
+  <Duration>k__BackingField: 0.4
+  <Distance>k__BackingField: 20
+  <VelocityBehaviourCurve>k__BackingField:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.0000011802185
+      value: 0.99527025
+      inSlope: -9.559103
+      outSlope: -9.559103
+      tangentMode: 34
+      weightedMode: 2
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.08492898
+      value: 0.1834141
+      inSlope: 0.20614599
+      outSlope: 0.20614599
+      tangentMode: 1
+      weightedMode: 3
+      inWeight: 0.33333337
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.30476385
+      value: 0.4235832
+      inSlope: 2.715249
+      outSlope: 1.6014137
+      tangentMode: 1
+      weightedMode: 2
+      inWeight: 0.58863753
+      outWeight: 0.40021646
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: 0
+      outSlope: 0.005157663
+      tangentMode: 1
+      weightedMode: 3
+      inWeight: 0.33333322
+      outWeight: 0.5221998
+    - serializedVersion: 3
+      time: 0.9004955
+      value: 0.7334678
+      inSlope: -2.287814
+      outSlope: -2.287814
+      tangentMode: 1
+      weightedMode: 3
+      inWeight: 0.17571557
+      outWeight: 0.8410077
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -73.15312
+      outSlope: -73.15312
+      tangentMode: 0
+      weightedMode: 1
+      inWeight: 0.03713562
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  <CapsuleCenter>k__BackingField: {x: 0, y: 1, z: 0}
+  <CapsuleHeight>k__BackingField: 2

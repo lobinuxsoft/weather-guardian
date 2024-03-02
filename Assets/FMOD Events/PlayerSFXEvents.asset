@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f2fe7b2e7db6384fbe2d0dacb60e6d8, type: 3}
+  m_Name: PlayerSFXEvents
+  m_EditorClassIdentifier: 
+  <footstepSfx>k__BackingField:
+    Guid:
+      Data1: 1022370032
+      Data2: 1151536719
+      Data3: -1807528797
+      Data4: -1019147751
+    Path: event:/Player/Footstep
+  <landingSfx>k__BackingField:
+    Guid:
+      Data1: 970036923
+      Data2: 1233037680
+      Data3: 293954713
+      Data4: -1872854003
+    Path: event:/Player/Land
+  <jumpSfx>k__BackingField:
+    Guid:
+      Data1: -852504256
+      Data2: 1258142462
+      Data3: 1427032984
+      Data4: -14112830
+    Path: event:/Player/Jump
+  <openUmbrellaSfx>k__BackingField:
+    Guid:
+      Data1: -1744401462
+      Data2: 1170942715
+      Data3: -974471805
+      Data4: -1020539566
+    Path: event:/Player/Umbrella/Open
+  <closeUmbrellaSfx>k__BackingField:
+    Guid:
+      Data1: 516198369
+      Data2: 1328527715
+      Data3: -2089832557
+      Data4: 1022430286
+    Path: event:/Player/Umbrella/Close
+  <dashSfx>k__BackingField:
+    Guid:
+      Data1: 2030659894
+      Data2: 1238114218
+      Data3: -1052111200
+      Data4: 779281203
+    Path: event:/Player/Dash
+  <glideSfx>k__BackingField:
+    Guid:
+      Data1: -253013874
+      Data2: 1216633286
+      Data3: 643050413
+      Data4: 2145910087
+    Path: event:/Player/Umbrella/Flapping

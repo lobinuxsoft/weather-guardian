@@ -1,0 +1,136 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dccf7172616748499437c285a6d18fe, type: 3}
+  m_Name: Wisps
+  m_EditorClassIdentifier: 
+  playTime: {x: 20, y: 40}
+  likelihood: 0.573
+  dontPlayDuring:
+  - {fileID: 11400000, guid: 1068707687c701b469f37cedfdb00512, type: 2}
+  - {fileID: 11400000, guid: 353351676db0d1b4ba64f832f1ee982d, type: 2}
+  - {fileID: 11400000, guid: f83c81a8ed7dbe74597b539292342072, type: 2}
+  - {fileID: 11400000, guid: 27eb046b80a3255408b142c7dfecd54a, type: 2}
+  - {fileID: 11400000, guid: 2cbfb0ce8a3c07a41ad83db763d04a1f, type: 2}
+  - {fileID: 11400000, guid: 5c380743248e4ba429d66d85299b2e49, type: 2}
+  - {fileID: 11400000, guid: c5c21d532592e2546ad40461014af420, type: 2}
+  - {fileID: 11400000, guid: 537de9db954e2a149bad37f466f8a9a3, type: 2}
+  - {fileID: 11400000, guid: 32b03dcea6e8b904aaab5e5430a304cc, type: 2}
+  - {fileID: 11400000, guid: 23523d407b5c18e4fbb7b1df5371325f, type: 2}
+  - {fileID: 11400000, guid: 552357e0a3891304bae4237d95d34195, type: 2}
+  chances:
+  - limitType: 1
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+  - limitType: 0
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+  - limitType: 3
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.7
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.8
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.85
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0.31892395
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  FX:
+  - {fileID: 11400000, guid: ed44521ca4daf5249a1f5794dec054f0, type: 2}
+  - {fileID: 11400000, guid: 794f932465038604c96a2f5cbd8f5596, type: 2}
+  FXVolume: 0.157
+  useVFX: 1
