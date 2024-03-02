@@ -1,5 +1,5 @@
 <p align="center">
-<img src="logo.png" alt="Weather guardian"/>
+<img src="/Assets/Logo/weather-guardian-logo.jpg" alt="Weather guardian"/>
 </p>
 
 # Weather guardian
