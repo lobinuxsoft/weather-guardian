@@ -1,0 +1,70 @@
+name: Build & Deploy Client
+
+on:
+  workflow_call: {}
+
+env:
+  BUILD_FULL_NAME: "${{ vars.BUILD_NAME }} ${{ github.ref_name }}"
+  UNITY_VERSION: 2022.3.0f1
+
+jobs:
+    buildAndDeployClient:
+      name: Build & deploy
+      runs-on: ubuntu-latest
+      strategy:
+        matrix:
+          targetPlatform:
+            #- StandaloneOSX # Build a macOS standalone (Intel 64-bit).
+            - StandaloneWindows # Build a Windows standalone.
+            #- StandaloneWindows64 # Build a Windows 64-bit standalone.
+            - StandaloneLinux64 # Build a Linux 64-bit standalone.
+            #- iOS # Build an iOS player.
+            #- Android # Build an Android .apk standalone app.
+            #- WebGL # WebGL.
+
+      steps:
+        
+        # Checkouts the current repository
+        - name: Checkout
+          uses: actions/checkout@v3
+          with:
+            fetch-depth: 1
+
+        # Caches the Library folder for faster builds
+        - name: Cache
+          uses: actions/cache@v3
+          with:
+            path: Library
+            key: Library-${{ env.BUILD_TARGET }}
+            restore-keys: Library-
+        
+        # Builds the Windows client using a given license
+        - name: Build
+          uses: game-ci/unity-builder@v2
+          env:
+            UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+            UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+            UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+          with:
+            buildName: "${{ env.BUILD_FULL_NAME }}_${{ matrix.targetPlatform }}"
+            unityVersion: ${{ env.UNITY_VERSION }}
+            targetPlatform: ${{ matrix.targetPlatform }}
+            versioning: Tag
+        
+        # Zips the build
+        - name: Zip build
+          id: zipBuild
+          run: bash ${GITHUB_WORKSPACE}/.github/scripts/common/zip-build.sh
+          env:
+            BUILD_TARGET: ${{ matrix.targetPlatform }}
+            BUILD_FULL_NAME: "${{ env.BUILD_FULL_NAME }}_${{ matrix.targetPlatform }}"
+
+        # Uploads the build zip to Google Drive
+        - name: Upload to Google Drive
+          uses: adityak74/google-drive-upload-git-action@main
+          with:
+            credentials: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS }}
+            folderId: ${{ secrets.GOOGLE_DRIVE_FOLDER_ID }}
+            filename: release/${{ steps.zipBuild.outputs.targetZipName }}.zip
+            name: ${{ steps.zipBuild.outputs.targetZipName }}.zip
+            overwrite: "true"
