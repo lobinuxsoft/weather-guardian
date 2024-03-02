@@ -157,10 +157,10 @@ namespace WeatherGuardian.Gameplay
             {   
                 if (collections==null || collections.HasAllMachineParts())
                 {
-                  
+                    activeMachine();
+                    OnMachineOff?.Invoke(this, EventArgs.Empty);
                 }
-                activeMachine();
-                OnMachineOff?.Invoke(this, EventArgs.Empty);
+
             }
         }
 

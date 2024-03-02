@@ -35,7 +35,8 @@ namespace Game.InputsController
         private void OnEnable()
         {
             debugAction.action.started += SwitchDebug;
-            debugAction.action.Enable();
+            //Debug desactivado para build final
+            debugAction.action.Disable();
 
             moveAction.action.performed += MoveAction;
             moveAction.action.canceled += MoveAction;
