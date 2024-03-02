@@ -4,7 +4,27 @@
 
 # Weather guardian
 
-PONER LA DESCRIPCION LARGA DEL JUEGO ACA.
+Welcome to the adventure of Weather Guardian!, an extraordinary 3D platformer where the world is going through a great climate crisis.
+Take on the role of Nimbus and equip himself with his magical umbrella, learn amazing moves, search for collectibles, and overcome the world's intense obstacles!
+It is your duty to repair the machine to save the climate!
+
+Controls
+Keyboard and Mouse
+W: Forward movement
+A: Movement to the left
+S: Backward movement
+D: Movement to the right
+SPACEBAR: Jump/Double Jump
+SHIFT:Dash
+LEFT CLICK: Open/Close umbrella (ONLY IN AIR)
+MOUSE MOVEMENT: Camera Movement
+
+Joystick
+Left Stick: Movement in 8 directions
+Right Stick: Move Camera
+A/X Button: Jump/Double Jump
+RT/R2 Button: Dash
+X/Square Button: Open/Close Umbrella (IN AIR ONLY)
 
 This is a game being developed by students from <a href="https://www.imagecampus.edu.ar/">Image Campus</a>
 
@@ -44,4 +64,4 @@ This game was also possible thanks to the support of these professors:
 
 ## Links
 
-Download it from itch.io: PONER LINK AL JUEGO DE ITCH ACA
+Download it from itch.io: https://maxigianetti.itch.io/weather-guardian
