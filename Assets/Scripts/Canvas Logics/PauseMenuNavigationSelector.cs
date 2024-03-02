@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace WeatherGuardian.CanvasManager 
 {
@@ -7,18 +8,12 @@ namespace WeatherGuardian.CanvasManager
     {
         [SerializeField] private EventSystem eventSystem;
 
-        [SerializeField] private GameObject pauseMenuFirstButton;
-
         [SerializeField] private GameObject configMenuFirstButton;
-
-        private void Start()
-        {
-            eventSystem.SetSelectedGameObject(pauseMenuFirstButton);
-        }
 
         public void NavigateBetweenPauseButtons()
         {
-            eventSystem.SetSelectedGameObject(pauseMenuFirstButton);
+            //pauseMenuFirstButton.Select();
+            //eventSystem.SetSelectedGameObject(pauseMenuFirstButton);
         }
 
         public void NavigateBetweenSettingsButtons()

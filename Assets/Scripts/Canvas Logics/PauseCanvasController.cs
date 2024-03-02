@@ -6,11 +6,24 @@ namespace WeatherGuardian.CanvasManager
     [RequireComponent(typeof(GameplayCanvasesController))]
     public class PauseCanvasController : CanvasVisibilityController
     {
+        [SerializeField] StartGameMissionCanvas startGameMissionCanvas;
         private GameplayCanvasesController gameplayCanvasesController;
+        private bool canPause;
+
 
         private void Awake()
         {
             gameplayCanvasesController = GetComponent<GameplayCanvasesController>();
+        }
+
+        private void Start()
+        {
+            startGameMissionCanvas.OnStartGame += StartGameMissionCanvas_OnStartGame;
+        }
+
+        private void StartGameMissionCanvas_OnStartGame(object sender, System.EventArgs e)
+        {
+            canPause = true;
         }
 
         public void PauseUnpauseGame()
@@ -34,7 +47,7 @@ namespace WeatherGuardian.CanvasManager
 
         public void PauseUnpauseGame(InputAction.CallbackContext callbackContext) 
         {
-            if (callbackContext.performed) 
+            if (callbackContext.performed && canPause) 
             {
                 if (myCanvasObject.IsVisible) 
                 {
