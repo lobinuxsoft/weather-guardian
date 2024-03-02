@@ -2,6 +2,7 @@ using CryingOnion.OhMy.WeatherSystem.Core;
 using CryingOnion.OhMy.WeatherSystem.Data;
 using CryingOnion.Tools.Runtime;
 using FMODUnity;
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -65,6 +66,7 @@ namespace WeatherGuardian.Gameplay
         [Space]
         [SerializeField] private UnityEvent onMachineOff;
 
+
         [Space]
         [Header("Only for debug mode")]
         [SerializeField] private Color debugColor = Color.red;
@@ -79,6 +81,8 @@ namespace WeatherGuardian.Gameplay
         private BoxCollider boxTrigger;
         private Transform camTransform;
         private GameObject player;
+
+        public static System.EventHandler OnMachineOff;
 
         private void Awake()
         {
@@ -156,6 +160,7 @@ namespace WeatherGuardian.Gameplay
                   
                 }
                 activeMachine();
+                OnMachineOff?.Invoke(this, EventArgs.Empty);
             }
         }
 
