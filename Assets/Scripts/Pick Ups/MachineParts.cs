@@ -1,9 +1,11 @@
 using UnityEngine;
 
 using FMODUnity;
+using System;
 
 namespace WeatherGuardian.PickUps 
 {
+    [RequireComponent(typeof(Collider))]
     public class MachineParts : MonoBehaviour, ICollectable
     {
         [SerializeField] private EventReference pickUpSFX;
@@ -13,6 +15,18 @@ namespace WeatherGuardian.PickUps
         [SerializeField] ParticleSystem particleSystem;
 
         [SerializeField] [Range(0.01f, 1.0f)] private float vanishSpeed;
+
+        private Collider myCollider;
+
+        private void Awake()
+        {
+            myCollider = GetComponent<Collider>();
+        }
+
+        private void OnEnable()
+        {
+            myCollider.enabled = true;
+        }
 
         private void Start()
         {
@@ -32,7 +46,9 @@ namespace WeatherGuardian.PickUps
             if (!MachinePartSFX.IsNull)
                 RuntimeManager.PlayOneShot(MachinePartSFX);
 
-            Destroy(gameObject, vanishSpeed);      
+            myCollider.enabled = false;
+
+            Destroy(gameObject, vanishSpeed);
         }        
     }
 }
