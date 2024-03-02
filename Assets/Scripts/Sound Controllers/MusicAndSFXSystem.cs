@@ -4,10 +4,10 @@ using UnityEngine.UI;
 
 public class MusicAndSFXSystem : MonoBehaviour
 {
-    [SerializeField] [Range(0.1f, 1.0f)] private float InitialMusicVolumeValue;
+    [SerializeField][Range(0.1f, 1.0f)] private float InitialMusicVolumeValue;
 
-    [SerializeField] [Range(0.1f, 1.0f)] private float InitialSFXVolumeValue;
-    
+    [SerializeField][Range(0.1f, 1.0f)] private float InitialSFXVolumeValue;
+
     [SerializeField] private Slider musicSlider;
 
     [SerializeField] private Slider SFXSlider;
@@ -42,11 +42,11 @@ public class MusicAndSFXSystem : MonoBehaviour
         {
             MusicBus = FMODUnity.RuntimeManager.GetBus(musicBusRoute);
 
-            SFXBus = FMODUnity.RuntimeManager.GetBus(SFXBusRoute);            
-        }        
+            SFXBus = FMODUnity.RuntimeManager.GetBus(SFXBusRoute);
+        }
     }
 
-    private void StartInitialConfiguration() 
+    private void StartInitialConfiguration()
     {
         if (firstSetting)
         {
@@ -54,43 +54,54 @@ public class MusicAndSFXSystem : MonoBehaviour
 
             firstSetting = !firstSetting;
         }
+        else
+        {
+            UpdateSlidersValues(musicVolume, SFXVolume);
+        }
     }
 
     public void UpdateSystemWithSliders()
     {
         UpdateVolumes(musicSlider.value, SFXSlider.value);
 
-        UpdateBusesVolumes(musicVolume, SFXVolume);        
+        UpdateBusesVolumes(musicVolume, SFXVolume);
     }
 
-    private void UpdateSystem(float musicVolume, float SFXVolume) 
+    private void UpdateSystem(float musicVolume, float SFXVolume)
     {
         UpdateVolumes(musicVolume, SFXVolume);
 
-        UpdateBusesVolumes(musicVolume, SFXVolume);        
+        UpdateBusesVolumes(musicVolume, SFXVolume);
     }
 
-    private void UpdateVolumes(float newMusicVolume, float newSFXVolume) 
+    private void UpdateVolumes(float newMusicVolume, float newSFXVolume)
     {
         musicVolume = newMusicVolume;
 
         SFXVolume = newSFXVolume;
     }
 
-    public void SetMusicVolumeLevel(float newMusicVolume) 
+    public void SetMusicVolumeLevel(float newMusicVolume)
     {
-        musicVolume = newMusicVolume;        
+        musicVolume = newMusicVolume;
     }
 
-    public void SetSFXVolumeLevel(float newSFXVolume) 
+    public void SetSFXVolumeLevel(float newSFXVolume)
     {
-        SFXVolume = newSFXVolume;        
+        SFXVolume = newSFXVolume;
     }
 
-    private void UpdateBusesVolumes(float newMusicBusVolume, float newSFXBusVolume) 
+    private void UpdateBusesVolumes(float newMusicBusVolume, float newSFXBusVolume)
     {
         MusicBus.setVolume(newMusicBusVolume);
 
         SFXBus.setVolume(newSFXBusVolume);
+    }
+
+    private void UpdateSlidersValues(float newMusicSliderValue, float newSFXSliderValue)
+    {
+        musicSlider.value = newMusicSliderValue;
+
+        SFXSlider.value = newSFXSliderValue;
     }
 }
