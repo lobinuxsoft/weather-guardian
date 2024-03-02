@@ -10,7 +10,7 @@ This is a game being developed by students from <a href="https://www.imagecampus
 
 <p align="center">
   <a href="https://www.imagecampus.edu.ar/">
-    <img src="/Assets/Logo/Image Logo.png" alt="Image Campus"/>
+    <img src="logo-image-campus.png" alt="Image Campus"/>
   </a> 
 </p>
 
