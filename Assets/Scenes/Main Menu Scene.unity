@@ -367,11 +367,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 806944853294852751, guid: 42a3e4705731ec04aab6f432ccc1fea5,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2293869186590500623, guid: 42a3e4705731ec04aab6f432ccc1fea5,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7055216021935876817, guid: 42a3e4705731ec04aab6f432ccc1fea5,
         type: 3}
       propertyPath: m_Name
       value: Nimbus (for menu)
       objectReference: {fileID: 0}
+    - target: {fileID: 7549566496734985492, guid: 42a3e4705731ec04aab6f432ccc1fea5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8f2b6933d42febb4da422de6fdd3e0d8, type: 2}
     - target: {fileID: 7683977946508406891, guid: 42a3e4705731ec04aab6f432ccc1fea5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -422,6 +437,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8552205880719367818, guid: 42a3e4705731ec04aab6f432ccc1fea5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8f2b6933d42febb4da422de6fdd3e0d8, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
