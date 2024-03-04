@@ -81,6 +81,7 @@ namespace WeatherGuardian.Gameplay
         private BoxCollider boxTrigger;
         private Transform camTransform;
         private GameObject player;
+        private bool machineIsOn = false;
 
         public static System.EventHandler OnMachineOff;
 
@@ -157,8 +158,12 @@ namespace WeatherGuardian.Gameplay
             {   
                 if (collections==null || collections.HasAllMachineParts())
                 {
-                    activeMachine();
-                    OnMachineOff?.Invoke(this, EventArgs.Empty);
+                    if (!machineIsOn)
+                    {
+                        machineIsOn = true;
+                        activeMachine();
+                        OnMachineOff?.Invoke(this, EventArgs.Empty);
+                    }
                 }
 
             }
