@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System;
 
 namespace WeatherGuardian.PickUps 
 {
@@ -9,6 +10,13 @@ namespace WeatherGuardian.PickUps
         [SerializeField] private int totalMachineParts;
         [SerializeField] TMP_Text machineAmmountText;
         [SerializeField] TMP_Text machineAmmountOnMachineText;
+
+        public event EventHandler<OnItemCollectedEventArgs> OnItemCollected;
+
+        public class OnItemCollectedEventArgs : EventArgs
+        {
+            public int amountPartsCollected;
+        }
 
         private void OnTriggerEnter(Collider other)
         {
@@ -21,6 +29,11 @@ namespace WeatherGuardian.PickUps
                 machineAmmountText.text = MachineParts.ToString();
                 
                 machineAmmountOnMachineText.text = machineAmmountOnMachineText.text;
+
+                OnItemCollected?.Invoke(this, new OnItemCollectedEventArgs
+                {
+                    amountPartsCollected = MachineParts
+                });
             }
         }
 

@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5646613975273465802}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -25.864353, y: -31.747719, z: 444.67245}
   m_LocalScale: {x: 726097.25, y: 726097.25, z: 726097.25}
   m_ConstrainProportionsScale: 0
@@ -100,8 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayTime: 0
-  posA: {x: 0, y: 0, z: 0}
-  posB: {x: 0, y: 0, z: 0}
+  posA: {x: -25.864353, y: -31.747719, z: 444.67245}
+  posB: {x: -25.864353, y: -615, z: 444.67245}
 --- !u!114 &9023347020663271067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagToDetect: Player
-  detectionType: 0
+  detectionType: -1
   triggerDebugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   colliderDebugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &3516907873464515322
@@ -145,9 +145,9 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.01, y: 0, z: 0.01}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.01, y: 0.000022938559, z: 0.01}
+  m_Center: {x: 0, y: -0.000011469279, z: 0}
