@@ -44,7 +44,7 @@ namespace WeatherGuardian.Behaviours
             capsuleCollider.center = deathConfig.CapsuleCenter;
             capsuleCollider.height = deathConfig.CapsuleHeight;
 
-            hsb.Body.drag = 0.0f;
+            hsb.Body.linearDamping = 0.0f;
             hsb.Body.constraints = RigidbodyConstraints.FreezeRotation;
 
             animator.SetBool(jumpHash, false);
@@ -60,7 +60,7 @@ namespace WeatherGuardian.Behaviours
         public void Revive(Animator animator)
         {
             IsDeath = false;
-            hsb.Body.drag = 0.0f;
+            hsb.Body.linearDamping = 0.0f;
             hsb.Body.constraints = RigidbodyConstraints.None;
             animator.SetBool(deathHash, IsDeath);
             animator.SetBool(jumpHash, false);

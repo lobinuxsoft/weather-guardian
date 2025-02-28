@@ -36,12 +36,12 @@ namespace WeatherGuardian.Utils
             Animator animator = go.GetComponent<Animator>();
             HeightSpringBehaviour hsb = animator.GetBehaviour<HeightSpringBehaviour>();
 
-            float dotVel = Vector3.Dot(rb.velocity, transform.forward);
+            float dotVel = Vector3.Dot(rb.linearVelocity, transform.forward);
 
             if(dotVel > 0)
             {
                 animator.SetBool(umbrellaHash, false);
-                hsb.Body.AddForce(rb.velocity, ForceMode.Impulse);
+                hsb.Body.AddForce(rb.linearVelocity, ForceMode.Impulse);
             }
         }
     }

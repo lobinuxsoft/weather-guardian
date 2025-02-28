@@ -105,7 +105,7 @@ public class Ball : ObstacleBehaviour
     {
         myRigidBody.isKinematic = false;        
 
-        myRigidBody.velocity = Vector3.zero;
+        myRigidBody.linearVelocity = Vector3.zero;
 
         if (!MyMeshRenderer.isVisible) 
         {
@@ -135,7 +135,7 @@ public class Ball : ObstacleBehaviour
         if (!yarnBallImpactSfx.IsNull)
             FMODUnity.RuntimeManager.PlayOneShot(yarnBallImpactSfx);
 
-        myRigidBody.velocity = Vector3.zero;
+        myRigidBody.linearVelocity = Vector3.zero;
     }
 
     public void ResetTransform() 
@@ -154,7 +154,7 @@ public class Ball : ObstacleBehaviour
     {
         if (!myRigidBody.isKinematic && ramp != null)
         {
-            myRigidBody.velocity += acceleration * Time.deltaTime;            
+            myRigidBody.linearVelocity += acceleration * Time.deltaTime;            
         }
     }
 }

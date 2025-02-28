@@ -126,12 +126,12 @@ namespace WeatherGuardian.Behaviours
         /// <returns>The oscillation force</returns>
         private Vector3 MaintainHeight(in Rigidbody body, in RaycastHit rayHit, in Vector3 rayDir, in Vector3 gravitationalForce)
         {
-            Vector3 vel = body.velocity;
+            Vector3 vel = body.linearVelocity;
             Vector3 otherVel = Vector3.zero;
             Rigidbody hitBody = rayHit.rigidbody;
 
             if (hitBody != null)
-                otherVel = hitBody.velocity;
+                otherVel = hitBody.linearVelocity;
 
             float rayDirVel = Vector3.Dot(rayDir, vel);
             float otherDirVel = Vector3.Dot(rayDir, otherVel);

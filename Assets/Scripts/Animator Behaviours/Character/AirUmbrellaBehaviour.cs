@@ -50,7 +50,7 @@ namespace WeatherGuardian.Behaviours
             forwardDir = heightSpringBehaviour.Body.transform.forward;
             rightDir = heightSpringBehaviour.Body.transform.right;
 
-            heightSpringBehaviour.Body.drag = airDragConfig.Drag.Evaluate(0);
+            heightSpringBehaviour.Body.linearDamping = airDragConfig.Drag.Evaluate(0);
 
             uprightSpringBehaviour.ForwardDirection = forwardDir;
             uprightSpringBehaviour.RightDirection = rightDir;
@@ -67,12 +67,12 @@ namespace WeatherGuardian.Behaviours
                 uprightSpringBehaviour.ForwardDirection = forwardDir;
                 uprightSpringBehaviour.RightDirection = rightDir;
 
-                verticalVelocity = Vector3.Dot(heightSpringBehaviour.Body.velocity, Vector3.up);
+                verticalVelocity = Vector3.Dot(heightSpringBehaviour.Body.linearVelocity, Vector3.up);
 
-                forwardVelocity = Vector3.Dot(heightSpringBehaviour.Body.velocity, uprightSpringBehaviour.ForwardDirection);
-                horizontalVelocity = Vector3.Dot(heightSpringBehaviour.Body.velocity, uprightSpringBehaviour.RightDirection);
+                forwardVelocity = Vector3.Dot(heightSpringBehaviour.Body.linearVelocity, uprightSpringBehaviour.ForwardDirection);
+                horizontalVelocity = Vector3.Dot(heightSpringBehaviour.Body.linearVelocity, uprightSpringBehaviour.RightDirection);
 
-                heightSpringBehaviour.Body.drag = airDragConfig.Drag.Evaluate(forwardVelocity);
+                heightSpringBehaviour.Body.linearDamping = airDragConfig.Drag.Evaluate(forwardVelocity);
 
                 animator.SetFloat(umbrellaHVelocityHash, horizontalVelocity);
                 animator.SetFloat(umbrellaVVelocityHash, forwardVelocity);
@@ -95,8 +95,8 @@ namespace WeatherGuardian.Behaviours
             if (stateInfo.tagHash != exitTagHash) return;
 
             animator.SetBool(umbrellaHash, false);
-            heightSpringBehaviour.Body.drag = 0.0f;
-            heightSpringBehaviour.Body.velocity = Vector3.zero;
+            heightSpringBehaviour.Body.linearDamping = 0.0f;
+            heightSpringBehaviour.Body.linearVelocity = Vector3.zero;
             heightSpringBehaviour.Body.constraints = RigidbodyConstraints.None;
             uprightSpringBehaviour.LockDirection = false;
         }
@@ -130,7 +130,7 @@ namespace WeatherGuardian.Behaviours
 
             float gravityInfluence = moveConfig.GravityFactorFromDot.Evaluate(verticalVelocity) * moveConfig.GravityMultiplier;
 
-            heightSpringBehaviour.Body.velocity += heightSpringBehaviour.GravitationalForce * gravityInfluence * Time.fixedDeltaTime;
+            heightSpringBehaviour.Body.linearVelocity += heightSpringBehaviour.GravitationalForce * gravityInfluence * Time.fixedDeltaTime;
         }
 
         private void AirMovement(in Vector3 moveInput)
@@ -149,7 +149,7 @@ namespace WeatherGuardian.Behaviours
 
             this.goalVel = Vector3.MoveTowards(this.goalVel, goalVel, accel * Time.fixedDeltaTime);
 
-            Vector3 neededAccel = (this.goalVel - heightSpringBehaviour.Body.velocity) / Time.fixedDeltaTime;
+            Vector3 neededAccel = (this.goalVel - heightSpringBehaviour.Body.linearVelocity) / Time.fixedDeltaTime;
             float maxAccel = moveConfig.Acceleration * moveConfig.AccelerationFactorFromDot.Evaluate(velDot) * maxAccelForceFactor;
             neededAccel = Vector3.ClampMagnitude(neededAccel, maxAccel);
 

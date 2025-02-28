@@ -35,7 +35,7 @@ namespace WeatherGuardian.Utils
             if (OhMyGizmos.Enabled)
             {
                 Vector3 forward = Vector3.ProjectOnPlane(transform.forward, Vector3.up);
-                Vector3 velocityDir = Vector3.ProjectOnPlane(hsb.Body.velocity, Vector3.up);
+                Vector3 velocityDir = Vector3.ProjectOnPlane(hsb.Body.linearVelocity, Vector3.up);
 
                 Vector3 pos = hsb.Body.worldCenterOfMass;
 

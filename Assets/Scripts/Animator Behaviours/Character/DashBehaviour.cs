@@ -53,11 +53,11 @@ namespace WeatherGuardian.Behaviours
 
                 lastTimeUse = Time.time;
 
-                dragDefault = heightSpringBehaviour.Body.drag;
+                dragDefault = heightSpringBehaviour.Body.linearDamping;
                 dragModifier = dashConfig.Distance * dashConfig.Duration;
 
                 forward = Vector3.ProjectOnPlane(animator.transform.forward, Vector3.up).normalized;
-                heightSpringBehaviour.Body.drag = 0;
+                heightSpringBehaviour.Body.linearDamping = 0;
                 heightSpringBehaviour.Body.constraints = RigidbodyConstraints.FreezeRotation;
 
                 lerpDuration = dashConfig.Duration;
@@ -88,12 +88,12 @@ namespace WeatherGuardian.Behaviours
 
             if (lerpDuration > 0)
             {
-                heightSpringBehaviour.Body.drag = Mathf.Lerp(0, dragModifier, dashConfig.VelocityBehaviourCurve.Evaluate((dashConfig.Duration - lerpDuration) / dashConfig.Duration));
+                heightSpringBehaviour.Body.linearDamping = Mathf.Lerp(0, dragModifier, dashConfig.VelocityBehaviourCurve.Evaluate((dashConfig.Duration - lerpDuration) / dashConfig.Duration));
                 lerpDuration -= Time.deltaTime;
             }
             else
             {
-                heightSpringBehaviour.Body.drag = dragDefault;
+                heightSpringBehaviour.Body.linearDamping = dragDefault;
                 animator.SetBool(dashHash, false);
             }
         }
@@ -110,11 +110,11 @@ namespace WeatherGuardian.Behaviours
 
             lerpDuration = 0;
             heightSpringBehaviour.Body.constraints = RigidbodyConstraints.None;
-            heightSpringBehaviour.Body.drag = 0;
+            heightSpringBehaviour.Body.linearDamping = 0;
             heightSpringBehaviour.Body.useGravity = true;
             heightSpringBehaviour.ShouldMaintainHeight = true;
 
-            heightSpringBehaviour.Body.velocity -= heightSpringBehaviour.Body.velocity;
+            heightSpringBehaviour.Body.linearVelocity -= heightSpringBehaviour.Body.linearVelocity;
 
             uprightSpringBehaviour.LockDirection = animator.GetBool(umbrellaHash);
 

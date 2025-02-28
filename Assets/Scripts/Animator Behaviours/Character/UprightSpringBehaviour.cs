@@ -107,7 +107,7 @@ namespace WeatherGuardian.Behaviours
         /// </summary>
         private Vector3 GetLookDirection(in Rigidbody body, in Vector3 gravitationalForce)
         {
-            Vector3 velocity = Vector3.ProjectOnPlane(body.velocity, -gravitationalForce);
+            Vector3 velocity = Vector3.ProjectOnPlane(body.linearVelocity, -gravitationalForce);
 
             lastLookDirection = velocity.magnitude > 0.25f ? velocity.normalized : lastLookDirection;
 

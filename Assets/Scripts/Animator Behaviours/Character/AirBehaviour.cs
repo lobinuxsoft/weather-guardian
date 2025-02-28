@@ -34,7 +34,7 @@ namespace WeatherGuardian.Behaviours
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            verticalVelocity = Vector3.Dot(heightSpringBehaviour.Body.velocity, Vector3.up);
+            verticalVelocity = Vector3.Dot(heightSpringBehaviour.Body.linearVelocity, Vector3.up);
 
             if (maxVerticalVel < float.Epsilon)
                 maxVerticalVel = Mathf.Abs(verticalVelocity);
@@ -47,7 +47,7 @@ namespace WeatherGuardian.Behaviours
 
             if (deltaVerticalVel < 0.0f && heightSpringBehaviour.GroundedInfo.grounded)
             {
-                heightSpringBehaviour.Body.velocity = heightSpringBehaviour.GravitationalForce.normalized * heightSpringBehaviour.Body.velocity.magnitude;
+                heightSpringBehaviour.Body.linearVelocity = heightSpringBehaviour.GravitationalForce.normalized * heightSpringBehaviour.Body.linearVelocity.magnitude;
                 animator.SetBool(groundedHash, true);
             }
 
@@ -79,7 +79,7 @@ namespace WeatherGuardian.Behaviours
 
             float gravityInfluence = moveConfig.GravityFactorFromDot.Evaluate(verticalVelocity) * moveConfig.GravityMultiplier;
 
-            heightSpringBehaviour.Body.velocity += heightSpringBehaviour.GravitationalForce * gravityInfluence * Time.fixedDeltaTime;
+            heightSpringBehaviour.Body.linearVelocity += heightSpringBehaviour.GravitationalForce * gravityInfluence * Time.fixedDeltaTime;
         }
 
         private void AirMovement(Animator animator, Vector3 moveInput)
@@ -98,7 +98,7 @@ namespace WeatherGuardian.Behaviours
 
             this.goalVel = Vector3.MoveTowards(this.goalVel, goalVel, accel * Time.fixedDeltaTime);
 
-            Vector3 neededAccel = (this.goalVel - heightSpringBehaviour.Body.velocity) / Time.fixedDeltaTime;
+            Vector3 neededAccel = (this.goalVel - heightSpringBehaviour.Body.linearVelocity) / Time.fixedDeltaTime;
             float maxAccel = moveConfig.Acceleration * moveConfig.AccelerationFactorFromDot.Evaluate(velDot) * maxAccelForceFactor;
             neededAccel = Vector3.ClampMagnitude(neededAccel, maxAccel);
 

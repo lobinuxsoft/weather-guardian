@@ -17,7 +17,7 @@ namespace WeatherGuardian.Behaviours
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             Vector3 force = Vector3.down * stompConfig.StompForce;
-            heightSpringBehaviour.Body.drag = 0;
+            heightSpringBehaviour.Body.linearDamping = 0;
             heightSpringBehaviour.Body.AddForce(force, ForceMode.Impulse);
         }
 
@@ -40,7 +40,7 @@ namespace WeatherGuardian.Behaviours
             heightSpringBehaviour.Oscillator.ApplyForce(force);
             heightSpringBehaviour.GroundedInfo.rayHit.rigidbody?.AddForceAtPosition(-force, heightSpringBehaviour.GroundedInfo.rayHit.point);
 
-            float bodyVelDot = Vector3.Dot(heightSpringBehaviour.Body.velocity, Vector3.up);
+            float bodyVelDot = Vector3.Dot(heightSpringBehaviour.Body.linearVelocity, Vector3.up);
             animator.SetBool(stompHash, !(bodyVelDot > 0.0f));
         }
 
@@ -68,7 +68,7 @@ namespace WeatherGuardian.Behaviours
         {
             if (heightSpringBehaviour == null || heightSpringBehaviour.GroundedInfo.grounded) return;
 
-            heightSpringBehaviour.Body.velocity += heightSpringBehaviour.GravitationalForce * stompConfig.GravityMultiplier * Time.fixedDeltaTime;
+            heightSpringBehaviour.Body.linearVelocity += heightSpringBehaviour.GravitationalForce * stompConfig.GravityMultiplier * Time.fixedDeltaTime;
         }
     }
 }

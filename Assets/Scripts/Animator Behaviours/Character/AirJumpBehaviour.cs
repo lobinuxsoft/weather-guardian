@@ -17,9 +17,9 @@ namespace WeatherGuardian.Behaviours
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             heightSpringBehaviour.ShouldMaintainHeight = false;
-            float verticalDot = Vector3.Dot(heightSpringBehaviour.Body.velocity, Vector3.up);
+            float verticalDot = Vector3.Dot(heightSpringBehaviour.Body.linearVelocity, Vector3.up);
 
-            heightSpringBehaviour.Body.velocity -= Vector3.up * verticalDot;
+            heightSpringBehaviour.Body.linearVelocity -= Vector3.up * verticalDot;
             heightSpringBehaviour.Body.AddForce(Vector3.up * airJumpConfig.JumpForceFactor, ForceMode.Impulse);
 
             animator.SetBool(jumpHash, false);

@@ -105,9 +105,9 @@ namespace WeatherGuardian.PlatformObjects
 
             Rigidbody catRigidBody = gameObject.GetComponent<Rigidbody>();
 
-            platformRigidBody.velocity = Vector3.zero;
+            platformRigidBody.linearVelocity = Vector3.zero;
 
-            catRigidBody.velocity = Vector3.zero;
+            catRigidBody.linearVelocity = Vector3.zero;
 
             CallStartMovingPlatformSfx();
 

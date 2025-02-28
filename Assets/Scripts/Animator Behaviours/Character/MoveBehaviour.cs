@@ -39,7 +39,7 @@ namespace WeatherGuardian.Behaviours
         {
             if (!CanMove) return;
 
-            float currentSpeed = Mathf.Clamp(heightSpringBehaviour.Body.velocity.magnitude / moveConfig.MaxSpeed, 0, 2);
+            float currentSpeed = Mathf.Clamp(heightSpringBehaviour.Body.linearVelocity.magnitude / moveConfig.MaxSpeed, 0, 2);
             isMoving = currentSpeed > 0.1f;
             canSprint = currentSpeed > 0.75f;
 
@@ -83,7 +83,7 @@ namespace WeatherGuardian.Behaviours
 
             this.goalVel = Vector3.MoveTowards(this.goalVel, goalVel, accel * Time.fixedDeltaTime);
 
-            Vector3 neededAccel = (this.goalVel - heightSpringBehaviour.Body.velocity) / Time.fixedDeltaTime;
+            Vector3 neededAccel = (this.goalVel - heightSpringBehaviour.Body.linearVelocity) / Time.fixedDeltaTime;
             float maxAccel = moveConfig.Acceleration * moveConfig.AccelerationFactorFromDot.Evaluate(velDot) * maxAccelForceFactor;
             neededAccel = Vector3.ClampMagnitude(neededAccel, maxAccel);
 
